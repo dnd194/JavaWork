@@ -31,7 +31,7 @@ import java.util.List;
 
 public class PhonebookManager implements Pb, Closeable  {
 
-	//TODO : DB를 위한 변수들 선언
+	//DB를 위한 변수들 선언
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
