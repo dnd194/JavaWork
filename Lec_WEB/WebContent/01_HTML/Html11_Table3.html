@@ -3,8 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <title>Table3 과제</title>
+<style>
+            table,td ,tr{
+                border: 1px black solid;
+                border-collapse: collapse;
+            }
+            #art, #art tr, #art td{
+            	
+            	border: 6px black solid;
+                border-collapse: collapse;
+            }
+        </style>
 </head>
 <body>
-
+	<table>
+            <tr>
+                <td rowspan="3" style="width: 40px;"></td>
+                <td colspan="3" style="width: 80px; height: 20px;" ></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="width: 80px; height: 20px;"></td>
+            </tr>
+            <tr>
+                <td style="height: 20px"></td>
+                <td style="height: 20px"></td>
+                <td style="height: 20px"></td>
+               
+            </tr>
+        </table>
+        <br>
+        <hr>
+        <br>
+        <table>
+            <tr>
+                <td rowspan="3" style="width: 40px;"></td>
+                <td colspan="3" style="width: 80px; height: 20px;" ></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 80px; height: 20px;"></td>
+                <td style="height: 20px; width: 40px"> 
+            </tr>
+            <tr>
+                <td style="height: 20px"></td>
+                <td style="height: 20px"></td>
+                <td style="height: 20px"></td>
+               
+            </tr>
+        </table>
+        <br>
+        <hr>
+        <br>
+        <table>
+        	<tr>
+        		<td style="width: 60px; height: 40px"> </td>
+        		<td  colspen="2" rowspan="2" style="width: 80px; height: 60px"></td>
+        		<td rowspan=3 style="width:60px; height: 80px"></td>
+        	</tr>
+        	<tr>
+        		<td style="width: 60px; height: 40px"></td>
+        	</tr>
+        	<tr>
+        		<td style="width: 60px; height: 40px"></td>
+        		<td style="width: 60px"></td>
+        	</tr>
+        </table>
+        <br>
+        <hr>
+        <br>
+        <table>
+        	<tr>
+        		<td><img src ="https://i.pinimg.com/474x/54/d0/ae/54d0ae212535b72175d694f9c7296860.jpg"></td>
+        	</tr>
+        </table>
+        <br>
+        <hr>
+        <br>
+        <table id="art">
+        	<tr>
+        		<td colspan=2 style=" height: 30px; background: rgb(225,225,225)"> </td>
+        		<!--<td> </td>  -->
+        		<td style="width: 30px;"> </td>
+        		<td colspan=2 style="background: rgb(245,239,5); "> </td>
+        		<!--<td> </td>  -->
+        		<td style="width: 20px"> </td>
+        	</tr>
+        	<tr>
+        		<td style="width: 30px; height: 30px"> </td>
+        		<td rowspan=2 colspan=2 style="background: red; width: 160px; height: 160px" > </td>
+        		<!--<td> </td>  -->
+        		<td colspan=2 style="background: rgb(245,239,5);"> </td>
+        		<!--<td> </td>  -->
+        		<td rowspan=3 > </td>
+        	</tr>
+        	<tr>
+        		<td style="width: 30px; height: 80px; background: rgb(225,225,225)"> </td>
+        		<!--<td> </td>  -->
+        		<!--<td> </td>  -->
+        		<td style="width: 20px"> </td>
+        		<td style="width: 20px"> </td>
+        		<!--<td> </td>  -->
+        	</tr>
+        	<tr>
+        		<td rowspan=3 style="background: rgb(245,239,5); height: 60px"> </td>
+        		<td style="width: 30px; background: black; height:35px"> </td>
+        		<td style="background: rgb(225,225,225)"> </td>
+        		<td colspan=2> </td>
+        		<!--<td> </td>  -->
+        		<!--<td> </td>  -->
+        	</tr>
+        	<tr>
+        		<!--<td> </td>  -->
+        		<td style="width: 30px; background: black; height:35px"> </td>
+        		<td style="background: rgb(225,225,225)"> </td>
+        		<td rowspan=2 colspan=2 style="background: blue; width: 20px"> </td>
+        		
+        		<td rowspan=2 style="background: red; "></td>
+        	</tr>
+        	<tr>
+        		<!--<td> </td>  -->
+        		<td style="height:35px"> </td>
+        		<td style="width: 30px; background: black; height:35px"> </td>
+        		<!--<td> </td>  -->
+        		<!--<td> </td>  -->
+        		<!--<td> </td>  -->
+        	</tr>
+        
+        </table>
+        
 </body>
 </html>
