@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Color</title>
+</head>
+<body style="background: LavenderBlush">
+	<!--
+		HTML 에서 색상값 지정하는 방법
+			1. 이름으로 지정: 많이쓰는 색상에 대해 140종의 이름이 정의되어 있슴
+				https://www.w3schools.com/colors/colors_names.asp -->
+	<h1> 140 종의 색상 이름</h1>
+	<h1 style="color: ForestGreen"> 라벤더생상 </h1>
+	<h1 style="background-color:Orange;">Orange</h1>
+<h1 style="background-color:DodgerBlue;">DodgerBlue</h1>
+<h1 style="background-color:MediumSeaGreen;">MediumSeaGreen</h1>
+<h1 style="background-color:Gray;">Gray</h1>
+<h1 style="background-color:SlateBlue;">SlateBlue</h1>
+<h1 style="background-color:Violet;">Violet</h1>
+<h1 style="background-color:LightGray;">LightGray</h1>
+<hr>
+
+<!--			
+2. rgb() 사용 :  rgb(255, 99, 71)  ←  Red, Green, Blue 값, 각각 0 ~ 255
+			https://www.w3schools.com/html/html_colors.asp
+-->
+
+<h1>rgb() 를 사용한 색상 표현</h1>
+
+<h1 style="background : rgb(255,0,0)">rgb(255,0,0)</h1>
+<h1 style="background-color:rgb(0, 0, 255);">rgb(0, 0, 255)</h1>
+<h1 style="background-color:rgb(60, 179, 113);">rgb(60, 179, 113)</h1>
+<h1 style="background-color:rgb(238, 130, 238);">rgb(238, 130, 238)</h1>
+<h1 style="background-color:rgb(255, 165, 0);">rgb(255, 165, 0)</h1>
+<h1 style="background-color:rgb(106, 90, 205);">rgb(106, 90, 205)</h1>
+<hr>
+<h1 style="background-color:rgb(0, 0, 0);">rgb(0, 0, 0)</h1>
+<h1 style="background-color:rgb(60, 60, 60);">rgb(60, 60, 60)</h1>
+<h1 style="background-color:rgb(120, 120, 120);">rgb(120, 120, 120)</h1>
+<h1 style="background-color:rgb(180, 180, 180);">rgb(180, 180, 180)</h1>
+<h1 style="background-color:rgb(240, 240, 240);">rgb(240, 240, 240)</h1>
+<h1 style="background-color:rgb(255, 255, 255);">rgb(255, 255, 255)</h1>
+
+
+<h1>rgb값을 동일하게 주면, 회색색조의 색상 표현 가능</h1>
+<!-- 
+3. 16진수 사용: #rrggbb  혹은  #rgb
+-->
+<h1>16진수 값(HEX)으로 색상 표현 가능 #rrggbb 형식</h1>
+<h1 style="background : #ff0000">#ff0000</h1>
+
+<h1 style="background-color:#0000ff;">#0000ff</h1>
+<h1 style="background-color:#3cb371;">#3cb371</h1>
+<h1 style="background-color:#ee82ee;">#ee82ee</h1>
+<h1 style="background-color:#ffa500;">#ffa500</h1>
+<h1 style="background-color:#6a5acd;">#6a5acd</h1>
+<hr>
+
+<h1>16진수 값(HEX)으로 색상 표현 가능 #rgb 형식</h1>
+<h1 style="background : #f00">#f00 그냥 이렇게 하는게 더 편한듯</h1>
+<h1 style="background-color:#00f;">#00f</h1>
+<h1 style="background-color:#ab1;">#ab1</h1>
+<h1 style="background-color:#0f2;">#0f2</h1>
+<hr>
+<!-- 
+4. hsl 사용 : 
+		ex) hsl(147, 50%, 47%)
+		hsl(hue, saturation, lightness)
+		
+		hue 0 ~ 360    (색상/색조: 0 빨강 ~ 240 블루 ~ 360 그린)
+		saturation 0% ~ 100%  (채도: 0 흑백 ~ 100 풀칼라)
+ 		lightness 0% ~ 100%  (휘도/밝기: 0 블랙 ~ 100 화이트)	
+
+-->
+<h1>hsl() 으로 색상 표현</h1>
+<h1 style="background: hsl(0,100%,50%)"> hsl(0,100%,50%)</h1>
+<h1 style="background-color:hsl(240, 100%, 50%);">hsl(240, 100%, 50%)</h1>
+<h1 style="background-color:hsl(147, 50%, 47%);">hsl(147, 50%, 47%)</h1>
+<h1 style="background-color:hsl(300, 76%, 72%);">hsl(300, 76%, 72%)</h1>
+<h1 style="background-color:hsl(39, 100%, 50%);">hsl(39, 100%, 50%)</h1>
+<h1 style="background-color:hsl(248, 53%, 58%);">hsl(248, 53%, 58%)</h1>
+<hr>
+
+<!--
+5. rgba color
+		rgba()   alpha 0.0 (투명) ~ 1.0 (불투명)
+		ex) rgba(255, 99, 71, 0.6)   
+		
+		#rrggbbaa	혹은  #rgba
+-->
+<h1>rgba() 로 alpha 표현</h1>
+<div style="background-image: url(https://www.w3schools.com/html/img_bg_transparent.gif)"> 
+	<h1 style="background-color: rgba(255,99,71,0) ">rgba(255,99,71,0)</h1>
+	<h1 style="background-color:rgba(255, 99, 71, 0.2);">rgba(255, 99, 71, 0.2)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.4);">rgba(255, 99, 71, 0.4)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.6);">rgba(255, 99, 71, 0.6)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.8);">rgba(255, 99, 71, 0.8)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 1);">rgba(255, 99, 71, 1)</h1>
+</div>
+
+<!--
+<h1>16진수 값(HEX)으로 rgba색상 표현 가능 #rrggbbaa 형식</h1>
+<div style="background-image:url(https://www.w3schools.com/html/img_bg_transparent.gif)">
+<h1 style="background-color:#f35421ff;">#f35421ff</h1>
+</div>
+-->
+
+<!-- 
+6. hsla color
+ -->
+<h1>hsla() 로 alpha 표현</h1>
+<div style="background-image:url(https://www.w3schools.com/html/img_bg_transparent.gif)">
+<h1 style="background-color:hsla(9, 100%, 64%, 0);">hsla(9, 100%, 64%, 0)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.2);">hsla(9, 100%, 64%, 0.4)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.4);">hsla(9, 100%, 64%, 0.4)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.6);">hsla(9, 100%, 64%, 0.6)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.8);">hsla(9, 100%, 64%, 0.8)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 1);">hsla(9, 100%, 64%, 1)</h1>
+</div>
+
+
+	
+
+</body>
+</html>

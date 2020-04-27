@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<!-- <head> : 
+	브라우저에 직접적으로 보여지진 않지만
+	'웹문서'에 대한 부가적인 정보나 설정값.
+  	'브라우저에서' 다루어야 할 내용 포함.-->
+
+
+<head>  <!-- HTML 주석 (COMMENT) -->
+
+<!-- 중첩된 주석불가    
+			한줄 주석이 없음 -->
+<meta charset="UTF-8">   <!-- 이 HTML 문서의 인코딩-->
+
+<!-- 	한글 글자 깨질때 확인 하는 방법
+		1.문서 저장 인코딩은 ?
+		2.meta charset 설정 인코딩은?
+		3.브라우저 인코딩은 ??  이 3개의 조건이 모두 일치해야함 -->
+<title> Paragraph (문단)</title>
+</head>
+
+<!-- 브라우저 화면에 보여지는 내용 -->
+<body>
+			하	위	하	위
+	<p> p 태그는 문단을 나타내는 태그 </p>
+	<p> 문단과 문단 사이는 줄바꿈 (기본) </p>
+	
+			<!-- Lorem Ipsum  로렘 입숨
+		출판등에서 디자인이나 레이아웃을 보기위한 샘플용 텍스트.  특별한 의미는 없으나, 
+		어느정도 분량의 텍스트로 글을 생성해주기 위해 필요.
+		https://www.lipsum.com/
+		 -->
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rutrum est. Aenean ut tellus facilisis nisl euismod finibus ac sit amet metus. Praesent ac iaculis risus. Sed nec ipsum scelerisque, fringilla odio at, accumsan nunc. Nullam aliquam, nisi at sagittis maximus, odio nisl tempus lacus, dictum elementum sem lacus ac erat. Mauris tristique, sapien ut scelerisque aliquet, erat neque interdum ipsum, et convallis nisi massa vitae sem. Curabitur lacinia fringilla lectus, sit amet tincidunt ex posuere sit amet. In pharetra vitae lorem quis interdum. Nulla vulputate lorem eu leo convallis, sit amet venenatis orci consectetur. Sed viverra libero quis eros tempor euismod. Vestibulum lobortis metus cursus magna porttitor dictum. Nulla semper a urna in dignissim. Donec in dapibus nisi. Integer non gravida elit, at rutrum lectus. </p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rutrum est. Aenean ut tellus facilisis nisl euismod finibus ac sit amet metus. Praesent ac iaculis risus. Sed nec ipsum scelerisque, fringilla odio at, accumsan nunc. Nullam aliquam, nisi at sagittis maximus, odio nisl tempus lacus, dictum elementum sem lacus ac erat. Mauris tristique, sapien ut scelerisque aliquet, erat neque interdum ipsum, et convallis nisi massa vitae sem. Curabitur lacinia fringilla lectus, sit amet tincidunt ex posuere sit amet. In pharetra vitae lorem quis interdum. Nulla vulputate lorem eu leo convallis, sit amet venenatis orci consectetur. Sed viverra libero quis eros tempor euismod. Vestibulum lobortis metus cursus magna porttitor dictum. Nulla semper a urna in dignissim. Donec in dapibus nisi. Integer non gravida elit, at rutrum lectus. </p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rutrum est. Aenean ut tellus facilisis nisl euismod finibus ac sit amet metus. Praesent ac iaculis risus. Sed nec ipsum scelerisque, fringilla odio at, accumsan nunc. Nullam aliquam, nisi at sagittis maximus, odio nisl tempus lacus, dictum elementum sem lacus ac erat. Mauris tristique, sapien ut scelerisque aliquet, erat neque interdum ipsum, et convallis nisi massa vitae sem. Curabitur lacinia fringilla lectus, sit amet tincidunt ex posuere sit amet. In pharetra vitae lorem quis interdum. Nulla vulputate lorem eu leo convallis, sit amet venenatis orci consectetur. Sed viverra libero quis eros tempor euismod. Vestibulum lobortis metus cursus magna porttitor dictum. Nulla semper a urna in dignissim. Donec in dapibus nisi. Integer non gravida elit, at rutrum lectus. </p>
+	<p>html 안에서 아무리 enter를 쳐도 ... 1개의 한칸 띄기도밖에 반영이 안됨</p>
+	<p> 마찬가지로  공백을 아무리 눌러도 1칸 띄기로밖에 반영이 안됌 </p>
+	<p>html 안에서 아무리 enter를 쳐도 ... 1개의 한칸 띄기도밖에 반영이 안됨</p>
+	<br>
+	<br>
+	<br>
+	<p> 마찬가지로  공백(space)을 아무리 눌러도 &nbsp; &nbsp; &lt;1&gt;&nbsp;칸 띄기로밖에 반영이 안됌 </p>
+			<!-- Entity(엔티티):
+			HTML 코드는 < ~~ > 형식의 태그들로 구성되어 있다 보니
+			< 와 > 등을 나타낼때는 특수한 방법을 사용해야 한다.
+			바로 & 로 시작 하는 엔티티(Entity) 라 불리우는 것들입니다 
+			
+			HTML 에는 수~많은 엔티티가 존재하지만.  다음6개는 일단 필수적으로 암기합시다
+			
+				non-breaking space	&nbsp;
+			<	less than			&lt;	
+			>	greater than		&gt;	
+			&	ampersand			&amp;	
+			"	double quotation mark	&quot;
+			'	single quotation mark (apostrophe)	&apos;
+		 -->
+
+<br>
+	<p>Entity (엔티티)</p>
+	<p>
+		&lt; &gt; &amp; &quot; &apos;
+	</p>
+
+	
+	
+	
+</body>
+</html>

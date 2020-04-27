@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Image</title>
+</head>
+<!-- 
+	<img> 이미지 태그 
+	 
+	src : 이미지 경로 지정
+		웹에서 가용한 이미지 포맷 3가지
+		*.jpg : 압축률 높음(손실압축), 큰 이미지에  사용
+		*.gif : 256색, 투명지원, 아이콘등 작은 이미지에 적합
+		*.png : 알파(투명도)지원, 픽셀당 4byte.  ARGB
+	
+	alt : 이미지가 없는 경우 보여지는 글자, 웹접근성 에서 시각장애인을 위한 용도
+	
+	width, height : 브라우저에서 표현하는 이미지 크기
+
+
+	경로지정 시 참조
+	.  : 현재 디렉토리
+	.. : 부모 디렉토리
+
+	image 의 width 와 height 는 항상 지정하자. 지정안하면, 이미지 로딩시 화면 깜빡임 증상 발생 
+-->
+
+<body>
+	<img src="../img/pulpitrock.jpg" alt="Mountain View" width="500" height="377">
+	<img src="../img/pulpitrock.jpg" alt="Mountain View" width="500" height="377"><br>
+	
+	<!-- 상대 경로와 절대 경로 잘 구분 할 것-->
+	<img src="../img/img_chania.jpg" alt="Flowers in Chania" width="460" height="345"><br>
+
+<img src="../img/img_girl.jpg" alt="Girl in a jacket" width="500" height="600"><br>
+<img src="../img/img_girl.jpg" alt="Girl in a jacket" style="width:500px; height:600px;"><br>
+	
+
+
+
+
+
+
+
+</body>
+</html>

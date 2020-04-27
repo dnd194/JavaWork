@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Hyper Links </title>
+<style>
+	a{
+		text-decoration: none;
+	}
+	a:visited {   /* 방문한 상태 스타일*/
+		color : pink;
+	}
+	a:link {     /* 기본 상태 스타일*/
+		color : green;
+	}
+	a:hover {	/* 마우스가 올라간 상태 */
+		color : red;
+	}
+	a:active {		/* 클릭한 상태 */
+		color : blue;
+		text-decoration: underline;
+	}
+
+</style>
+</head>
+<!--
+기본 구문 : <a href="url">link text</a>
+ 
+ target attribute
+	_blank - 새 윈도우나 탭에.
+	_self - 현재 브라우저창에 (디폴트)
+	_parent - 상위 frame 에
+	_top - 최 상위 윈도우에  
+ 
+ -->
+
+<body>
+	<a href="https://www.naver.com" target="_blank" >naver</a>
+	<br>
+	<a href="https://www.google.com" target="_self">google</a>
+	<br>
+	
+	<!-- 이미지 링크 만들기 -->
+	<a href="https://www.w3schools.com" target="_blank">
+		<img src="https://www.w3schools.com/html/smiley.gif" alt="HTMLtutorial"/>
+	</a>
+</body>
+</html>

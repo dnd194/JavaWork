@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Table2</title>
+<style>
+table, th, td {
+    border: 1px solid black;  /* 두께, 선종류, 선색상 */
+    border-collapse: collapse; /* border 붙이기 */
+}
+
+th, td {
+	padding: 15px;	/* 셀 안쪽의 컨텐트와 border 사이 여백 */
+}
+
+th {
+	text-align: left;
+}
+</style>
+
+</head>
+<!-- colspan : 열병합
+	 rowspan : 행 병합 		 -->
+
+
+<body>
+	<table style="width : 100%">
+		<thead>
+			<tr>
+				<td colspan=2 rowspan=2>1</td>
+				
+				<td>3</td>
+			</tr>
+			<tr>
+				
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		</thead>
+	</table>
+	
+	<hr>
+	<hr>
+	
+	<table style="width : 100%">
+		<thead>
+			<tr>
+				<td >1</td>
+				<td colspan=2 style="text-align: center">2</td>
+				
+			</tr>
+			<tr>
+				<td>4</td>
+				<td rowspan=2>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				
+				<td>9</td>
+			</tr>
+		</thead>
+	</table>
+	<hr>
+	<table style="width : 100%">
+		<thead>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td colspan="3">4</td>
+				<!--<td>5</td> -->
+				<!--<td>6</td> -->
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		</thead>
+	</table>
+	<hr>
+	<table style="width : 100%">
+		<thead>
+			<tr>
+				<td>1</td>
+				<td rowspan=2>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td rowspan=2>4</td>
+				<!-- <td>5</td> -->
+				<td>6</td>
+			</tr>
+			<tr>
+				<!-- <td>7</td> -->
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		</thead>
+	</table>
+	
+	
+	
+	
+</body>
+
+
+
+
+</html>
