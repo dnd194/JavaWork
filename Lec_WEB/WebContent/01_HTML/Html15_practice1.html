@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>주문 form 작성</title>
+<style>
+	table{
+		border:1px solid black;
+		
+	}
+	td{
+		margin-left: 5px;
+	}
+	button{
+		margin:4px;
+		background: #f2f2f2;
+		border: none;
+		padding:4px;
+	}
+	input{
+		margin:4px;
+	}
+	
+</style>
+</head>
+<body>
+<form>
+	<span><strong>주문자 정보 입력</strong></span><br>
+	<br>
+<div style="border-top:2px solid black; border-right:1px solid black; border-left:1px solid black;
+border-bottom: 1px solid black; padding: 20px; max-width:900px" >
+	
+		<label><strong>주문자 정보</strong></label> <span style="margin-left:30px">비회원으로 상품구매시 반드시 본인인증을 하셔야합니다.</span> 
+		<button style="padding:6px">휴대폰인증</button><button style="padding:6px">아이핀인증</button> <br>  
+		<label style="margin-right:80px"><strong>주소</strong></label> 		
+		<input type="text" disabled size=20> <button>주소 찾기</button><br>
+		<input type="text" disabled size=100 style="margin-left:122px"><br>
+		<input type="text" size=100 style="margin-left:122px"><br>
+		<label><strong>휴대 전화</strong></label>
+		<select name="identifier" style="margin-left:46px">
+			<option value="010">010</option>
+			<option value="011">011</option>
+			<option value="019">019</option>
+		</select>&nbsp;	
+		- <input type="number" size=4> - <input type="number" size=4> <label><input type="checkbox" value="sms" checked><small>SMS 수신동의</small></label>
+		<br>
+		<label><strong>이메일</strong></label>
+		<input type="email" size=15 style="margin-left:68px">@ <input type="email" size=15> 
+		&nbsp;<select name="email" >
+			<option value="direct" selected="selected">직접 입력</option>
+			<option value="naver.com">naver.com</option>
+			<option value="daum.net">daum.net</option>
+			<option value="gmail.com">gmail.com</option>
+			<option value="nate.com">nate.com</option>
+			<option value="yahookorea.com">yahookorea.com</option>
+		</select>
+		<br>
+												
+	</div>
+</form>
+<small>*SK플래닛<small>(주)</small>는 통신판매중개자로서 통신판매의 당사자가 아니며,
+		개별 판매자가 등록한 상품정보 및 거래에 대해 SK플래닛<small>(주)</small>는 일체 책임을 지지 않습니다. </small>
+	<br><br>
+	<form>
+		<span><strong>배송지 정보 입력</strong></span><br><br>
+		<div style="border-top:2px solid black; border-right:1px solid black; border-left:1px solid black;
+			border-bottom: 1px solid black;  max-width:900px;" >
+			<div style="background: rgb(240,240,240); padding:20px;">
+			<label><strong>배송지 선택</strong></label>
+			<button style="margin-left: 50px; padding:5px; background: rgb(225,225,225);" >주문자 정보와 동일</button>
+			</div>
+			<br>
+			<div style="padding: 20px">
+				<label><strong>받으시는 분</strong></label>
+				<input style="margin-left:50px" type="text" size=10><br>
+				<label style="margin-right:80px"><strong>주소</strong></label> 		
+				<input type="text" disabled size=20 style="margin-left: 24px"> 
+				<button>주소 찾기</button><br>
+				<input type="text" disabled size=100 style ="margin-left: 142px"><br>
+				<input type="text" size=100 style="margin-left:142px"><br>
+				<label><strong>휴대 전화</strong></label>
+				<select name="identifier" style="margin-left:66px">
+					<option value="010">010</option>
+					<option value="011">011</option>
+					<option value="019">019</option>
+				</select>&nbsp;	
+				- <input type="number" size=4> 
+				- <input type="number" size=4> 
+				<label><input type="checkbox" value="sms" checked><small>안심번호 사용(무료)</small></label>
+				<label><input type="checkbox" value="homephone"><small>집 전화 추가 등록</small></label>
+				<br>
+				<label><strong>배송시 요구사항</strong></label>
+				<input type="text" size=50 style="margin-left: 15px">
+				<small><small>(0/50자)</small></small><br>
+				<span style="color:blue; font-size: 12px; margin-left: 138px"><small>*특정한 배송일을 지정하고자 할 경우 판매자와 연락하여 배송일을 확인해주시기 바랍니다.</small></span>
+			</div>
+			
+		</div>
+	</form>
+</body>
+</html>

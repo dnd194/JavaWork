@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Width & Height</title>
+
+<!-- 
+https://www.w3schools.com/tags/ref_pxtoemconversion.asp
+ 		px  <->  em 변환기
+ -->
+
+
+
+<style>
+.c1 {background-color: powderblue;}
+.c2 {background-color: lightpink;}
+.c3 {background-color: lightyellow;}
+
+div#demo11 { 
+	height: 200px;  /* px, em, % 등의 단위가 있다. */
+	width: 50%;		/* 화면 전체의 50% (가용폭의 50%) */
+}
+div#demo12 { 
+	height: 100px;   /* 높이만 100px 고정 */
+}
+div#demo21 { 
+	height: 150px; 
+	max-width: 500px;  /* 이거보다 더 커지지 않는다. */
+ }
+div#demo22 { 
+	height: 150px;
+	min-width: 500px;	/* 이거보다 작아지지 않는다 --> 아래에 스크롤바가 생김 */ 
+}
+div#demo31 { 
+	max-height: 70px; /* 높이가 고정인데 넓이가 줄어들면 content가 삐져나옴 */
+	overflow: auto; /* content가 넘칠때 해결할 수 있는 방법  auto -> scrollbar 가 생김*/
+}
+
+div#demo32 { 
+	min-height: 70px
+ }
+
+</style>
+</head>
+
+<body>
+
+<h2>width & height</h2>
+<!-- width, height
+	https://www.w3schools.com/css/css_dimension.asp
+	
+	주의!:
+	CSS 의 height, width 값은
+		padding, border, margin 영역은 포함하지 않습니다
+		padding, border, margin 안쪽영역만 다룬 값입니다.
+	
+	width 와 height 의 디폴트 값은 : auto <-- 즉, 브라우저가 알아서 계산합니다	
+ -->
+
+<p>아래 div element 는 height 200px / width  50%:</p>
+<div class="c1" id="demo11">demo11</div>
+
+<p>아래 div element 는 height 100px:</p>
+<div class="c1" id="demo12">demo12</div>
+
+<hr><br>
+
+
+<h2>max-width & min-width</h2>
+<!-- 
+		max-width  : element의 최대 width 값
+				"아무리 container가 커져도 max-width 값보다 커지지는 않음
+			
+		min-width : elemtnt의 최소 width 값
+				"아무리 container가 작아져도 min-width 보다 작아지지는 않음.
+			
+		디폴트 값은 none  	<-- maximum width 값 없슴.
+	
+		max-width 가 설정되면 기존의 width 값도 오버라이딩 한다.
+ -->
+<p>아래 div element 는 height 150px / max-width 500px </p>
+<div class="c2" id="demo21">demo21</div>
+
+<p>아래 div element 는 height 150px / min-width 500px </p>
+<div class="c2" id="demo22">
+demo22<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed eros volutpat, accumsan nisl cursus, facilisis est. Sed quis nunc ut eros ornare auctor sed non lacus. Donec eu neque ut sapien venenatis venenatis sed vel quam. Nulla ut metus et ipsum posuere egestas. Maecenas ac hendrerit risus. Sed ultrices est id nisi congue ultrices. Vestibulum eget velit sed arcu ornare auctor.</div>
+
+<hr><br>
+
+
+<h2>max-height & min-height</h2>
+<!--
+	max-height : 아무리 안의 내용물이 넘쳐도. 그 이상 height 가 커지지 않는다 
+	
+	min-height : 아무리 안의 내용물이 줄어도, 그 이하로 height 가 작아지진 않는다
+	
+	즉 max/min height 는 '내용' 에 대한 크기 이다.
+	
+	max-height 가 설정되면 기존의 height 값을 오버라이딩 한다.
+ -->
+
+<p>아래 div element 는 기본값 </p>
+<div class="c3">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed eros volutpat, accumsan nisl cursus, facilisis est. Sed quis nunc ut eros ornare auctor sed non lacus. Donec eu neque ut sapien venenatis venenatis sed vel quam. Nulla ut metus et ipsum posuere egestas. Maecenas ac hendrerit risus. Sed ultrices est id nisi congue ultrices. Vestibulum eget velit sed arcu ornare auctor.</div>
+
+<p>아래 div element 는 max-height: 70px </p>
+<div class="c3" id="demo31">
+demo31<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed eros volutpat, accumsan nisl cursus, facilisis est. Sed quis nunc ut eros ornare auctor sed non lacus. Donec eu neque ut sapien venenatis venenatis sed vel quam. Nulla ut metus et ipsum posuere egestas. Maecenas ac hendrerit risus. Sed ultrices est id nisi congue ultrices. Vestibulum eget velit sed arcu ornare auctor.</div>
+
+<p>아래 div element 는 min-height: 70px </p>
+<div class="c3" id="demo32">
+demo32
+</div>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

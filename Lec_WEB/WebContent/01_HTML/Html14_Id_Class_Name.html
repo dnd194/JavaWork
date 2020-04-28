@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>id class name</title>
+<style>
+	p{
+		font-size: 200%;
+	}
+	
+	p#demo{  			/*id가 demo인 p element*/ 
+		background: cyan;
+	}
+	p.c1{ 				/*클래스가 c1인 p element  */
+		color:orange;
+	}
+
+	p.c2{
+		background: yellow;
+	}
+
+</style>
+</head>
+<!-- 
+HTML 에서 element 를 식별하는 수단 3가지 (attribute)
+
+1. id
+	: ''''''고유(unique) 한 element 식별용으로 사용''''''
+	: 사용처: CSS, JavaScript
+
+2. class
+	: 그룹으로 여러 element에 적용
+	: 한 element에 복수 class 적용 가능.
+	: 사용처: CSS, JavaScript
+
+3. name
+	: 주로 form 관련 element에 적용
+	: 사용처: JavaScript, 서버프로그래밍(PHP, JSP 등..)
+	        서버에 데이터를 전송할때는 반드시 name 사용!!
+ 
+ -->
+<body>
+
+<p id="demo">id = demo</p>
+<p class="c1">class="c1"</p>
+<p class="c2">class="c2"</p>
+<p class="c1 c2">class="c1 c2"</p>   <!-- 하나의 element에 여러개의 class를 해줄 수 있다. -->
+				<!-- p.c1, p.c2 의 효과 2개 모두 받는 것을 볼 수 있다. -->
+<p id="demo">id = demo 또?</p>
+<!-- CSS 는 동작하지만 JAVASCRPIT 는 동작하지 않는다. -->
+
+아이디: <input type="text" name="userid" size="20">
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

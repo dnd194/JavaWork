@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Position</title>
+
+<style>
+div.static {
+	/* TODO */
+}
+
+div.relative {
+	/* TODO */
+}
+
+div.fixed {
+	/* TODO */
+}
+
+div.absolute {
+	/* TODO */
+}
+</style>
+
+</head>
+
+<!--
+	position : element 의 배치, 아래 4가지 종류
+	
+	1. static : (디폴트) 기본위치(normal) 에 배치.
+				top, bottom, left, right 와 아무런 영향 없슴
+				
+	-- 나머지 아래 3개는 모두 ~~에 대해 '상대적' 배치
+	   top, bottom, left, right 값에 영향 받음
+	   
+	2. relative : 기본위치(normal) 에 대해 '상대적' 배치
+	3. fixed : 뷰포트(viewport) 에 대해 '상대적' 배치
+	4. absolute : 부모(ancestor) 에 대해 '상대적' 배치
+			- 부모가 relative, fixed, absolute 인경우만 작동!
+			- 부모가 static 이면, body 에 대해 상대적 배치다.
+ -->
+<body>
+<h2>position: static</h2>
+<div class="static">static</div>
+
+<br><hr>
+
+<h2>position: relative</h2>
+<div class="relative">relative</div>
+
+<br><hr>
+
+<h2>position: fixed</h2>
+<div class="fixed">fixed</div>
+
+<br><hr>
+
+<h2>position: absolute</h2> <!-- 다음 2개 비교 -->
+<!--  부모가 relative, fixed, absolute 인 경우 -->
+<!-- TODO -->
+<div class="">부모1-relative
+	<div class="absolute">absolute1</div>
+</div>
+
+<br>
+<!-- 부모가 static 인 경우 -->
+<!-- TODO -->
+<div class="">부모2-static
+	<div class="absolute">absolute2</div>
+</div>
+
+<br><hr>
+
+
+
+<!-- 이번단원은 학생들도 아래 br 태그기입해주세요 -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

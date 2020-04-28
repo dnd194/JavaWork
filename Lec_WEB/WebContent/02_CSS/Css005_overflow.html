@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>overflow</title>
+<!-- 
+'content' 가 element box 를 벗어난 경우 어떻게 처리할지 명시
+overflow 는 height 값을 가진 block 속성 element 에 대해서만 동작함!
+
+	visible : (기본값) clip 발생 안하고, 그냥 box 영역 밖에 보임
+	hidden : clip 발생, 넘치는 content 는 안 보임
+	scroll : clip 발생하나 scroll 바 등장하여 볼수는 있게 한다
+	auto : overflow 발생시에만 scoll 바 등장
+	initial : 기본값 전환
+	inherit : 부모 element 의 overflow 값 계승
+
+https://www.w3schools.com/css/css_overflow.asp
+https://www.w3schools.com/cssref/pr_pos_overflow.asp
+https://www.w3schools.com/cssref/playit.asp?filename=playcss_overflow
+
+
+x축(수평) overflow 값에 대해서만 설정할때는 overflow-x
+y축(수직) overflow 값에 대해서만 설정할때는 overflow-y
+
+
+ -->
+<style>
+div.ex1 {
+  background-color: lightblue;
+  width: 110px;
+  height: 110px;
+  /* TODO */
+}
+
+div.ex2 {
+  background-color: lightblue;
+  width: 110px;
+  height: 110px;
+  /* TODO */
+}
+
+div.ex3 {
+  background-color: lightblue;
+  width: 110px;
+  height: 110px;
+  /* TODO */
+}
+
+div.ex4 {
+  background-color: lightblue;
+  width: 110px;
+  height: 110px;
+  /* TODO */
+}
+</style>
+</head>
+<body>
+
+<h1>The overflow Property</h1>
+
+<p>The overflow property specifies whether to clip content or to add scrollbars when an element's content is too big to fit in a specified area.</p>
+
+<h2>overflow: scroll:</h2>
+<div class="ex1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+<h2>overflow: hidden:</h2>
+<div class="ex2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+<h2>overflow: auto:</h2>
+<div class="ex3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+<h2>overflow: visible (default):</h2>
+<div class="ex4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

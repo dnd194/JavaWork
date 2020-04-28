@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Block & Inline</title>
+</head>
+<!--
+'모~든' HTML elements 들은  display 스타일 값을 가지고 있다.
+
+1. display: block   
+
+	block 속성 elements 들은 '항상' 새 라인에서 시작하고
+	'''''가용한 좌우폭을 다 차지한다.''''
+	CSS height. width 속성이 적용됨.
+	
+	디폴트 display 속성이 block 인 element 들.
+	<div>, <h1> ~ <h6>, <p>, <table>, <ol>, <ul>.. 
+	
+	
+
+2. display: inline
+
+	inline 속성 element 들은 새 라인에서 시작하지 않고
+	'''''필요한 만큼(안에 담겨있는 컨텐츠의 내용만큼 wrap-content)의 좌우폭만 차지''''한다
+	''''''''''CSS height. width 속성이 적용안됨★''''''''''''''
+
+	디폴트 display 속성이 inline 인 element 들.
+	'''''''<span> <a> <img> <input>''''''''''''
+	
+	
+	※ 위 3개 정도만 디폴트가 inline 이고 나머지는 block 이라 생각해도 됨.
+	
+
+	background-color 나 border 등을 주면 그 element 가 차지하고 있는 영역이 보인다
+	크롬 등에서 element selector 등을 사용하면 해당 element 가 차지하는 영역이 보인다.
+
+
+	HTML 에서 대표적인 grouping 목적의 태그 두가지
+		<div>	Defines a section in a document (block-level)
+		<span>	Defines a section in a document (inline) 
+
+
+3 display : none  /* 해당 요소 감추기 */
+
+4 display : inline-block 	
+	element 들끼리는 inline 으로 배치되고,
+	element 는 block 처럼 동작 (width, height 적용됨)
+
+ -->
+<body>
+
+<div style="background-color: lime; padding: 5px;">
+	div 요소입니다
+	<div style="background-color: yellow;">div안의 div 입니다</div>
+	<div style="background-color: pink;">div안의 div 입니다</div>
+	<div style="background-color: violet;">div안의 div 입니다</div>
+</div>
+
+
+<br>
+<!-- display:block 요소 에는 width, height 가 적용됨 -->
+<div style="background-color: lime; padding: 5px; width:300px; height: 250px; ">
+	div 요소(300 x 250)입니다
+	<div style="background-color: yellow; width: 200px; height: 80px">div안의 div (200x80)입니다</div>
+	<div style="background-color: pink;width: 150px; height: 60px">div안의 div (150x60)입니다</div>
+	<div style="background-color: violet;width: 100px; height: 50px">div안의 div (100x50)입니다</div>
+</div>
+
+<br>
+
+<span style="background-color: lime; padding: 5px;">
+	span 요소입니다
+	<span style="background-color: yellow; /*width: 100px; height: 100px;*/">span안의 span</span>
+								<!-- inline은 width와 height 가 먹지않는다. -->
+</span>
+
+<br>
+
+
+<div style="background: Cyan; display: inline;" > inline이 적용된 div</div>
+<br><br>
+<span style="background: Cyan; display: block;"> block이 적용된 span</span>
+
+
+</body>
+</html>
+
+

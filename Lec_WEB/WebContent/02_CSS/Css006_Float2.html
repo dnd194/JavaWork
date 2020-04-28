@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Float & Clear 2</title>
+
+<style>
+h2 {
+	border: 1px solid brown;
+}
+
+.div1, .div3 {
+	border: 3px solid MediumSeaGreen;
+	width: 100px;
+	height: 50px;
+	margin: 10px;	
+}
+
+.div2, .div4 {
+	border: 1px solid red;
+}
+
+
+
+.div1 {
+	/* TODO */
+}
+
+.div3 {
+	/* TODO */
+}
+
+.div4 {
+	/* TODO */
+}
+
+
+</style>
+
+</head>
+
+<!-- 
+clear 값 - clear가 적용된 element
+좌우로 어떻게 float이 적용될지 지정
+https://www.w3schools.com/css/css_float.asp
+
+
+none : (디폴트) float 허용
+left : 왼쪽으로는 float 허용안함
+right : 오른쪽으로는 float 허용안함
+both : 양쪽으로 float 허용안함
+inherit : 부모의 clear 값
+
+ -->
+
+
+<body>
+
+<h2>clear가 없다면</h2>
+<div class="div1">div1</div>
+<div class="div2">div2 : div2 는 div1의 '다음'에 있었다. 
+그러나, div1이 float:left 이기 때문에 
+div2 의 content는  div1 주변을 float 한다.
+</div>
+
+
+<h2>clear가 적용된다면</h2>
+<div class="div3">div3</div>
+<div class="div4">div4 : div4 는 div3 '다음'에 있었다 
+div4 는 clear:left 가 적용 되면, 더이상 float:left 의
+영향을 받지 않는다
+</div>
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

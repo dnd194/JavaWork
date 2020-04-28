@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Float & Clear 1</title>
+<style>
+img {
+	width:170px; height:170px;
+	margin-left:15px;  /* 왼쪽 바깥 여백 */
+}
+img#f1 {
+	/* TODO */
+}
+img#f2 {
+	/* TODO */
+}
+img#f3 {
+	/* TODO */
+}
+
+/* TODO : clear*/
+
+</style>
+</head>
+<!-- CSS float 
+	https://www.w3schools.com/css/css_float.asp
+	
+	float 는 content 들을 어떻게 배치하고 자리 잡을지 세팅한다.
+	
+	left - element를  컨테이너의 왼쪽으로 float 한다
+	right- element를  컨테이너의 오른쪽으로 float 한다
+	none - float 안한다 (디폴트) (일반 텍스트 출력처럼 한다)
+	inherit - 부모의 float 값대로 동작.
+	
+	★ 일단 자신이 float가 되면 주변의 다른 element 의 content 는 그 '주변'으로 배치된다. 
+
+ -->
+<body>
+
+<p>아래 이미지와 이를 감싸는 paragraph 의 텍스트 들이 어떻게 배치되는지 확인해보기 위해 none, right, left 값을 주면서 관찰해보자</p>
+<hr>
+<!--
+	float: none 일때는 이미지도 텍스트의 하나처럼 배치된다 
+	float: right 하면, 이미지는 컨테이너 우측으로 float 하고 
+		주변 element의 content 은 float 하는 이미지 주변을 감싸는 형태가 된다.
+	float: left 하면, 이미지는 컨테이너 좌측으로 float 하고 
+		주변 element의 content 은 float 하는 이미지 주변을 감싸는 형태가 된다.
+ -->
+<p>
+	<img id="f1" src="https://www.w3schools.com/css/pineapple.jpg" alt="Pineapple">
+	<b>float:none</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+</p>
+<hr>
+<p>
+	<img id="f2" src="https://www.w3schools.com/css/pineapple.jpg" alt="Pineapple">
+	<b>float:right</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+</p>
+<hr>
+<p>
+	<img id="f3" src="https://www.w3schools.com/css/pineapple.jpg" alt="Pineapple">
+	<b>float:left;</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+</p>
+
+<!-- TODO : clear -->
+
+<hr> <!-- hr의 위치 주목! -->
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

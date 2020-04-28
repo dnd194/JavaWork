@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>List1</title>
+</head>
+<!-- 
+	<ul>  Unordered List
+	<ol>  Ordered List
+	
+	
+	style 적용시 '어느 element' 에 '어느 style' 을 적용시켜야 하는지 알아야 한다.
+	
+	list-style-type 의 값은
+		disc(디폴트) / circle / square / none 이 있다
+		
+	type 값은
+		1   숫자 (디폴트)
+		A   알파벳 대문자
+		a	알파벳 소문자
+		I	로무숫자 대문자
+		i 	로마숫자 소문자
+	
+ -->
+<body>
+	<h2>Unordered List</h2>
+		<ul>
+			<li>coffee</li>
+			<li>tea</li>
+			<li>coke</li>
+		</ul>
+	<hr>
+	<h2>Ordered List</h2>
+		<ol>
+			<li>coffee</li>
+			<li>tea</li>
+			<li>coke</li>
+		</ol>
+
+	<hr>	
+	<h2>Unordered List + 'list-style-type'</h2>
+		<ul style="list-style-type: square;">
+			<li>coffee</li>
+			<li>tea</li>
+			<li>coke</li>
+		</ul>
+	
+	<hr>
+	<h2>Ordered List + 'type'</h2>
+		<ol type="I">
+			<li>coffee</li>
+			<li>tea</li>
+			<li>coke</li>
+		</ol>
+
+	<hr>
+	<h2>Description List</h2>
+		<dl>
+			<dt>Coffee</dt>			<!-- Data term : 이름  -->
+				<dd>-drug-</dd>     <!-- Data Description 설명 -->
+			<dt>Soda</dt>
+				<dd>-fresh-</dd> 		
+			<dt>Juice</dt>	
+				<dd>-juicy-</dd> 	
+		</dl>
+	
+	<hr>
+	<h2>A Nested List</h2>
+		<ul>
+			<li>Coffee</li>
+			<li>Soda</li>
+				<ul>
+					<li>splite</li>
+					<li>7star</li>
+				</ul>
+			<li>Juice</li>
+		</ul>
+	
+	
+</body>
+</html>
+
+

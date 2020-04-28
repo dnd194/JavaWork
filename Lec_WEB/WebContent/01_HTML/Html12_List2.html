@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>List2</title>
+<style>
+
+	ul{								/* 앞에 디스크 모양 없애기 */
+		list-style-type: none;
+		background: #333333;
+		overflow: hidden;			
+	}
+	
+	li{
+		float: left;			/*줄 바꿈했던 li를 일렬 + 좌측정렬*/
+	}
+	
+	li a {				/* li의 '''자손'''a    (자식표현은  '>'  )*/
+		text-decoration: none;		/*  밑줄 없애기 */
+		padding: 16px;
+		display:block;
+		color:white;
+	}
+	
+	li a:hover{
+		background: #111111;
+	}
+	
+</style>
+</head>
+<!-- 오늘날 웹에서 li, ol 은 메뉴 작성에도 많이 사용됨 -->
+<body>
+	<ul>
+		<li><a href="https://www.naver.com">네이버</a></li>
+		<li><a href="https://www.google.com">구글</a></li>
+		<li><a href="https://www.daum.net">다음</a></li>
+		<li><a href="https://www.nate.com">네이트</a></li>
+	</ul>
+</body>
+</html>

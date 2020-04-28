@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Form3</title>
+</head>
+<body>
+<h3>여러가지 Input '''Type'''</h3>
+<form action="https://www.w3schools.com/action_page.php">
+
+<!-- hidden 보이지 않음 , 그러나 당연히 데이터는 넘어감-->
+<input type="hidden" name="data1" value="alpha">
+<input type="hidden" name="data2" value="beta">
+
+<!-- text -->
+First name:<br>
+<input type="text" name="firstname">ㅣ
+<br>
+Last name:<br>
+<input type="text" name="lastname">ㅣ
+
+
+
+<br><hr>
+
+<!-- 필수요소인 경우 required ,placeholder : 입력 힌트 -->
+ID:<br>
+<input type="text" placeholder="id를 입력하세요" required>
+			<!-- 안쓰고 넘어갈경우 제출되지 않음  -->
+<br><hr>
+
+<!-- disabled, readonly (read-only)-->
+별명 : <br>
+<input type="text" name="nick" value="건드리면 안되는 값" disabled><br>
+Hobby : <br>
+<input type="text" name="hobby" value="읽기전용 read-only" readonly>
+
+<br><hr>
+
+<!-- number -->
+나이 : <br>
+<input type="number" name="age">
+	<!-- 브라우저마다 assist 방법이 다름 -->
+<br><hr>
+
+<!--  password -->
+User Password:<br>
+<input type="password" name="pw">
+<br><hr>
+
+
+<!-- radio -->  
+<!-- name을 똑같이 주면		'''중복체크'''	 	할수가 없다. -->	
+남성<input type="radio" name="gender" value = "male" checked>
+여성<input type="radio" name="gender" value = "female"><br>
+<br><hr>
+
+
+<!-- checkbox -->
+<label><input type="checkbox" checked name="vehicle" value="bike">자전거</label>
+<input type="checkbox" name="vehicle2" value="car">차
+<input type="checkbox" name="vehicle3" value="foot">발
+
+<br><hr>
+
+
+<!-- button -->
+<!--  <button> 도 있고 <input type="button" 도 있다 -->
+
+<input type="button" value="제출(input type button)">		<!-- 동작하지 않음 -->
+<button>제출</button>  <!-- button도 type이 있다. 		
+							type을 명시하지않은 경우  form문안에서 button은 submit으로 동작한다 -->
+			<!-- 동작 -->			
+				
+<button type="button">type="button"</button>		<!-- 동작하지 않음 -->
+<br><hr>
+
+<!-- reset -->
+<input type="reset" value="초기화">
+<!-- submit -->
+<input type="submit" value="제출(input type submit)">   <!-- 동작 -->
+</form>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Form2</title>
+</head>
+<!-- 다양한 form element 들 -->
+<body>
+<form action="https://www.w3schools.com/action_page.php">
+
+
+<h3>&lt;input&gt;</h3>
+성:	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="firstname" size=30 placeholder="성 입력" ><br>
+이름:&nbsp;&nbsp;<input type="text" name="lastname" size=30 value="입력하세요"><br>
+<input type="submit" value="submit"><br>
+
+<br><hr>
+ 
+ 
+<h3>&lt;select&gt;</h3>
+  <!--  서버쪽에서 받은 데이터의 이름(name) 은 cars 이고
+  						''''받은 값(value) 는  value attribute에 명시된 값임을 주목''''! -->
+<select name="cars">
+	<option value="VOLVO">볼보</option>
+	<option value="BENZ">벤츠</option>
+	<option value="AUDI">아우디</option>
+	<option value="BMW">BMW</option>
+</select><br>
+
+<br><hr>
+  <!--  selected  (미리 선택되어진 값을 정할 때 사용)-->
+  
+<select name="cars2">
+	<option value="VOLVO">볼보</option>
+	<option value="BENZ">벤츠</option>
+	<option value="AUDI" selected>아우디</option>
+	<option value="BMW">BMW</option>
+</select><br>
+  
+<br><hr>  
+  <!--  <select> 의 size attribute -->
+<select name="cars3" size=3>
+	<option value="VOLVO">볼보</option>
+	<option value="BENZ">벤츠</option>
+	<option value="AUDI">아우디</option>
+	<option value="BMW">BMW</option>
+</select><br>
+  
+<br><hr>
+   <!--  <select> 의 multiple selection -->
+   <!--  동일한 name 으로 복수개가 전달됨에 주목! -->
+<select name="cars4" size=4 multiple>    <!-- 동일한 name 으로 여러 value를 넘길 수 있다 (String배열로). -->
+	<option value="VOLVO">볼보</option>
+	<option value="BENZ">벤츠</option>
+	<option value="AUDI"selected>아우디</option>
+	<option value="BMW" selected>BMW</option>
+</select><br>
+  
+ <br><hr>
+<h3>&lt;textarea&gt;</h3>
+<textarea name="message1" rows="10" cols="30">wlqdpqhsownj</textarea>
+<!-- 위에 방식은 옛날 방식이라 그다지 추천하지 않음 -->
+
+<br><br><br>
+  
+  <!-- 가급적 아래와 같이 '''스타일 사용 권장 '''-->
+<textarea name="message2" style="width: 400px; height: 200px;"></textarea>
+  <br><br>
+  
+  
+</form>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

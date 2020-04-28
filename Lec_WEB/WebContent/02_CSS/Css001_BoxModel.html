@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BoxModel</title>
+<!-- Box Model  
+https://www.w3schools.com/css/css_boxmodel.asp
+
+모든 HTML elements 들은 사각형 상자 모양으로 구성된다.
+CSS에서 말하는 box model 이란 바로 이런것을 말한다. 
+
+Content : 텍스트나 이미지가 등장하는 영역
+Padding : content 주변을 둘러 싸는 영역. content - border 사이 간격,  투명이다 
+Border: padding 을 감싸는 테두리
+Margin : border 의 바깥 영역  (다른 element 와의 간격)
+
+
+
+element 의 '전체 width / height' 구하는 공식
+
+	element 의 전체 width = 
+		width + left padding + right padding + left border + right border + left margin + right margin
+	
+	element 의 전체 height = 
+		height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+
+ -->
+<style>
+	div#demo1{
+		background: lightcyan;	/* content, padding 영역까지  */
+		width: 300px;   /* 컨텐츠 영역의 넓이를 의미한다. */
+		border: 25px solid orange;		/* 테두리 */
+		padding:25px;   /* content 와 border 사이의 간격 */
+		margin: 25px;		/* border와 다른element 사이의 간격 */
+	}
+	div.demo2{
+		width:320px;
+		padding:10px;
+		border:5px solid gray;
+		maring:0;
+		
+	}
+	div#demo3{
+		outline: 2px solid red;
+	}
+
+</style>
+
+</head>
+<body>
+<h2>Box Model</h2>
+
+<p>CSS box model 은 모든 HTML elements을 구성하는(감싸는) box다. <br> Box model 은 border + padding + margin + content 로 구성됨</p>
+
+<div id="demo1">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed eros volutpat, accumsan nisl cursus, facilisis est. Sed quis nunc ut eros ornare auctor sed non lacus. Donec eu neque ut sapien venenatis venenatis sed vel quam. Nulla ut metus et ipsum posuere egestas. Maecenas ac hendrerit risus. Sed ultrices est id nisi congue ultrices. Vestibulum eget velit sed arcu ornare auctor. 
+</div>
+
+<br><hr>
+<h2>Box model 의 크기 계산 </h2>
+
+<img src="https://www.w3schools.com/css/klematis4_big.jpg" 
+width="350" height="263" alt="Klematis">
+<div class="demo2" >
+위 이미지는 폭이 350px 입니다. 지금 보고 있는 이 div element 의 폭도 350px 입니다, 눈으로 비교해보세요
+</div>
+ 
+<hr><br>
+<h2>outline </h2>
+
+<div class="demo2" id="demo3">
+outline 은 border 의 바깥쪽에 표시되나, width, height 에는 영향을 주지 않는다.
+<!-- 박스모델 계산에서 제외된다. -->
+</div>
+ 
+ 
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

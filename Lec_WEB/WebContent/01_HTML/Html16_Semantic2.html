@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Semantic 적용</title>
+<!-- HTML5 에 추가된 Semantic 태그들
+	https://www.w3schools.com/html/html5_semantic_elements.asp
+	
+	특별한 기능을 하는 것은 아니나, 태그의 의미(semantic) 을 부여하여 작성.
+	
+	
+	<header> : 헤더
+	<article> : 본문
+	<nav> : 메뉴 등 navigation
+	<aside> : 사이드 요소
+	<footer> : 푸터
+	
+	<section> : 문서의 섹션 <summary>
+	<figcaption>, <figure> : 그림 :  https://www.w3schools.com/html/tryit.asp?filename=tryhtml_figcaption
+	<details> : 추가 세부 정보
+	<main> : 문서의 메인 content 
+	<mark> : 강조 텍스트
+	<time> : 날짜/시간
+
+
+	HTML5 Semantic 스타일 VS HTML4 스타일 비교
+		https://www.w3schools.com/html/html5_migration.asp
+ -->
+<style>
+	body{
+		font-family: Verdana, sans-serif;
+		font-size: 0.9em;
+	}
+	header, footer{
+		background: black;
+		color: white;
+		padding:10px;
+	}
+	section{
+		background: lightgrey;
+		margin:5px;
+		padding:10px;
+	}
+	article{
+		background: white;	
+		margin: 5px;
+		padding:10px;
+	}
+	nav ul{
+		padding:0;           
+	}
+	nav ul li{
+		display: inline;
+		margin:5px;
+	}
+</style>
+</head>
+<body>
+
+<header><!--semantic tag  -->
+  <h1>Monday Times</h1>
+</header>
+<nav>
+  <ul>
+    <li>News</li>
+    <li>Sports</li>
+    <li>Weather</li>
+  </ul>
+</nav>
+<section>
+  <h2>News Section</h2>
+  <article>
+    <h2>News Article</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+  </article>
+  <article>
+    <h2>News Article</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+  </article>
+</section>
+<footer>
+  <p>&copy; 2014 Monday Times. All rights reserved.</p>
+</footer>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+

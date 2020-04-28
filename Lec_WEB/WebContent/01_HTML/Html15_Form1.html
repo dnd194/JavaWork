@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Form1</title>
+</head>
+<!-- 
+	<form> 안에 있는 '''''  form element 들의 내용들만!  ''''서버로 전달됩니다.
+	이때 전달되는(받는) 곳은 서버의 특정 페이지가 되며, 이렇게 전달하는 것을
+				'''''	submit	''''' 한다고 합니다 
+	
+	<form> 에 사용되는 중요한 attribute 는
+	
+		1. action : 
+			submit 하는 대상 페이지 url
+		
+		2. method : 
+			form 데이터를 전송하는 방식
+			get 방식 : url에 모든 데이터 명시, 눈에 보임, 용량제한. 북마크 가능
+			post 방식 :  url에 안보임, 용량제한없슴, 북마크 불가
+				
+		3. onsubmit : 
+			submit 발생 직전에 수행하는 JavaScript 코드
+			form 데이터 검증을 위해 쓰임.  
+		
+		4. target : 
+			<a> 에서의 target 과 동일
+			(_self, _blank, ...)
+		
+		★5. name : 
+			submit 하기 전에 form 데이터 검증을 위해선 필요하게 됨.
+			특히, 한 페이지 내에 form 이 여러개의 경우 
+			 	
+	
+	form element 종류에는 아래와 같은 것들이 있다.
+	
+		1. <input>		
+		2. <select>
+		3. <textarea>
+		4. <button>
+	
+	(이 밖에도 HTML5에 추가된 몇가지가 있으나, 브라우저 지원문제등으로 아직은..)
+	
+ -->
+
+<body>
+
+<form action="https://www.w3schools.com/action_page.php">
+		<!-- form 안에 없으면 데이터가 전송되지 않음  -->
+		First name: <br>
+		<input type="text" name="firstname" value="켈빈" size="10">
+		<br>
+		Last name: <br>
+		<input type="text" name="lastname" value="림" size="10">
+		<br><br>
+	
+		<input type="submit" value="제출">    <!-- 서버로 data를 넘김 -->
+
+</form>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
