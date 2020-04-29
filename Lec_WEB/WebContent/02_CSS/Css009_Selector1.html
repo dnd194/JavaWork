@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Css Selector</title>
+
+<style>
+/* 모든 element */
+/*
+* {  
+    background-color: yellow;
+}
+/*
+/* 모든 div element */
+/*
+div {
+    background-color: yellow;
+}
+*/
+
+/* 모든 p element */
+/*
+p {
+    background-color: yellow;
+}
+*/
+/* , 는 selector 나열 . 모든 h3 + 모든 div */
+/*
+h3, div {
+    background-color: yellow;
+}
+*/
+
+/* # 은 id selector 
+	id 값이 para1 인 모든 element */
+	/*  
+#para1 {
+	background-color: yellow;
+}
+*/
+/* id 값이 para4인 span element */
+/*
+span#para4 {
+	background-color: yellow;
+}
+/*
+/* . 은 class selector */
+/* class 에 c1 을 갖고 있는 모든 element */
+/*
+.c1 {
+	background-color: yellow;
+}
+*/
+/* class 에 c3 를 갖고 있는 모든 element */
+/*
+.c3 {
+	background-color: yellow;
+}
+*/
+
+/* class 에 c3 를 갖고 있는 span element */
+/*
+span.c3 {
+	background-color: yellow;
+}
+*/
+/* div 의 아래에(자손들중에) 있는 모든 p */
+/*
+div p{  
+    background-color: yellow;
+}
+/*
+/* div 의 바로 자식(child) 인 모든 p */
+/*
+div>p {  
+    background-color: yellow;
+}
+/*
+/* div 바로 다음 인접 형제 p */
+/*
+div + p {
+    background-color: yellow;
+}
+*/
+/* div 다음에 나오는 모든 형제 p */
+/*
+div ~ p {
+    background-color: yellow;
+} 
+*/
+/* 연습: [01,06,07] 에 적용 */
+/*
+h3 ~ p{
+    background-color: yellow;
+}
+*/
+/* 연습: 다음은 과연 누가 select 될것인가? */
+TODO_15 {
+    background-color: yellow;
+}
+
+
+/* ★★띄어쓰기 조심★★ */
+/* class 에 c1 과 c2 둘다 갖고 있는 element */
+/*
+.c1.c2 {
+	background-color: yellow;
+}
+*/
+/* class c1 을 갖고 있는 element 의 
+	자손들 중에 class c2를 갖고 있는 element */
+/*
+.c1 .c2 {
+	background-color: yellow;
+}
+/*
+/* class 에 c2를 갖고 있는 span element */
+/*
+span.c2 {
+	background-color: yellow;
+}
+*/
+/* span 의 자손중에 class c2를 갖고 있는 element */
+/*
+span .c2 {
+	background-color: yellow;
+}
+*/
+</style>
+<style>
+/* 예제용 margin */
+div > * { margin-left: 30px; }
+div > * > * {margin-left: 60px;}
+</style>
+</head>
+<!-- 
+	다시 복습)
+	CSS 구문은
+	
+	selector { property:value; ... }
+	
+	여기서 'selector' 란 '어느 element' 에 스타일을 적용될지는 지정함.
+	
+	특정 element 를 지정하는 수단으로 CSS selector 가 광범위하게 사용됨
+	
+	selector 중에서 combinator 라고도 불리우는 다음 4가지 	
+	1. descendant selector (space) : 자손
+	2. child selector (>) : 자식
+	3. adjacent sibling selector (+) : 다음에 등장하는 인접 형제
+	4. general sibling selector (~) : 다음에 등장하는 모든 형제
+ -->
+<body>
+	<!-- element 간 계층도를 그려보자 -->
+	<h3>[00] CSS Combinator (h3)</h3>
+	<p id="para1">[01] Paragraph (id="para1")</p>
+	<div>
+	[div시작]
+	  <p>[02] Paragraph</p>
+	  <p id="para2">[03] Paragraph (id="para2")</p>
+	  <span class="c1">[04] span (class="c1")
+	  	<p class="c2">[05] Paragraph (class="c2" div > span 내부)</p>
+	  </span>
+	[div끝]
+	</div>
+	
+	<p id="para3">[06] Paragraph (id="para3")</p>
+	<p class="c3">[07] Paragraph (class="c3")</p>
+	<span class="c1 c2 c3">[08] span (class="c1 c2 c3")</span><br>
+	<span id="para4" class="c3">[09] span (id="para4" class="c3")</span><br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+

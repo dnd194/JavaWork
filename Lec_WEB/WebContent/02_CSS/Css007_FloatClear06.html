@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>container사용</title>
+<!-- div 컨테이너로 감싼뒤의 모습 -->
+<!-- 화면 좁혀가면서 변화 주목, 화면을 좁혀도 변화없다 -->
+
+<style type="text/css">
+	body {
+		background-color: antiquewhite;
+	}
+	div.a {
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+		font-size: 18px;	
+	}
+	#div1 {
+		background-color: red;
+		float:left         /* div1 에 float:left 적용 */
+	}
+	#div2 {
+		background-color: green;
+		float:left         /* div2 에 float:left 적용 */
+	}
+	#div3 {
+		background-color: blue;
+		float:left         /* div3 에 float:left 적용 */
+	}
+</style>
+</head>
+<body>
+
+	<!-- div로 감싸기 -->
+	<div style="width:400px; background: black;">
+	<!-- width 값을 300으로 하면 안에있는 div들이 다 담기지않는다
+			왜냐하면 div들의 border 값을 합치면 300px을 넘어가기 때문-->
+		<div id="div1" class="a">RED div1</div>
+		<div id="div2" class="a">GREEN div2</div>
+		<div id="div3" class="a">BLUE div3</div>
+	</div>  <!-- 존재는 하는데 height 값이 0 이라서 안보이는 거 뿐임
+					안에 있는 div들은 다 float 상태 
+					
+					-->
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

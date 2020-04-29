@@ -9,16 +9,19 @@ img {
 	margin-left:15px;  /* 왼쪽 바깥 여백 */
 }
 img#f1 {
-	/* TODO */
+	float:none;
 }
 img#f2 {
-	/* TODO */
+	float: right;
+	margin-right: 100px;
 }
 img#f3 {
-	/* TODO */
+	float: left;
 }
 
-/* TODO : clear*/
+div#clear{
+	clear:left;	/* float:left의 영향을 받지 않는다. */
+}
 
 </style>
 </head>
@@ -33,7 +36,8 @@ img#f3 {
 	inherit - 부모의 float 값대로 동작.
 	
 	★ 일단 자신이 float가 되면 주변의 다른 element 의 content 는 그 '주변'으로 배치된다. 
-
+	다른 곳에 영향을 끼침
+	float도 margin이 먹힌다.
  -->
 <body>
 
@@ -55,14 +59,15 @@ img#f3 {
 	<img id="f2" src="https://www.w3schools.com/css/pineapple.jpg" alt="Pineapple">
 	<b>float:right</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
 </p>
+
 <hr>
 <p>
 	<img id="f3" src="https://www.w3schools.com/css/pineapple.jpg" alt="Pineapple">
 	<b>float:left;</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
 </p>
 
-<!-- TODO : clear -->
 
+<div id="clear"></div>
 <hr> <!-- hr의 위치 주목! -->
 
 

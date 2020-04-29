@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>float</title>
+<!-- 
+	1단계 float 적용 안된 상태  
+	2단계 div1 에만 float:left 적용된 상태 → div2의 상태를 눈여겨보자
+	3단계 div2 까지 float:left 적용된 상태
+	4단계 div3 까지 float:left 적용된 상태	
+	
+		화면 폭을 좁혀가면서 변화도 확인하자, 
+		같은 float 끼리는 inline 처럼 동작
+-->
+<style type="text/css">
+	body {
+		background-color: lightcyan;
+	}
+	div.a {
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+		font-size: 18px;	
+	}
+	#div1 {
+		background-color: red;
+		   float:left;      /* div1 에 float:left 적용 */
+	}
+	#div2 {
+		background-color: green;
+		float:left;         /* div2 에 float:left 적용 */
+	}
+	#div3 {
+		background-color: blue;
+		float:left;         /* div3 에 float:left 적용 */
+	}
+</style>
+</head>
+<body>
+	<div id="div1" class="a">RED div1</div>
+	<div id="div2" class="a">GREEN div2</div>
+	<div id="div3" class="a">BLUE div3</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

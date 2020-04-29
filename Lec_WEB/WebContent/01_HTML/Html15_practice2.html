@@ -3,8 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <title>켈린더 폼 작성</title>
+<style>
+div {
+	background: rgb(240, 240, 240);
+	max-width: 1000px;
+}
+
+span {
+	padding: 20px;
+	margin: 20px;
+}
+
+table {
+	border: 1px solid lightgrey;
+	margin: 0 auto;
+}
+
+table, td, tr {
+	padding: 20px;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+td.nav:hover {
+	background: lightblue;
+}
+
+table.day {
+	width: 1050px;
+}
+
+.day td, .day tr {
+	border: 1px solid lightgrey;
+	text-align: left;
+}
+
+#pan {
+	width: 1050px;
+}
+
+#pan tr {
+	border: 1px solid lightgrey;
+}
+
+#online {
+	border: 1px solid red;
+	color: Red;
+}
+
+button.btn1 {
+	background-color: white;
+}
+
+button:hover {
+	background-color: rgb(80, 150, 220);
+	color: white;
+}
+</style>
 </head>
 <body>
-
-</body>
+	<table style="background: rgb(240, 240, 240)">
+		<tr>
+			<td class="nav" style="width: 220px">정책자 발표</td>
+			<td class="nav" style="width: 220px">미리보는 지원사업</td>
+			<td class="nav" style="width: 220px">마감임박 지원사업</td>
+			<td class="nav" style="width: 220px">접수중인 지원사업</td>
+		</tr>
+	</table>
+	<table style="border: none;">
+		<tr>
+			<td colspan="4" style="color: dodgerblue; font-size: 60px"><span
+				style="color: grey">&lt;</span> 2020-04-28 <span style="color: grey">&gt;</span></td>
+			<!--<td> </td>  -->
+			<!--<td> </td>  -->
+			<!--<td> </td>  -->
+		</tr>
+	</table>
+	<table style="width: 1050px">
+		<tr>
+			<td colspan=5 style="float: left;"><input type="radio"
+				name="select" value="all" style="margin-right: 10px">전체 <input
+				type="radio" name="select" value="aa" style="margin-right: 10px">창업
+				벤처 <input type="radio" name="select" value="bb"
+				style="margin-right: 10px">소상공인 <input type="radio"
+				name="select" value="cc" style="margin-right: 10px">판로 수출 <input
+				type="radio" name="select" value="ff" style="margin-right: 10px">R&D
+				<input type="radio" name="select" value="ee"
+				style="margin-right: 10px">금융 세제 <input type="radio"
+				name="select" value="gg">인력</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<table class="day">
+		<tr class="day">
+			<td
+				style="background: rgb(240, 240, 240); text-align: center; font-weight: bold;">일</td>
+			<td
+				style="background: rgb(240, 240, 240); text-align: center; font-weight: bold;">월</td>
+			<td
+				style="background: rgb(240, 240, 240); text-align: center; font-weight: bold;">화</td>
+			<td
+				style="background: rgb(240, 240, 240); text-align: center; font-weight: bold;">수</td>
+			<td
+				style="background: rgb(240, 240, 240); text-align: center; font-weight: bold;">목</td>
+			<td
+				style="background: rgb(240, 240, 240); text-align: center; font-weight: bold;">금</td>
+			<td
+				style="background: rgb(240, 240, 240); text-align: center; font-weight: bold;">토</td>
+		</tr>
+		<tr>
+			<td style="background: rgb(240, 240, 240)"></td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+			<td>13</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+			<td>17</td>
+			<td>18</td>
+			<td>19</td>
+			<td>20</td>
+		</tr>
+		<tr>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+			<td>25</td>
+			<td>26</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>28</td>
+			<td>29</td>
+			<td>30</td>
+			<td style="background: rgb(240, 240, 240)"></td>
+			<td style="background: rgb(240, 240, 240)"></td>
+			<td style="background: rgb(240, 240, 240)"></td>
+			<td style="background: rgb(240, 240, 240)"></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<span style="color: red; font-size: 12px; margin-left: 240px;">-
+		2015년 6월 7일, 전체 검색결과, 진행중인 사업은 총 614건 입니다.</span>
+	<br>
+	<br>
+	<table id="pan">
+		<tr>
+			<td>번호</td>
+			<td>지원사업명</td>
+			<td>주관부처</td>
+			<td>신청기간</td>
+			<td>조회</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..<input id="online"
+				type="button" value="ON-LINE"></td>
+			<td>중소기업청</td>
+			<td>2015.06.04 ~ 2015.06.30</td>
+			<td>731</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..<input id="online"
+				type="button" value="ON-LINE"></td>
+			<td>중소기업청</td>
+			<td>2015.06.04 ~ 2015.06.30</td>
+			<td>731</td>
+		</tr>
+		<tr>
+			<td>614</td>
+			<td>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..<input id="online"
+				type="button" value="ON-LINE"></td>
+			<td>중소기업청</td>
+			<td>2015.06.04 ~ 2015.06.30</td>
+			<td>731</td>
+		</tr>
+		<tr>
+			<td>614</td>
+			<td>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..<input id="online"
+				type="button" value="ON-LINE"></td>
+			<td>중소기업청</td>
+			<td>2015.06.04 ~ 2015.06.30</td>
+			<td>731</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<div class=btn1 style="margin: 0 auto;">
+		<button
+			style="color: rgb(223, 223, 223); border: 1px solid rgb(223, 223, 223);">&lt;&lt;</button>
+		<button
+			style="color: rgb(223, 223, 223); border: 1px solid rgb(223, 223, 223);">&lt;</button>
+		<span style="color: black;">
+			<button style="border: none;">1</button>
+			<button style="border: none;">2</button>
+			<button style="border: none;">3</button>
+			<button style="border: none;">4</button>
+			<button style="border: none;">5</button>
+		</span>
+		<button
+			style="color: rgb(223, 223, 223); border: 1px solid rgb(223, 223, 223);">&gt;&gt;</button>
+		<button
+			style="color: rgb(223, 223, 223); border: 1px solid rgb(223, 223, 223);">&gt;</button>
+	</div>
 </html>

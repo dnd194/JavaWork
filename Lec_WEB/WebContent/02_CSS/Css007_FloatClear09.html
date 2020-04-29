@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>container 폭이 좁은 경우3</title>
+<!-- 컨테이너 폭이 좁은 경우3  -->
+<!-- '구조상'으로는 부모 컨테이너 안에 자식 요소들이 위치하는 구조이지만 
+    실제 화면에서는 마치 부모 영역 밖에 위치한 상태로 보여지는 경우가 있다 -->
+
+<style type="text/css">
+	body {
+		background-color: antiquewhite;
+	}
+	div.a {
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+		font-size: 14px;	
+	}
+
+    #div1 {
+        background-color: red;
+        float: left;                
+    }
+    #div2 {
+        height: 50px;  /* height 50px */
+        background-color: green;
+        float: left;                
+    }
+    #div3 {
+        height: 30px;   /* height 30px */
+        background-color: blue;
+        float: left;                 
+    }
+    #div4 {
+        height: 100px;   /* height 100px */
+        background-color: yellow;
+        float: left;
+    }
+    
+	/* TODO div5 추가 */
+	#div5{
+		background: black;
+		height: 100px;
+		color:white;
+		float:left;
+	}
+	/* height 100px */
+</style>
+</head > 
+<body>
+    아래처럼 부모 컨테이너 안에 자식 요소들이 위치하는 구조이지만 실제 화면에서는 부모 영역 밖에 위치한 상태로 보여지는 경우가 있다<br> <p>
+    <!-- TODO 컨테이너를 줄여보자 -->
+	
+	    <div id="div1" class="a"> RED</div>
+	    <div id="div2" class="a"> GREEN</div>
+	    <div id="div3" class="a"> BLUE</div>
+	    <div id="div4" class="a"> YELLOW</div>
+	    <div id="div5" class="a"> BLACK</div>
+	
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+<!-- '구조상'으로는 부모 컨테이너 안에 자식 요소들이 위치하는 구조이지만 
+    실제 화면에서는 마치 부모 영역 밖에 위치한 상태로 보여지는 경우가 있다 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

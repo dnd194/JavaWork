@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>inline-block</title>
+<style>
+	body {
+		background-color: antiquewhite;
+	}
+	div.a {
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+		font-size: 18px;	
+		
+		/* 아래 각각의 경우를 비교해보자 */
+		/* display:block; */    
+	
+		/* ↓여기서 주목 할 것은  inline 에는 width, height 값은 적용안된다는 사실*/
+		/*display:inline;*/
+	
+		
+		/* ↓끼리끼리는 inline 처럼 움직이나 block 처럼 width, height 값을 가질수 있다 */
+		display:inline-block;
+		
+	}
+
+	#div1 {
+		background-color: red;
+	}
+	#div2 {
+		background-color: green;
+	}
+	#div3 {
+		background-color: blue;
+	}
+
+</style>
+
+<!--
+	https://www.w3schools.com/css/css_inline-block.asp
+	https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_nav  : 메뉴구성에 많이 사용됨
+	
+	CSS display는  inline / block / none / inline-block 가능
+	
+	그중에서 inline-block 은 
+	끼리끼리는 inline 처럼 움직이나, block 처럼 width, height 값을 가질수 있다 
+	
+	아래의 예제는 마지 div 3개가 float 인 마냥 움직인다.  (위의 css 를 보면 절대로 float 가 붙지 않았다!)
+ -->
+</head>
+<body>
+	<div id="div1" class="a">RED div1</div>
+	<div id="div2" class="a">GREEN div2</div>
+	<div id="div3" class="a">BLUE div3</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

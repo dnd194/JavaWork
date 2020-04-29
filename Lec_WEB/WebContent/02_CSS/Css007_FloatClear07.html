@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>container가 좁은 경우 float이동변화</title>
+
+<!-- 컨테이너 폭이 좁아진 경우 경우  -->
+<style type="text/css">
+body {
+	background-color: antiquewhite;
+}
+
+div.a {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	font-size: 14px;
+}
+
+#div1 {
+	background-color: red;
+	float: left /* div1 에 float:left 적용 */
+}
+
+#div2 {
+	background-color: green;
+	height: 30px; /* height 30 으로 조정 */
+	float: left /* div2 에 float:left 적용 */
+}
+
+#div3 {
+	background-color: blue;
+	height: 30px; /* height 30 으로 조정 */
+	float: left /* div3 에 float:left 적용 */
+}
+
+/* TODO : yellow div4 추가 */
+#div4 {
+	background: YELLOW;
+	float: left;
+}
+</style>
+</head>
+<body>
+
+	<!-- container 의 width 값을 변화 시켜 보자  -->
+	<div style="width: 400px; background-color: aquamarine">
+		<div id="div1" class="a">RED div1</div>
+		<div id="div2" class="a">GREEN div2</div>
+		<div id="div3" class="a">BLUE div3</div>
+		<div id="div4" class="a">YELLOW div4></div>
+		<!-- yellow 추가 -->
+	</div>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

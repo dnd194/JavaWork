@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Selector4 - Attribute Selector</title>
+<style>
+span {
+	display:inline-block;
+	height:30px;
+	border: 1px solid lightgrey;
+}
+
+/*[attribute] 특정 attribute*/
+ div#demo1 [class]{
+	background-color:yellow;
+}
+/*[attribute="value"] attribute="value"*/
+div#demo2 [class="my"]{
+	background-color:yellow;
+}	
+/*[attribute~="value"] value 포함 & 공백으로 구분*/
+div#demo3 [class~="my"]{
+	background-color:yellow;
+}	
+/*[attribute*="value"] value 포함 */
+div#demo4 [class*="my"] {
+	background-color:yellow;
+}	
+
+/*[attribute|="value"] value 혹은 value- 로 시작하는 ''''단독 단어''''*/
+div#demo5 [class|="my"] {
+	background-color:yellow;
+}	
+	
+/*[attribute^="value"] value 로 시작*/
+div#demo6 [class^="my"]  {
+	background-color:yellow;
+}	
+
+/*[attribute$="value"] value 로 끝*/
+div#demo7 [class$="my"] {
+	background-color:yellow;
+}	
+
+</style>
+</head>
+
+<!-- 
+Attribute Selector
+
+참조 : https://www.w3schools.com/css/css_attribute_selectors.asp
+ -->
+
+<body>
+<h3>demo1 [class]</h3>
+<div id="demo1">
+<span>1</span>
+<span class="my">2 my</span>
+<span class="my car">3 my car</span>
+<span class="mycar">4 mycar</span>
+<span class="carmy">5 carmy</span>
+<span class="car my">6 car my</span>
+<span class="my-car">7 my-car</span>
+</div>
+
+<hr>
+<h3>demo2 [class="my"]</h3>
+<div id="demo2">
+<span>1</span>
+<span class="my">2 my</span>
+<span class="my car">3 my car</span>
+<span class="mycar">4 mycar</span>
+<span class="carmy">5 carmy</span>
+<span class="car my">6 car my</span>
+<span class="my-car">7 my-car</span>
+</div>
+	
+<hr>
+<h3>demo3 [class~="my"]</h3>
+<div id="demo3">
+<span>1</span>
+<span class="my">2 my</span>
+<span class="my car">3 my car</span>
+<span class="mycar">4 mycar</span>
+<span class="carmy">5 carmy</span>
+<span class="car my">6 car my</span>
+<span class="my-car">7 my-car</span>
+</div>
+
+<hr>
+<h3>demo4 [class*="my"]</h3>
+<div id="demo4">
+<span>1</span>
+<span class="my">2 my</span>
+<span class="my car">3 my car</span>
+<span class="mycar">4 mycar</span>
+<span class="carmy">5 carmy</span>
+<span class="car my">6 car my</span>
+<span class="my-car">7 my-car</span>
+</div>
+
+<hr>
+<h3>demo5 [class|="my"]</h3>
+<div id="demo5">
+<span>1</span>
+<span class="my">2 my</span>
+<span class="my car">3 my car</span>
+<span class="mycar">4 mycar</span>
+<span class="carmy">5 carmy</span>
+<span class="car my">6 car my</span>
+<span class="my-car">7 my-car</span>
+</div>
+	
+<hr>
+<h3>demo6 [class^="my"]</h3>
+<div id="demo6">
+<span>1</span>
+<span class="my">2 my</span>
+<span class="my car">3 my car</span>
+<span class="mycar">4 mycar</span>
+<span class="carmy">5 carmy</span>
+<span class="car my">6 car my</span>
+<span class="my-car">7 my-car</span>
+</div>
+
+<hr>
+<h3>demo7 [class$="my"]</h3>
+<div id="demo7">
+<span>1</span>
+<span class="my">2 my</span>
+<span class="my car">3 my car</span>
+<span class="mycar">4 mycar</span>
+<span class="carmy">5 carmy</span>
+<span class="car my">6 car my</span>
+<span class="my-car">7 my-car</span>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

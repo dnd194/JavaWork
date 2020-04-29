@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Selector3 - Pseudo element</title>
+<style>
+/* ::first-line 첫 라인 */
+div#demo1 p::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+}
+
+/* ::first-letter 첫 글자 */
+div#demo2 p::first-letter {
+    color: #ff0000;
+    font-size: xx-large;   /* https://www.w3schools.com/cssref/playit.asp?filename=playcss_font-size&preval=x-large 참조 */ 
+}
+
+/* ::before ~앞에 삽입 */
+div#demo3 h1::before {
+    content: url(https://www.w3schools.com/css/smiley.gif);  /* content 는 pseudo-element selector 와만 사용 가능*/
+}
+
+/* ::selection  선택 영역 */
+div#demo4 ::selection {
+ 	color: red;
+    background: yellow;
+}
+body ::selection{
+	color: red;
+    background: yellow;
+}
+
+
+</style>
+</head>
+<!-- 
+CSS selector 에서 pseudo-element 란
+element 의 '특정 부분' 에 적용 되는 것.
+
+구문
+selector::pseudo-element {
+    property:value;
+}
+
+참조 : https://www.w3schools.com/css/css_pseudo_elements.asp
+ -->
+<body>
+
+<div id="demo1">
+<p>You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.</p>
+</div>
+
+<hr>
+<div id="demo2">
+<p>You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.</p>
+</div>
+
+<hr>
+<div id="demo3">
+<h1>This is a heading</h1>
+<p>The ::before pseudo-element inserts content before the content of an element.</p>
+</div>
+
+<hr>
+<div id="demo4">
+<p><strong>Note:</strong> ::selection is not supported in Internet Explorer 8 and earlier versions.</p>
+<p><strong>Note:</strong> Firefox supports an alternative, the ::-moz-selection property.</p>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>KeyFrame Animation</title>
+<style> 
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+	position: relative;
+	
+	
+	
+	animation: example 4s 10;
+}
+/* animation-name:example;    
+	animation-duration: 4s;
+	animation-iteration-count: 10;  이걸 요약하면 위와 같이 됨*/
+@keyframes example{    /* keyframes를 정의하는 example 이란 녀석을 정의 */
+	0%	{background:red; left:0px; top:0px;}
+	25% {background: cyan; left:200px; top:0px}    /* 색이 이런거는 eclipse가 안좋아서 그럼 */
+	50% {background: blue; left:200px; top:100px}
+	75% {background: green; left:50px; top:200px}
+	100% {background: grey; left:400px; top:0px}
+}
+
+</style>
+</head>
+<body>
+<h1>Key Frame Animation</h1>
+
+<p><b>Note:</b> IE9 나 이전 버젼에서는 작동안합니다.</p>
+
+<div></div>   <!-- 이게 빨간색 사각형을 만듬 -->
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

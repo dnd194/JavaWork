@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>clear & overflow</title>
+<!-- clear:both  -->
+<!--  부모 컨테이너 안에 자식 요소들이 위치하는 구조이지만 
+실제 화면에서는 부모 영역 밖에 위치한 상태로 보여지는 경우가 있다 -->
+
+<style type="text/css">
+	body {
+		background-color: antiquewhite;
+	}
+	div.a {
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+		font-size: 14px;	
+	}
+
+    #div1 {
+        background-color: red;
+        float: left;                
+    }
+    #div2 {
+        height: 50px;  /* height 50px */
+        background-color: green;
+        float: left;                
+    }
+    #div3 {
+        height: 30px;   /* height 30px */
+        background-color: blue;
+        float: left;                 
+    }
+    #div4 {
+        height: 100px;   /* height 100px */
+        background-color: yellow;
+        float: left;
+    }
+    
+	#div5 {
+	    height: 100px;      /* height 100 */
+	    background-color: black;
+	    color:white;
+	    float: left;
+	}
+</style >
+</head > 
+<body>
+	해결책1: clear:both<br> <p>      <!-- 이걸 추천합니다~~~ -->
+	<!-- container 안의 element에 적용  -->
+	<div style="width:350px; background-color:lightblue;">
+       <div id="div1" class="a"> RED</div>
+       <div id="div2" class="a"> GREEN</div>
+       <div id="div3" class="a"> BLUE</div>
+       <div id="div4" class="a"> YELLOW</div>
+       <div id="div5" class="a"> BLACK</div>
+       <div style="clear:both;"></div>
+	</div>
+
+
+<br><br>
+
+	해결책2: overflow: auto<br> <p>
+	<!-- container 에 적용  -->
+	<div style="width:350px; background-color:lightblue; overflow: auto">  
+		<div id="div1" class="a"> RED</div>
+		<div id="div2" class="a"> GREEN</div>
+		<div id="div3" class="a"> BLUE</div>
+		<div id="div4" class="a"> YELLOW</div>
+		<div id="div5" class="a"> BLACK</div>
+	</div> 
+  
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

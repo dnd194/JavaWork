@@ -6,19 +6,34 @@
 
 <style>
 div.static {
-	/* TODO */
+	border: 3px solid lime; 
+	position:static;  /* static 이 default 값  */
 }
 
 div.relative {
-	/* TODO */
+	border: 3px solid orangered;
+	width: 400px;
+	position:relative; 
+	 left: 30px; 	/* 왼쪽 	으로부터 30px */
+	/* right:30px;  */ 		/* 오른쪽 	으로부터 30px */
+	/* top:30px;	 */		/* 위 	에서부터 30px */
+	/* bottom:30px;	 */	  	/* 아래 	에서부터 30px */
 }
 
 div.fixed {
-	/* TODO */
+	border:3px solid blue;
+	width: 300px;
+	position: fixed;
+	top:0;
+	right:0;
 }
 
 div.absolute {
-	/* TODO */
+	border: 3px solid orchid;
+	width: 200px;
+	height: 100px;
+	top:100px;
+	left: 300px;
 }
 </style>
 
@@ -28,14 +43,14 @@ div.absolute {
 	position : element 의 배치, 아래 4가지 종류
 	
 	1. static : (디폴트) 기본위치(normal) 에 배치.
-				top, bottom, left, right 와 아무런 영향 없슴
+								top, bottom, left, right 와 아무런 영향 없음
 				
 	-- 나머지 아래 3개는 모두 ~~에 대해 '상대적' 배치
 	   top, bottom, left, right 값에 영향 받음
 	   
-	2. relative : 기본위치(normal) 에 대해 '상대적' 배치
-	3. fixed : 뷰포트(viewport) 에 대해 '상대적' 배치
-	4. absolute : 부모(ancestor) 에 대해 '상대적' 배치
+	2. relative : ''''기본위치(normal) 에 대해'''' 			'상대적' 배치
+	3. fixed : ''''뷰포트(viewport) 에 대해'''' 			'상대적' 배치
+	4. absolute : ''''부모(ancestor) 에 대해'''' 			'상대적' 배치
 			- 부모가 relative, fixed, absolute 인경우만 작동!
 			- 부모가 static 이면, body 에 대해 상대적 배치다.
  -->
@@ -58,14 +73,14 @@ div.absolute {
 <h2>position: absolute</h2> <!-- 다음 2개 비교 -->
 <!--  부모가 relative, fixed, absolute 인 경우 -->
 <!-- TODO -->
-<div class="">부모1-relative
+<div class="relative">부모1-relative
 	<div class="absolute">absolute1</div>
 </div>
 
 <br>
 <!-- 부모가 static 인 경우 -->
 <!-- TODO -->
-<div class="">부모2-static
+<div class="static">부모2-static
 	<div class="absolute">absolute2</div>
 </div>
 
