@@ -16,7 +16,7 @@ public class Hello {
 		//소스코드 = .java  - src =source 소스코드 = 클레스 파일
 		//바이트코드 = .class - bin = binary 
 		
-		System.out.println();
+		System.out.println(); 
 		System.out.println(1+2);
 		System.out.println("1"+"2");
 		System.out.println('A'+'B');
