@@ -1,0 +1,94 @@
+footer{
+    background-size: cover;
+    background-color: rgb(61, 61, 61);
+    z-index: 2;
+    color: rgb(211, 211, 211);
+    bottom: 0px;
+    position: relative;
+    width: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 20px 0px 0px;
+}
+
+.diYXOe {
+    background-size: cover;
+    background-color: rgb(61, 61, 61);
+    z-index: 2;
+    color: rgb(211, 211, 211);
+    bottom: 0px;
+    position: relative;
+    width: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 20px 0px 0px;
+}
+.gmlETE {
+    width: 1350px;
+    margin: auto;
+}
+.btYeLG {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-top: 14px;
+    flex-flow: row nowrap;
+    margin: 0px 0px 20px;
+}
+.ftZOqJ {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+.gCnLxM {
+    margin: 0px;
+    list-style: none;
+    padding: 0px;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.ftZOqJ {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+.dEUFlO {
+    font-family: proxima-nova;
+    text-transform: none;
+    font-size: 15px;
+    margin: 0px;
+}
+a:active, a:focus, a:hover, a:visited {
+    text-decoration: none!important;
+    cursor: pointer;
+}
+.hzmpgh {
+    padding-top: 8px;
+    font-size: 13px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.gCnLxM a:hover {
+    color: rgb(8, 160, 92);
+}
+.UiySW {
+    color: rgb(128, 128, 128);
+}
+.dfPPJB {
+    color: rgb(255, 255, 255);
+}
+.fVfYS {
+    color: rgb(255, 255, 255);
+}
+.RUiVl {
+    color: rgb(128, 128, 128);
+}

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹페이지만들기</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        header {
+            top: 0;
+            left: 0;
+            right: 0;
+
+        }
+
+        nav {
+            width: 100%;
+            margin: 0 auto;
+            height: 125px;
+        }
+
+        #logo {
+            cursor: pointer;
+            float: left;
+        }
+
+        #menuContainer {
+            list-style: none;
+            display: inline;
+            float: right;
+            margin: 16px;
+            margin-top: 24px;
+            width: auto;
+            padding: 20px;
+        }
+
+        .menu {
+            display: inline;
+            width: 100px;
+            margin-right: 20px;
+            margin-left: 20px;
+            padding: 8px 16px 8px 16px;
+            font-size: 24px;
+            color: black;
+            font-weight: bold;
+        }
+
+        .menu:hover {
+            color: white;
+            background-color: cadetblue;
+        }
+
+        button.trigger {
+            font-size: 24px;
+            color: black;
+            font-weight: bold;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            padding: 8px 16px 8px 16px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        button.trigger:hover {
+            color: white;
+            background-color: cadetblue;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #back {
+            background: url('offjo.png') no-repeat left;
+            height: 500px;
+        }
+
+        #finderContainer {
+            float: right;
+            height: 100px;
+            width: auto;
+            margin: 8px 16px 8px 8px;
+            padding: 16px;
+        }
+
+        #find {
+            display: inline;
+            width: 300px;
+            height: 50px;
+            font-size: 16px;
+            margin: 8px;
+            text-align: center;
+        }
+
+
+        section {
+            width: 100%;
+            margin: 0 auto;
+            height: 200px;
+        }
+    </style>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link href="loginpop.css" rel="stylesheet" type="text/css">
+    <link href="footer1.css" rel="stylesheet" type="text/css">
+    <link href="footer2.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img id="logo" src="st.png" alt="로고"></a>
+            <ul id="menuContainer">
+                <a href="sell.html">
+                    <li class="menu">SELL</li>
+                </a>
+                <a href="buy.html">
+                    <li class="menu">BUY</li>
+                </a>
+                <a href="signup.html">
+                    <li class="menu">SignUP</li>
+                </a>
+
+                <button class="trigger">Sign IN</button>
+
+            </ul>
+        </nav>
+        <div id="back">
+            <div id="finderContainer">
+                <input id="find" type="text" placeholder="sneakers, brands, news, price....">
+                <i class="fas fa-search" style="cursor: pointer; font-size: 40px; vertical-align:middle; "></i>
+            </div>
+
+        </div>
+
+        <!-- 팝업 될 레이어 -->
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h1 class="title">Sign IN</h1>
+                <form action="#post.php" method="POST">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Your Email" required="required">
+                    <label for="pw">Password</label>
+                    <input type="password" name="pw" placeholder="Your password" required="required">
+                    <input type="button" id="cancel" value="Cancel">
+                    <input type="submit" id="submit" value="Login">
+                </form>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rutrum est. Aenean ut tellus facilisis
+                nisl euismod finibus ac sit amet metus. Praesent ac iaculis risus. Sed nec ipsum scelerisque, fringilla
+                odio at, accumsan nunc. Nullam aliquam, nisi at sagittis maximus, odio nisl tempus lacus, dictum
+                elementum sem lacus ac erat. Mauris tristique, sapien ut scelerisque aliquet, erat neque interdum ipsum,
+                et convallis nisi massa vitae sem. Curabitur lacinia fringilla lectus, sit amet tincidunt ex posuere sit
+                amet. In pharetra vitae lorem quis interdum. Nulla vulputate lorem eu leo convallis, sit amet venenatis
+                orci consectetur. Sed viverra libero quis eros tempor euismod. Vestibulum lobortis metus cursus magna
+                porttitor dictum. Nulla semper a urna in dignissim. Donec in dapibus nisi. Integer non gravida elit, at
+                rutrum lectus. </p>
+        </div>
+    </section>
+    <footer>
+        <div class="SiteFooter__FooterTop-sc-1f2rypq-1 gmlETE">
+            <div class="SiteFooter__ProductLinks-sc-1f2rypq-2 btYeLG">
+                <div class="SiteFooter__LinkGroup-sc-1f2rypq-3 ftZOqJ">
+                    <ul class="SiteFooter__LinkList-sc-1f2rypq-5 gCnLxM">
+                        <span data-testid="footer-link-header" class="SiteFooter__LinkGroupHeader-sc-1f2rypq-4 dEUFlO">
+                            <a href="https://stockx.com/news" target="_blank" rel="noopener"
+                                class="SiteFooter__FooterA-sc-1f2rypq-8 fVfYS">Recent Updates</a></span>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/news/what-are-banned-jordans/" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">What Are Banned
+                                Jordans?</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/news/nike-air-max-90-dqm-bacon/" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Nike Air Max 90
+                                Highlight</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/air-jordan-1-retro-high-court-purple-white" target="_blank"
+                                rel="noopener" data-testid="footer-link"
+                                class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Jordan 1 Court Purple</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/adidas-yeezy-700-v3-alvah" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Yeezy 700
+                                Alvah</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/nike-air-zoom-spiridon-cage-2-stussy-fossil" target="_blank"
+                                rel="noopener" data-testid="footer-link"
+                                class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Nike Air Zoom Stussy Fossil</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/air-jordan-6-retro-dmp-2020" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Jordan 6 Retro
+                                DMP</a></li>
+                    </ul>
+                </div>
+                <div class="SiteFooter__LinkGroup-sc-1f2rypq-3 ftZOqJ">
+                    <ul class="SiteFooter__LinkList-sc-1f2rypq-5 gCnLxM"><span data-testid="footer-link-header"
+                            class="SiteFooter__LinkGroupHeader-sc-1f2rypq-4 dEUFlO"><a groupheader="true"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 dfPPJB" href="/new-releases/sneakers">Popular
+                                Releases</a></span>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/air-jordan-1-retro-high-court-purple-white" target="_blank"
+                                rel="noopener" data-testid="footer-link"
+                                class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Jordan 1 Court Purple</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/nike-air-zoom-spiridon-cage-2-stussy-fossil" target="_blank"
+                                rel="noopener" data-testid="footer-link"
+                                class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Nike Air Zoom Stussy Fossil</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/air-jordan-6-retro-dmp-2020" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Jordan 6 Retro
+                                DMP</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/adidas-yeezy-700-v3-alvah" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Yeezy 700
+                                Alvah</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/adidas-yeezy-boost-350-v2-linen" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Yeezy 350
+                                Linen</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/adidas-yeezy-boost-350-v2-cinder" target="_blank"
+                                rel="noopener" data-testid="footer-link"
+                                class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Yeezy 350 Cinder</a></li>
+                    </ul>
+                </div>
+                <div class="SiteFooter__LinkGroup-sc-1f2rypq-3 ftZOqJ">
+                    <ul class="SiteFooter__LinkList-sc-1f2rypq-5 gCnLxM"><span data-testid="footer-link-header"
+                            class="SiteFooter__LinkGroupHeader-sc-1f2rypq-4 dEUFlO"><a groupheader="true"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 dfPPJB" href="/retro-jordans">Air
+                                Jordan</a></span>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl"
+                                href="/air-jordan-1-retro-high-court-purple-white">Jordan 1 Court Purple</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/air-jordan-6-retro-dmp-2020" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Jordan 6 Retro
+                                DMP</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl"
+                                href="/air-jordan-3-retro-unc-2020">Jordan 3 UNC</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl"
+                                href="/air-jordan-1-retro-high-unc-chicago-leather-w">Jordan 1 UNC to Chicago
+                                Leather</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl"
+                                href="/air-jordan-5-retro-off-white-black">Jordan 5 Off White</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl"
+                                href="/air-jordan-1-retro-high-zoom-white-racer-blue">Jordan 1 Zoom White Racer Blue</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="SiteFooter__LinkGroup-sc-1f2rypq-3 ftZOqJ">
+                    <ul class="SiteFooter__LinkList-sc-1f2rypq-5 gCnLxM"><span data-testid="footer-link-header"
+                            class="SiteFooter__LinkGroupHeader-sc-1f2rypq-4 dEUFlO"><a groupheader="true"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 dfPPJB" href="/adidas">adidas</a></span>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/adidas/yeezy/350">adidas Yeezy
+                                Boost 350</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/adidas/yeezy/500">adidas Yeezy
+                                500</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/adidas/yeezy/700">adidas Yeezy
+                                Boost 700</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/adidas/yeezy/powerphase">adidas
+                                Yeezy Powerphase</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/adidas/ultra-boost">adidas
+                                Ultra Boost</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/adidas/nmd">adidas NMD</a></li>
+                    </ul>
+                </div>
+                <div class="SiteFooter__LinkGroup-sc-1f2rypq-3 ftZOqJ">
+                    <ul class="SiteFooter__LinkList-sc-1f2rypq-5 gCnLxM"><span data-testid="footer-link-header"
+                            class="SiteFooter__LinkGroupHeader-sc-1f2rypq-4 dEUFlO"><a groupheader="true"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 dfPPJB" href="/nike">Nike</a></span>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/air-jordan-1-retro-high-court-purple-white" target="_blank"
+                                rel="noopener" data-testid="footer-link"
+                                class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Jordan 1 Court Purple</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/air-jordan-4-retro-rasta-w" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Jordan 4
+                                Rasta</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/air-jordan-6-retro-dmp-2020" target="_blank" rel="noopener"
+                                data-testid="footer-link" class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Jordan 6 Retro
+                                DMP</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl"
+                                href="/nike-sb-dunk-low-travis-scott">Nike SB Dunk Low Travis Scott</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/nike-air-zoom-spiridon-cage-2-stussy-pure-platinum"
+                                target="_blank" rel="noopener" data-testid="footer-link"
+                                class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Nike Air Zoom Spiridon Platinum</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a
+                                href="https://stockx.com/nike-air-zoom-spiridon-cage-2-stussy-fossil" target="_blank"
+                                rel="noopener" data-testid="footer-link"
+                                class="SiteFooter__FooterA-sc-1f2rypq-8 UiySW">Nike Air Zoom Spiridon Fossil</a></li>
+                    </ul>
+                </div>
+                <div class="SiteFooter__LinkGroup-sc-1f2rypq-3 ftZOqJ">
+                    <ul class="SiteFooter__LinkList-sc-1f2rypq-5 gCnLxM"><span data-testid="footer-link-header"
+                            class="SiteFooter__LinkGroupHeader-sc-1f2rypq-4 dEUFlO"><a groupheader="true"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 dfPPJB"
+                                href="/streetwear">Streetwear</a></span>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/supreme">Supreme</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/kith">Kith</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/off-white">Off-White</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/bape">Bape</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/palace">Palace</a></li>
+                        <li class="SiteFooter__ListItem-sc-1f2rypq-6 hzmpgh"><a data-testid="footer-link"
+                                class="SiteFooter__FooterLink-sc-1f2rypq-7 RUiVl" href="/kaws">Kaws</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="SiteFooter__FooterMiddle-sc-1f2rypq-9 ilRdXy">
+            <div data-testid="localization-toggle" class="SiteFooter__LocalizationContainer-sc-1f2rypq-22 jfQDdA">
+                <span>South Korea</span><span></span><span>English en</span><span></span><span>$ USD</span></div>
+            <div class="SiteFooter__SocialLinksContainer-sc-1f2rypq-10 gFHWmA">
+                <div class="SiteFooter__SocialLinks-sc-1f2rypq-11 bXlFiW">
+                    <div class="SiteFooter__SocialLink-sc-1f2rypq-12 bkiyvr"><a href="https://twitter.com/stockx"
+                            target="_blank" rel="noopener noreferrer"><img alt="Twitter"
+                                src="//stockx-assets.imgix.net/svg/icons/twitter-footer.svg?auto=compress,format"
+                                class="SiteFooter__LinkImg-sc-1f2rypq-13 dbfOOO"></a></div>
+                    <div class="SiteFooter__SocialLink-sc-1f2rypq-12 bkiyvr"><a
+                            href="https://www.facebook.com/stockxdotcom" target="_blank" rel="noopener noreferrer"><img
+                                alt="Facebook"
+                                src="//stockx-assets.imgix.net/svg/icons/facebook-footer.svg?auto=compress,format"
+                                class="SiteFooter__LinkImg-sc-1f2rypq-13 dbfOOO"></a></div>
+                    <div class="SiteFooter__SocialLink-sc-1f2rypq-12 bkiyvr"><a href="https://instagram.com/stockx/"
+                            target="_blank" rel="noopener noreferrer"><img alt="Instagram"
+                                src="//stockx-assets.imgix.net/svg/icons/instagram-footer.svg?auto=compress,format"
+                                class="SiteFooter__LinkImg-sc-1f2rypq-13 dbfOOO"></a></div>
+                    <div class="SiteFooter__SocialLink-sc-1f2rypq-12 bkiyvr"><a href="https://youtube.com/stockx/"
+                            target="_blank" rel="noopener noreferrer"><img alt="YouTube"
+                                src="//stockx-assets.imgix.net/emails/the-outsole/youtube-black.png?auto=compress,format"
+                                class="SiteFooter__LinkImg-sc-1f2rypq-13 iejbRr"></a></div>
+                </div>
+                <div class="SiteFooter__SocialLinks-sc-1f2rypq-11 bXlFiW">
+                    <div class="SiteFooter__SocialLink-sc-1f2rypq-12 bkiyvr"><a
+                            href="https://itunes.apple.com/us/app/stockx-buy-sell-authentic/id881599819?mt=8"
+                            target="_blank" rel="noopener noreferrer"><img alt="ios"
+                                src="//stockx-assets.imgix.net/svg/icons/apple-logo-white.svg?auto=compress,format"
+                                class="SiteFooter__LinkImg-sc-1f2rypq-13 dbfOOO"></a></div>
+                    <div class="SiteFooter__SocialLink-sc-1f2rypq-12 bkiyvr"><a
+                            href="https://play.google.com/store/apps/details?id=com.stockx.stockx&amp;hl=en_US"
+                            target="_blank" rel="noopener noreferrer"><img alt="android"
+                                src="//stockx-assets.imgix.net/svg/icons/android-logo-white.svg?auto=compress,format"
+                                class="SiteFooter__LinkImg-sc-1f2rypq-13 dbfOOO"></a></div>
+                </div>
+            </div>
+            <div class="SiteFooter__Proudly-sc-1f2rypq-14 iJjbLu"><i class="fa fa-cog"></i><a
+                    href="https://www.youtube.com/watch?v=d1UDoUQ-Ius" target="_blank" rel="noopener noreferrer"
+                    class="SiteFooter__ProudlyLink-sc-1f2rypq-15 jZFsMv"> Proudly Built by Kelvin IM</a></div>
+        </div>
+
+
+        <hr>
+
+    </footer>
+    <script type="text/javascript">
+        var modal = document.querySelector(".modal");
+        var trigger = document.querySelector(".trigger");
+        var closeButton = document.querySelector(".close-button");
+        var cancelButton = document.querySelector("#cancel");
+
+        //console.log(modal);
+
+        function toggleModal() {
+            modal.classList.toggle("show-modal");
+        }
+
+        function windowOnClick(event) {
+            if (event.target === modal) {
+                toggleModal();
+            }
+        }
+
+        trigger.addEventListener("click", toggleModal);
+        closeButton.addEventListener("click", toggleModal);
+        cancel.addEventListener("click", toggleModal);
+        window.addEventListener("click", windowOnClick);
+    </script>
+</body>
+
+</html>
