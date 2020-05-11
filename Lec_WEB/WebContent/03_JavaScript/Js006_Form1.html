@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Form 데이터</title>
+  <style>
+    div#btnBox {
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      margin: 4px;
+      border: 1px solid orange;
+      width: 180px;
+
+    }
+
+    div#btnBox * {
+      margin: 2px;
+    }
+  </style>
+</head>
+<!-- 
+	JavaScript 로 
+	다양한 form element 들의 '값을 가져 올수도' 있어야 한며,
+	반대로 '값을 입력해야 할수도' 있다.
+	
+	JavaScript 는 form element 들을 접근할수 있는
+	다양한 방법들을 제공한다.  (특히 name 값 활용!)
+ -->
+
+<!-- 
+	※ 각 form element별 동작하는 것으로 JS 와 HTML 코드 작성하면서 확인 하기 
+ -->
+
+<script>
+  function showData() {
+      var result = "입력결과<br>";
+
+      //form 객체 가져오기 '''' forms["form 이름""] '''' 라는게 있음  
+      //myform1 객체 가져오기        2가지 방법이있음
+
+      // var frm = document.forms["myform1"]; //1.
+      var frm = document.forms.myform1; //2.
+
+
+      // 1. 일반적인 input 값   (input도 element 임 )
+      //            forms["input 이름"]
+
+      // var username = frm["username"].value;   // username의 값을 변수에 다음
+
+      // ==> 1줄로 쓰면
+      // var username = document.forms.myform1.username.value;
+      var username = frm.username.value;
+
+      result += "이름 : " + username + "<br>";
+
+
+      //2. checkbox 의 값   .checked 로 판단
+      var hobby = "";
+
+      if (frm.drive.checked) {
+        hobby += frm.drive.value + ",";
+      }
+
+      if (frm.music.checked) {
+        hobby += frm.music.value + ",";
+      }
+
+      if (frm.sports.checked) {
+        hobby += frm.sports.value + ",";
+      }
+
+      result += "취미 :" + hobby + "<br>";
+
+      //3. checkbox 동일 name이 여럿인 경우
+      var skill = "";
+
+      // frm.skill  ==> skill 이라는 name 을 가지고 있는 element 들의 배열(?)형식을 return 함
+      for(i = 0; i < frm.skill.length; i++){
+          //=> 3개 짜리 배열이 나올거임
+          if(frm.skill[i].checked){
+            skill += frm.skill[i].value+", ";
+          }
+      }
+
+      result += "보유기술 :" + skill + "<br>";
+
+      //4. radio : 동일 name 구성  ===> 3번과 유사
+
+      var gender ="";
+
+      for(i=0; i<frm.gender.length; i++){
+        //이것도 배열 형식을 리턴??
+        if(frm.gender[i].checked){
+          gender+=frm.gender[i].value;
+          break;    //라디오 버튼은 어짜피 하나만 체크할 수 있기때문에
+        }
+
+      }
+      result += "성별: "+gender +"<br>";
+
+      //  5. select (단일  => for 문이 필요없음)     .value 만 사용
+
+      result += "좋아하는차1: "+frm.cars.value +"<br>";   
+
+      //  6. select (복수일 경우 => for문 필요)  3번과 유사     .selected 사용
+      //  1개를 선택해도 배열 형식으로 들어옴
+      
+      var cars2 ="";
+
+      for(i = 0; i< frm.cars2.length; i++){
+        if(frm.cars2[i].selected){
+          cars2 += frm.cars2[i].value+", ";
+        }
+
+      }
+
+      result +="좋아하는차 2: "+ cars2 +"<br>";
+
+      //7. <textarea> : .value ==> 사용자가 입력한 값 
+        // .innerHTML ==> HTML 상의 content 값( 코드 상에 집어 넣은 값) 을 가져올수 있다.
+      result += "메모 : " +frm.message.value +"<br>";
+      
+
+      
+      document.getElementById("result").innerHTML = result;
+
+
+  }
+
+  function setData() {
+    var frm = document.forms.myform1;   // 객체 가져오기
+
+    //input
+    frm.username.value="Kelvin";
+    //checkbox
+    frm.music.checked=true;
+    // frm.drive.checked=false;  false 면 안해줘도 되는듯>>
+    frm.sports.checked=true;
+
+    //checkbox 동일한 name을 가진 것에는 배열로 접근
+    frm.skill[0].checked =true;
+    frm.skill[1].checked =false;
+    frm.skill[2].checked =true;
+
+    //radio 버튼
+    frm.gender[0].checked=true;  //남성체크
+    frm.gender[1].checked=true;  //여성체크
+    frm.gender[2].checked=true;  //동물체크
+
+    //select   (단일)     ==> 해당 value 값으로 바꾸면된다. 
+    // or 배열처럼 접근 가능 + selected
+    // frm.cars.value='fiat';   
+    frm.cars[1].selected=true;    //배열처럼 접근 가능 + selected
+
+    //select (복수 multiple)
+    frm.cars2[0].selected=true;
+    frm.cars2[1].selected=false;
+    frm.cars2[2].selected=true;
+    frm.cars2[3].selected=false;
+
+    //textarea : .value , .innerHTML 
+    frm.message.value = "하위바위하뷔";
+
+    //or  .innerhtml
+    // frm.message.innerHTML ="gdgdgdgdg";
+  }
+</script>
+
+<body>
+  <div id="btnBox">
+    <button type="button" onclick="showData();">입력값 보여주기</button>
+    <br>
+    <button type="button" onclick="setData();">입력값 세팅</button>
+    <br>
+    <p id="result"></p>
+  </div>
+
+  <form name="myform1">
+    이름:<br>
+    <input type="text" name="username"><br>
+    <br>
+
+    취미:<br>
+    <input type="checkbox" name="drive" value="driving">드라이빙<br>
+    <input type="checkbox" name="music" value="music">음악<br>
+    <input type="checkbox" name="sports" value="sports">운동<br>
+    <br>
+
+    보유기술:<br>
+    <input type="checkbox" name="skill" value="자바">JAVA<br>
+    <input type="checkbox" name="skill" value="닷넷">.Net<br>
+    <input type="checkbox" name="skill" value="애플">iOS<br>
+    <br>
+
+
+    성별:<br>
+    <input type="radio" name="gender" value="male">남<br>
+    <input type="radio" name="gender" value="female">여<br>
+    <input type="radio" name="gender" value="animal">케모노<br>
+    <br>
+
+    좋아하는 차1:<br>
+    <select name="cars">
+      <option value="volvo">볼보</option>
+      <option value="saab">사브</option>
+      <option value="fiat">피아트</option>
+      <option value="audi" selected>아우디</option>
+    </select>
+    <br><br>
+
+    좋아하는 차2:<br>
+    <select name="cars2" size="4" multiple>
+      <option value="volvo">볼보</option>
+      <option value="saab" selected>사브</option>
+      <option value="fiat">피아트</option>
+      <option value="audi" selected>아우디</option>
+    </select>
+    <br><br>
+
+
+    메모:<br>
+    <textarea name="message" style="width:200px; height:100px">The cat was playing in the garden.</textarea>
+    <br>
+
+    <!-- <input type="submit" value="제출">  -->
+
+  </form>
+
+  <!-- 
+<form name="myform2">
+별명:<br>
+<input type="text" name="nickname">
+
+<br><br>
+<input type="submit" value="제출">
+
+</form>
+ -->
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

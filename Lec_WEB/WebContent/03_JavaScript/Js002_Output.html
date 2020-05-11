@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Output</title>
+</head>
+<!-- 
+JavaScript 가  출력하는 4가지 방법.
+1. HTML element 에 출력  ← innerHTML 사용
+2. HTML 에 직접 출력 ← document.write() 사용
+3. alert 팝업 ← window.alert() 사용
+4. 브라우저 console 에 출력, ← console.log().
+ -->
+<body>
+
+<script>
+// 먼저 id='demo' 인 것 아래에서 실행한뒤에 위로 올려놓고 보여주자
+
+document.getElementById('demo').innerHTML = "로딩중~~~~ 어떻게될까요";
+
+function showRandom(){
+	document.getElementById('demo').innerHTML = Math.floor((Math.random()*10)+1);
+}
+
+</script>
+
+
+<h2 onclick="showRandom()">클릭하세요</h2>
+<p id="demo">1~10까지 난수</p>
+<script>
+document.getElementById('demo').innerHTML = "로딩중~~~~ 실행된다";
+</script>
+
+<br>
+
+<script>
+// 아래 코드는 '페이지가 로딩'될때 실행
+var text = "로딩중에 document.write()";
+document.write("<h2>"+text+"</h2>");
+
+</script>
+
+
+<p onclick="document.write('헉스')">그러나 이것을 클릭하면..</p>
+<!-- document.write()는 로딩 완료후에 호출하면 기존 로딩된 html 문서 다 지우고 
+지정된 문구로 wrtie 함-->
+
+<br>
+
+<h2 onclick="alert('하위')">클릭하면 팝업이..</h2>
+<!-- 요즘에는 alert 잘 안씀  -->
+
+<br>
+
+
+<h2 onclick="showNumber(5)">클릭하고 console에서 확인해보자</h2>
+
+<script>
+function showNumber(num){
+	var i , j;
+	for(i=0; i<num; i++){
+		j=i*2;
+		console.log("i = ", i, "j =", j);
+	}
+}
+/*
+	JavaScript 는 브라우저에서 실행 (Client side script) 이기 때문에
+	브라우저에서 디버깅도 가능하다.
+	크롬의 경우 Sources 탭에서 Scources 선택하고, breakpoint 추가한 뒤에 실행 가능.
+
+	
+	클라이언트 쪽(브라우저)에서 정상적인 동작이 안된다면
+	
+	1. 우선 '소스' 확인.  제대로 
+	2. console 창에서 에러 (예외) 발생여부 확인하기
+	3. source 창에서 디버깅
+*/
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD viewport</title>
+    <style>
+        *{
+            box-sizing: border-box; 
+        }
+        .header{
+            border: 1px solid red;
+            padding: 15px;
+        }
+        .menu{
+            width: 25%;
+            border: 1px solid red;
+            float: left;
+        }
+        .main{
+            width: 75%;
+            border: 1px solid red;
+            float: left;
+        }
+    </style>
+</head>
+<!-- 
+아래 두가지를 '모바일 이나 태블릿' 에서 확인해보자 
+
+1. viewport meta태그가 적용안된 페이지
+  https://www.w3schools.com/css/example_withoutviewport.htm
+
+2. viewport meta태그가 적용된 페이지
+  https://www.w3schools.com/css/example_withviewport.htm
+
+위 두 페이지의 효과를 보려면 꼭! 모바일에서 보기를 추천 (크롬의 device 에서도 체험하기 어렵다)
+
+1.의 경우 필히 '확대' 및 '좌우 스크롤' 을 발생해야 할것이다.  
+사용자게게 있어 수직스크롤에 익숙하지만,
+수평스크롤은 매우 불편한 경험이다.
+페이지 내용을 보기 위해 '확대' 를 해야 하는 것도 사용자를 불편하게 하는 요소다
+	
+위 두페이지의 <body>는 동일하다 
+단 2. 에선 viewport meta 태그와
+ img 의 경우 max-width:100%, height:auto 설정됨.
+ -->
+ 
+<!-- 
+	viewport : '웹페이지'에서 사용자게에 '보여지는 영역',
+		기기마다 다르다 (pc, 모바일, 태블릿)
+		
+	'큰 웹페이지' 를 '작은 기기'에서 보려하면..viewport 가 작아서 불편하다.
+	확대및 좌우 스크롤 발생 유발...  웹페이지 로딩후에 이러면 곤란...
+		
+	해결방법!
+	HTML5 에선 다음과 같이 <meta> 태그 에서 설정.
+	어떠한 사이즈의 기기에서도 일단. 웹페이지가 로딩될때 
+	viewport에 딱 맞게 zoom level 이 조정되도록 한다.
+	
+	★ 이는 Responsive Web Design 구현의 필수요소 입니다
+ -->
+
+
+<body>
+    <div class="header">
+        <h1>일본여행</h1>
+    </div>
+    
+    <div class="menu">
+        <ul>
+            <li>항공편</li>
+            <li>도시</li>
+            <li>섬</li>
+            <li>음식</li>
+        </ul>
+    </div>
+    
+    <div class="main">
+        <h1>도시</h1>
+        <p>도쿄	とうきょう	tokyo	東京	
+        요코하마	よこはま	yokohama	横浜	
+        나고야	なごや	nagoya	名古屋	
+        오사카	おおさか	osaka	大阪</p>
+    </div>
+    
+    
+    
+</body>
+</html>

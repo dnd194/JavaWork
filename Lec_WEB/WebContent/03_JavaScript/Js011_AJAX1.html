@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AJAX</title>
+</head>
+<!--
+	■ 동기화 (Synchronous) 방식
+	 	request - response 관계 
+
+	■ AJAX
+	1. Asynchronous JavaScript And XML.
+		: 자바스크립트르 활용한 비동기 프로그래밍
+		: 꼭 XML만 다루지는 않음.. 텍스트, JSON 등 다룰수 있슴
+			(결국 AJAX 는 근시안적 작명의 오류)
+	2. AJAX는  프로그래밍 언어가 아니다!
+	
+	3. XMLHttpRequest object 를 사용하여 서버에 request를 보내고
+	  DOM 을 사용하여 화면에 업데이트 한다.
+	
+	4. 일본어로:  アジャックス
+
+	 
+	■ AJAX 장점!
+	1. 페이지 로딩 후에도, 서버로부터 데이터 끌고 올수 있다. 
+	2. 페이지 리로딩 없이, 서버로부터 데이터 끌고 와서 페이지 업데이트 가능
+	        → 페이지 변경시 필요한 네트웍 트래픽(시간, 대역폭) 절약
+	3. 서버에 데이터 전송이 서버 조작이 가능하다 (백그라운드로!)
+	
+	■ AJAX 사용예
+	1. 아이디 중복 체크
+	2. 포탈 검색어 입력시 suggestion.
+	3. 실시간 정보 업데이트 : 실검, 날씨, 뉴스, 주식 정보등..
+	4. 스크롤 페이징
+	5. 각종 API
+	6. SPA (Single Page Web : 단일페이지 웹) 구현
+	
+	■ AJAX 작동절차
+	1. 웹페이지 이벤트 발생 (클릭, 입력, 등...)
+	2. XMLHttpRequest object 생성
+	3. XMLHttpRequest object 가 서버에 request 한다.
+	4. 서버가 request 처리
+	5. 서버가 response 를 웹페이지에 보낸다
+	6. 웹페이지에서 response 를 읽는다.
+	7. 읽은 내용으로 화면을 업데이트 한다
+ -->
+ <!-- 
+ ※ 크롬의 경우 타 소스로의 AJAX 요청을 원천적으로 차단합니다.
+ same-origin policy 정책
+  --> 
+<body>
+
+<div id="demo">
+<h2>AJAX XMLHttpRequest</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+var url = "https://www.w3schools.com/js/ajax_info.txt";
+function loadDoc() {
+
+	var xhttp = new XMLHttpRequest();  //XHR 
+	xhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			document.getElementById('demo').innerHTML = 
+				this.responseText;
+		}
+	};
+
+	xhttp.open('GET', url, true);   //open(method, url, async, user, psw) : request 에 대해 명시 true 가 default 값
+	xhttp.send();  //send() : GET 방식으로 서버에 request 보냄 // 문자열 매개변수가 있을때는 post 방식임
+
+
+}
+</script>
+<!-- 
+XMLHttpRequest object 의 메소드들
+
+open(method, url, async, user, psw) : request 에 대해 명시
+
+	- method: GET or POST
+	- url
+	- async: true (asynchronous) or false (synchronous)
+	- user: optional user name
+	- psw: optional password
+
+
+send() : GET 방식으로 서버에 request 보냄
+send(string) : POST 방식으로 서버에 request 보냄
+setRequestHeader() : 
+
+-->
+<!-- 
+XMLHttpRequest object 의 property 들.
+
+1. onreadystatechange : 함수설정.  '''readyState 값이 바뀔때마다 호출됨.'''
+2.  readyState : XMLHttpRequest 상태(state) 값 저장
+		[값] : [의미]
+		0 : request 준비 안됨 (초기화 안됨)
+		1 : 서버 연결됨
+		2 : request 수신됨.
+		3 : request 처리중
+		'''''''''''''''''''''4 : request 끝나고, ''''''''''''''response 준비됨.''''''''''''''''
+		
+3. responseText : response 데이터를 문자열로.
+3. responseXML : response 데이터를 XML로.
+4. status : request 상태값
+		[값] : [의미]
+		200 : OK
+		403 : Forbidden
+		404 : Not Found
+		500 : Internal Server Error
+		참조 : https://www.w3schools.com/tags/ref_httpmessages.asp
+
+5. statusText : 상태정보 텍스트 : (ex: 'OK' , 'Not Found');
+
+ -->
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -25,6 +25,33 @@
 					"@dbeaver-use-meta-optimizer@": "false",
 					"@dbeaver-connection-type@": "BASIC"
 				},
+				"auth-model": "oracle_native"
+			}
+		},
+		"oracle_thin-171e7aa7d65-3c6e54c0d59dc117": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "Oracle - XE 2",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"home": "C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-check-schema-content@": "false",
+					"@dbeaver-always-show-dba@": "false",
+					"@dbeaver-always-use-dba-views@": "false",
+					"@dbeaver-meta-use-sys-schema@": "false",
+					"@dbeaver-meta-use-simple-constraints@": "false",
+					"@dbeaver-use-rule-hint@": "false",
+					"@dbeaver-use-meta-optimizer@": "false",
+					"@dbeaver-connection-type@": "BASIC"
+				},
 				"auth-model": "oracle_native",
 				"handlers": {}
 			}

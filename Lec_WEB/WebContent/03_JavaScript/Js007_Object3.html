@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Prototype</title>
+</head>
+<script>
+// 도우미 함수들
+function TITLE(t){ document.write("<hr><h3>" + t + "</h3>");}
+function write(c){ document.write(c + "<br>"); }  // 도우미 함수
+function wrType(dsc, c) {document.write(dsc + " : " + c + " " + typeof(c) + "<br>");}
+</script>
+
+<script>
+function Person(firstName, age){
+    this.firstName = firstName;
+    this.age = age;
+};
+
+function allProp(obj){
+	var result = "";
+	for(prop in obj){
+		result += prop + ":" + obj[prop] + " / ";
+	}
+	return result;
+}
+</script>
+
+<body>
+<h2>JavaScript Prototype</h2>
+
+<script>
+TITLE("JavaScript Prototype");
+var myFather = new Person("John", 57);
+var myMother = new Person("Susie", 54);
+
+// TODO
+
+document.write("");
+
+//'prototype' 이 생성자 측의 property 중 하나다.
+
+// TODO
+
+document.write("<hr>");
+
+// TODO
+
+document.write("<hr>");
+
+// TODO
+
+// prototype 에 property 추가 하면
+// 기존의 이 Person.prototype 을 계승한 모든 오프젝트에 영향을 받는다.
+// TODO
+document.write("<hr>");
+
+// TODO
+document.write("<hr>");
+
+// TODO
+document.write("<hr>");
+
+
+// TODO
+
+
+/*
+	사용자가 만든 object 의 prototype 만 손대자...
+	표준 JavaScript Object 는 손대지 말자...
+*/
+
+</script>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

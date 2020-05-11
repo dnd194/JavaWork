@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>history 2</title>
+</head>
+<!-- 
+브라우저가 기억하고 있는 이전/이후 페이지 이동
+
+history.back()   이번 페이지 이동
+history.forward()  이후 페이지 이동
+
+ -->
+<body>
+<h2>history 2</h2>
+<script>
+document.write(new Date() + "<br>"); // 시간 확인,  새로고침 여부 확인용
+document.write("history.length : " + history.length  + "<hr>");
+</script>
+
+별명: <input type="text"/><br><br>
+
+<input type="button" value="history 1" onclick="location.href = 'Js008_BOM4_history1.html'"/>
+<input type="button" value="history 3" onclick="location.href = 'Js008_BOM4_history3.html'"/>
+<br>
+<hr>
+<input type="button" value="back()" onclick="history.back()">
+<input type="button" value="forward()" onclick="history.forward()">
+<input type="button" value="go(-1)" onclick="history.go(-1)">
+<input type="button" value="go(-2)" onclick="history.go(-2)">
+<input type="button" value="go(1)" onclick="history.go(1)">
+<input type="button" value="go(2)" onclick="history.go(2)">
+<br>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

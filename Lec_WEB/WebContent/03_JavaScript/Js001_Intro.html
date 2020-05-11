@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Intro</title>
+</head>
+<!-- 
+JavaScript 는 client(브라우저) 에서 구동되는 스크립트 프로그램.
+주로 HTML 페이지 내의 element 들의 동적인 변화, 폼 데이터 검증, 브라우저 제어, AJAX 등에 사용.
+HTML elmenet 에 접근 할때는 id, class, name, tag명 을 통해서 접근가능.
+
+JavaScript 를 HTML 에 적용하는 방법 3가지
+1. inline 방식  :  태그의 onxxx 속성(이벤트) 값으로 JavaScript 코드 동작. 
+2. internal 방식 : <script></script> 태그 안에 JavaScript 코드 기입
+3. external 방식 : <script src="myScript.js"> 와 같이 src 속성에 외부 JavaScript 파일 명시
+
+JavaScript 의 주요동작 3가지
+1. HTML element 의  '''content''' 를 바꾸는 동작
+2. HTML element 의 '''attribute''' 를 바꾸는 동작
+3. HTML element 의 '''style''' 을 바꾸는 동작
+
+웹개발자에게 있어서
+	HTML + CSS + JavaScript 는  'MUST LEARN' 이다.
+
+
+** JavaScript:
+	웹 브라우저에서 가동하는 웹페이지 가동용 기본 스크립트 언어로서 개발됨
+	
+	jQuery 와 같이 산업표준화된 라이브러리 풍부.
+	JSON 데이터 교환 포맷
+	다양한 프레임워크 : vue.js, react.js, angular.js 등...
+	
+	그밖에도 다양한 영역에서 사용됨
+		TypeScript : 컴파일 가능한 JS	
+		서버사이드 개발 : Node.JS
+		하이브리드앱 : IONIC 
+		크로스플랫폼앱 :  React Native
+		데스크탑 어플리케이션 : electron
+		게임 : PhaserJS, ImpactJS
+		3D,VR,: three.JS
+		AR  : Aframe, AR.js
+		머신러닝 : tensorflow.js
+		Unity3D 같은 게임개발 엔진에서도 채택
+		
+** 최초 1995년 개발 (설계자 '브렌던 아이크')
+	이후 자바스크립트 는 ECMAScript(ES) 표준이 됨 (1997, ECMA262)
+	모질라 재단, ECMA 인터네셔널, 에서 만들고 관리함.
+
+** 주요 버전
+ 	ES5(2009) : 대부분의 브라우저에 지원, (웹페이지 작성 기준?)
+ 	ES6(2015) : 가장 많은 변화, (IE 지원안함)
+
+** JavaScript 는 Java 와 관련이 없다!!!  오리너구리는 오리가 아니다.
+	(둘다 C언어 구문을 계승한 부분은 닮았다..)
+
+** 자바스크립트 구동 환경 = 엔진 + 런타임
+	엔진 과 런타임에 따라 ECMAScript 규격 지원하는 내용 범위, 
+	제공 객체, 함수들이 다른 부분 존재
+
+** V8 엔진 : 구글에서 개발한 크롬 브라우저용 JS엔진, 
+	Node.js 의 엔진으로도 사용됨.  	
+
+** JavaScript 상표권은 현재 오라클.. 그러나, 모질라 재단과 라이선스 하에 운용됨.
+	
+** DOM( Document Object Model ) 을 구동시키기 위한 목적으로 개발되었기 때문에
+	DOM 구조를 갖고 있는 HTML과 찰떡궁합.
+	
+-->
+<script>
+	function myFunction(){
+		document.getElementById('demo3').innerHTML="클릭했다리";
+	}
+
+</script>
+				<!-- external 방식 -->
+ <script src="JS/myScript.js"></script>    
+
+
+<body>
+<h2>1. JavaScript 는 Content 를 바꿀수 있다</h3>
+<button type="button" onclick="document.getElementById('demo1').innerHTML = Date()">클릭하면 날짜와 시간이 보여집니다.</button>
+<!-- demo1 의 content 가 바뀜    innerHTML 은 CONTENT 를 의미함-->
+<p id="demo1">클릭하면 Content 가 바뀝니다</p>
+<p id="demo3" onclick="myFunction()">클릭해보세요</p>
+
+<h2>2. JavaScript 는 attribute 를 바꿀수 있다</h3>
+<img id="myImage" src="https://www.w3schools.com/html/pic_bulboff.gif" width="100" height="180">
+<div>
+<button type="button" onclick="light(1)">Light On</button>
+<button type="button"onclick="light(0)">Light Off</button>
+</div>
+
+<h2>3. JavaScript 는 Style 를 바꿀수 있다</h3>
+<p id="demo2" 
+onmouseover="document.getElementById('demo2').style.color = 'red'"
+onmouseout="this.style.color = 'black'"
+>
+<!-- this = document.getElementById('demo2') 위에서 한번 해주면 다음부터는 this 써도됨-->
+마우스를 올렸다, 내렸다 해보세요.
+</p>
+
+
+</body>
+</html>

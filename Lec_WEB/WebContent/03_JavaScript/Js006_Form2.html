@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Form 검증</title>
+<style>
+.important {
+	color:red;
+}
+</style>
+</head>
+<!-- 
+	form validation (폼 검증)
+	form 데이터를 서버에 제출(submit) 하기 전에
+	클라이언트에서 1차적으로 값의 유효성을 체크해주는게 좋다.
+	이때 JavaScript 를 사용하여 검증합니다.
+	
+	ex) 
+		- '필수 항목'들은 입력이 되었는지?
+		- 숫자만 입력하는 경우 숫자로만 입력되었는지?
+		- n글자 이상이 입력되었는지?
+		- checkbox 의 경우 n개 이상이 체크 되었는지?
+		- 특정포맷 (이메일, url 등..) 으로 입력되었는지?
+	
+	<form> 의 onsubmit 이벤트 처리 코드
+		: true 를 return 하면 정상적으로 submit 됨
+		: false 를 return 하면 submit 안됨 
+	
+	
+	focus() 함수 : 해당 form element 에 입력상태(focus) 지정 → onfocus 이벤트 발동 
+	blur() 함수 : 해당 form element 에 입력상태 해제 → onblur 이벤트 발동	
+	submit() 함수 : 해당 form 을 submit 함
+
+	required attribute 사용 : 
+-->
+
+<!--
+	** alert(), confirm(), prompt() 함수
+	https://www.w3schools.com/jsref/met_win_alert.asp
+	https://www.w3schools.com/jsref/met_win_confirm.asp
+	https://www.w3schools.com/jsref/met_win_prompt.asp
+	
+	alert() 리턴값 없슴
+	confirm()  true/false 리턴, submit 하기전에 물어보기 위해 사용 가능
+	prompt() 입력한 string 리턴
+ -->
+ 
+<body>
+<h3>form validation</h3>
+<hr>
+<h4>form1</h4>
+<form name="form1" action="https://www.w3schools.com/action_page.php" method="get">
+  First name:
+  <input type="text" name="firstname"> <span class="important">*</span>   <!-- 기본값 value 가 없다. -->
+  <br><br>
+  Last name:
+  <input type="text" name="lastname">
+  <br><br>
+  <input type="submit" value="제출">
+</form> 
+<hr> <!-- ----------------------------------------------------------------- -->
+<!-- 
+	form 에 onsubmit 사용
+	onsubmit 에 JS 코드를 수행하고 return 받은 값이 true 이면 submit 
+ -->
+ <script>
+ function chkSubmit(){
+	 var frm = document.forms['form2'];
+	 
+	 if(frm['firstname'].value.trim() == ""){
+		 alert("First Name 은 필수 입니다");
+		 //return false;   // onsubmit 에 false 를 리턴하면 submit 안된다
+		 
+		 frm['firstname'].focus();  // return false 하기 전에 커서 위치 시키면 좋다
+		// frm.firstname.focus();
+		 return false;
+	 }
+	 
+	 return true;   // onsubmit 에 true를 리턴하면 submit 진행된다 
+ }
+ 
+ </script>
+ 
+<h4>form2 - 필수 항목</h4>
+<form name="form2" action="https://www.w3schools.com/action_page.php" method="get" 
+	onsubmit="return chkSubmit();" > 
+	<!-- ''''''''반드시 onsubmit 에 return 해야 한다 '''''''''-->
+  First name:
+  <input type="text" name="firstname"> <span class="important">*</span>   <!-- 기본값 value 가 없다. -->
+  <br><br>
+  Last name:
+  <input type="text" name="lastname">
+  <br><br>
+  <input type="submit" value="제출">
+</form> 
+
+<hr> <!-- ----------------------------------------------------------------- -->
+<h4>form3 - 숫자검증</h4>
+<script>
+
+function chkSubmut3(){
+	var frm = document.forms.form3;
+	var age = frm.age.value.trim();
+
+	// isNaN() : number 타입이면 false , number타입이 아니면 true
+	if(isNaN(age) || age < 1 || age > 130){
+		alert(age + "는 유효한 값이 아닙니다\n1~130 사이 숫자입력");
+		frm.age.value="";  //초기화
+		frm.age.focus();
+		return false;  //submit 하지 않음
+	}
+	return true;
+}
+
+</script>
+<form name="form3" action="https://www.w3schools.com/action_page.php"
+	method="get" onsubmit="return chkSubmut3();"> 
+	나이 (1~130): <input type="text" name="age">
+	<br><br>
+	<input type="submit" value="제출">
+</form> 
+
+<hr> <!-- ----------------------------------------------------------------- -->
+<h4>form4 - required</h4>
+<!-- 브라우저가 자동적으로 필수 요소 체크하여 submit 여부 조정 -->
+<form name="form4" action="https://www.w3schools.com/action_page.php" method="get">
+  First name:
+  <input type="text" name="firstname" required> <span class="important">*</span>
+  <br><br>
+  Last name:
+  <input type="text" name="lastname">
+  <br><br>
+  <input type="submit" value="제출">
+</form> 
+
+
+<hr> <!-- ----------------------------------------------------------------- -->
+<h4>form5 - submit()</h4>
+<!-- 일반 JS 코드에서도 특정 form을 submit 시킬수 있다. -->
+<script>
+	function chkSubmit5(){
+		var frm = document.forms.form5;
+		if(frm.firstname.value.trim()==""){
+			alert("firstname 은 필수...");
+			frm.firstname.focus();
+			return;   //그냥 일반 버튼이라서 return만 해줘도 되는거임
+		}
+		
+		// frm.submit();  //위의 조건을 통과하면 submit 동작 수행
+
+		//confirm() 함수 : 확인 / 취소 선택에 따라 true / false return
+		var a = confirm("제출하시겠습니까??");
+		if(a){
+			frm.submit();
+		}else{
+			frm.firstname.value="";
+		}
+	}
+</script>
+<form name="form5" action="https://www.w3schools.com/action_page.php" method="get">
+  First name:
+  <input type="text" name="firstname" required> <span class="important">*</span>
+  <br><br>
+  Last name:
+  <input type="text" name="lastname">
+  <br><br>
+</form>
+<!-- 버튼으로 form submit() 넣어주기  -->
+<button onclick="chkSubmit5();">제출</button>  <!-- form 바깥에 있다! --> 
+
+
+<hr> <!-- ----------------------------------------------------------------- -->
+<h4>form6 - regexp</h4>
+<!-- 복잡한 서식 (url, email 등은) 정규표현식(regular expression) 사용하여 체크 -->
+<script>
+// url 패턴에 대한 정규표현식
+var urlPat = /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+
+// email 패턴에 대한 정규표현식
+var emailPat = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
+function chkSubmit6(){
+	var frm = document.forms.form6;
+	var url = frm.url.value.trim();   
+	var email = frm.email.value.trim();
+
+	document.getElementById('urlwarn').innerHTML="";
+	document.getElementById('emailwarn').innerHTML="";
+
+	//정규표현식 객체의 ''''test() ==> 패턴매칭 여부 확인'''
+	if(!urlPat.test(url)){
+		document.getElementById('urlwarn').innerHTML="유효하지않은 url";
+		frm.url.focus();
+		return false;
+	}
+	
+
+	if(!emailPat.test(email)){
+		document.getElementById('emailwarn').innerHTML="유효하지않은 email형식";
+		frm.email.focus();
+		return false;
+	}
+	return true;
+}
+
+</script>
+<form name="form6" action="https://www.w3schools.com/action_page.php" method="get"
+	onsubmit="return chkSubmit6();"> 
+	
+  url:
+  <input type="text" name="url"><span id="urlwarn" class="important"></span>
+  <br><br>
+  email:
+  <input type="text" name="email"><span id="emailwarn" class="important"></span>
+  <br><br>
+
+  <input type="submit" value="제출">
+</form>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

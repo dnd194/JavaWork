@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BOM - window </title>
+</head>
+<!-- 
+			BOM : Browser Object Model 
+				(브라우저 객체 모델)
+				
+			JavaScrpt 는 소위 BOM 이라 불리우는 '브라우저 객체 모델' 을 통해
+			'브라우저' 를 제어 합니다.
+
+			BOM 은 특별히 '표준' 이 정해져 있는 모델이 아닙니다.
+			그러나, 
+			오늘날 대부분의 브라우저들이 
+			'JavaScript' 를 통해 그리고 'BOM 의 object 들과 method' 들로 통해
+			제어되고 있으며 이들 브라우저들이 대체로 같은 이름의  object 와 method 들은 사용하다 보니
+			BOM 이 마치 '표준'처럼 여겨져 사용되고 있습니다.
+			(사실, 브라우저마다 조금씩 다르게 구현된 부분도 있습니다)
+
+			BOM 의 object 계층은 다음과 같습니다.
+
+			window
+				├─ document 
+				├─ screen
+				├─ location
+				├─ history
+				└─ navigator
+				
+			■ widow 객체
+
+				BOM 의 최상위 객체.
+				모든 '전역(global)' 객체, 변수, 함수는 자동적으로 window 객체 멤버가 된다.
+				일반적으로 window객체가 '생략' 되며,  이 경우 
+				자동적으로 window 객체 멤버입니다.
+				
+				document 또한 window 객체 멤버임에 주목!
+				
+					window.document.getElementById("header");
+						↕  
+					document.getElementById("header");
+
+-->
+
+<script>
+	// 전역변수 x , window 소속  ==> 모든 곳에 영향을 미치므로 조심해서 사용해야함
+	var x = 10;    
+
+
+	function myFunc1(){
+		// window.document.getElementById("result1").innerHTML =				//document 도 window 의 property  
+		// 이렇게 해도 똑같음
+		document.getElementById("result1").innerHTML =				//document 도 window 의 property  
+		"전역 x = " +x;
+	}
+
+	function myFunc2(){
+		x = x+3;
+		document.getElementById("result2").innerHTML = x;
+	}
+
+	function myFunc3(){
+		a = 40;   // 타입 없이 변수를 선언하면 자동으로 전역변수 로 선언됨 
+		// 그래서 a => 전역변수
+		document.getElementById('result3').innerHTML = a;
+	}
+	function myFunc4(){
+		a += 20;  // a = a+20;   
+		//  myFunc4 를 먼저 누를경우  a가 선언되있지 않아서 javascript 작동이 멈춤
+		
+		document.getElementById('result4').innerHTML = a;
+	}
+
+	//함수 안에서 지역변수로 사용할거라면 ''''꼭 var 를 사용하세요'''''
+</script>
+
+<body>
+	<h2>window 객체</h2>
+	<br>
+	<button type="button" onclick="myFunc1();">전역 변수 x </button>
+	: <span id="result1"></span><br><br>
+	<button type="button" onclick="myFunc2();">전역 변수 x 3증가 </button>
+	: <span id="result2"></span><br><br>
+	<button type="button" onclick="myFunc3();">a = 40</button>
+	: <span id="result3"></span><br><br>
+	<button type="button" onclick="myFunc4();">a = a + 20 </button>
+	: <span id="result4"></span><br><br>
+
+	<hr>
+	<script>
+		//alert(), confirm(), prompt() 도 window 소속
+
+		function myFunc5(){
+			var answer = window.confirm('confirm() 도 window 소속');
+			document.getElementById('result5').innerHTML=answer;
+		}
+		function myFunc6(){
+			var name = prompt('키미노 나가와');
+			document.getElementById('result6').innerHTML=name;
+		}
+	</script>
+	<input type="button" onclick="window.alert('alert함수도 window 소속')" value='alert() 함수' /><br><br>
+	<input type="button" onclick="myFunc5()" value='confirm() 함수' />
+	: <span id="result5"></span><br><br>
+	<input type="button" onclick="myFunc6()" value='prompt() 함수' />
+	: <span id="result6"></span><br><br>
+
+	<hr>
+
+	<h4>open() 함수</h4>
+	<!-- 
+	팝업 창 띄움
+	요즘은 대부분의 브라우저가 팝업을 허용하지 않는 옵션이 켜져 있어서 특별한 경우 아니면 쓰진 않는것을 추천
+ -->
+	<script>
+		function myFunc7() {
+			// open(url, 새창이름, 새창옵션);
+			// 리턴값도 window 객체
+			myWindow = open('Js008_BOM1_pop.html', 'ㅇㅇㅇ', 'width = 350, height=400, left = 50, top=10');
+				//height 안써주면 그냥 전체크기로 잡아줌   'auto'    인듯
+
+		}
+	</script>
+	<button type="button" onclick="myFunc7()">open()</button>
+	<br><br>
+	<!-- 오픈 한 창에서 닫아줘야해서 myWindow   ' . '  하는듯   
+					--------근데 크롬에서 지원 안함 ------------  -->
+	<button type="button" onclick="myWindow.close()">close()</button> <!-- 열린 창 닫기 -->
+	<br><br>
+	<hr>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<TITLE>JS string</TITLE>
+</head>
+<body>
+<h1>String</h1>
+<script>
+//도우미 함수들
+function TITLE(t){ document.write("<hr><h3>" + t + "</h3>");}
+function write(c){ document.write(c + "<br>"); }  // 도우미 함수
+function wrType(dsc, c) {document.write(dsc + " : " + c + " " + typeof(c) + "<br>");}
+</script>
+
+<script>
+/* 기본적으로 string 의 모든 함수는 immutable 하다. 즉 원본을 변화시키기 않고, 
+ * 새로운 string 을 만들어 리턴한다.
+ */
+var str, str1, str2;
+TITLE("문자열 생성");
+// 문자열은 
+//   1. "~" 혹은 '~' 으로 정의 
+//   2. new String() 으로 정의 (비추)
+// TODO
+
+// '~', "~" 둘다 사용하는 이유
+// TODO
+
+// new 사용하여 생성하는 경우
+// TODO
+
+// .length
+TITLE("length: 문자개수");
+var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// TODO
+
+// 이스케이프 문자 escape character
+//  \'   \"   \\    \n   \t       
+TITLE("Escapce character");
+// TODO
+
+// 문자열 중간에 자르기
+TITLE("문자열 중간에 자르기")
+str = "Hello Web Application";  // 과연 문자열을 중간에 자르면 될까
+// TODO
+
+
+// indexOf(), lastIndexOf(), search() : 문자열 안에서 문자열 찾기
+// 찾은 위치 인덱스 리턴, 못찾으면 -1 리턴
+TITLE("문자열 검색 <br>indexOf(), lastIndexOf(), search()");
+str = "Please locate where 'locate' occurs!";
+// TODO
+
+// search() : 문자열 안에서 문자열 찾기
+// TODO
+
+// search() vs indexOf() : 둘은 다르다!
+// 	search() : 두번째 매개변수 없다
+// 	indexOf() : regexp 사용 불가
+
+
+//문자열 추출
+//slice(start, end)
+//substring(start, end)
+//substr(start, length)
+TITLE("문자열 추출<br>slice(), substring(), substr()");
+str = "Apple, Banana, Kiwi";
+
+// TODO
+
+
+// 문자열 치환
+// replace() : 치환한 결과 문자열 리턴, 정규표현식 사용 가능
+// 기본적으로 첫번째 '매칭된 문자열 만 치환
+TITLE("문자열 치환 replace()");
+str = "Please visit Japan!";
+// TODO
+
+str = "Please visit Japan! Go Japan";
+// TODO
+
+
+// 대소문자 전환
+// toUpperCase(), toLowerCase()
+TITLE("대소문자 전환<br>toUpperCase(), toLowerCase()");
+str = "Hello World!";
+// TODO
+
+// 문자열 연결 concat()
+TITLE("문자열 연결 concat()");
+str1 = "Hello";
+str2 = "World";
+
+// 아래 두 문장은 같다
+// TODO
+
+// 좌우 공백 제거 trim()
+TITLE("좌우 공백 제거 trim()");
+str = "       Hello World!        ";
+//※ alert() 으로 확인해볼수 밖에 없다.
+// TODO
+
+// 문자 코드 : 
+// charAt(position)
+// charCodeAt(position)
+// Property access [ ]
+TITLE("문자 코드 <br> [ ], charAt(), charCodeAt()");
+str = "HELLO WORLD";
+// TODO
+
+// 다음과 같이 해도 변화없다
+// TODO
+
+// string -> array : split()
+// array -> string : join()
+TITLE("string ↔ array");
+str = "2019-11-23"; 
+// TODO
+
+str = "Hello";
+// TODO
+
+arr = ["H", "e", "l", "l", "o"];  // array -> string
+// TODO
+
+
+</script>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>DOM:get함수들</title>
+</head>
+<!-- 
+■ DOM (Document Object Model)
+HTML 페이지가 로드 되면 
+브라우저는 이 HTML 페이지를 다루기위한
+DOM 을 생성합니다.
+
+■ DOM 은 'W3C 표준' 입니다.
+- 이는 모든 언어에 오픈된 규약입니다.
+	즉, JavaScript 외에 다른 언어로도
+	DOM 표준을 따르는 HTML문서를 다룰수 있다.
+	
+- 'W3C DOM 표준'은  크게 3파트로 구성
+	1. Core DOM
+	2. XML DOM
+	3. HTML DOM
+
+■ HTML DOM 표준의 목적은! 
+HTML element를 다루기 위한
+표준방법을 제시하는 겁니다.
+
+■ JavaScript 는 DOM 구조의 HTML페이지를
+다루기 위한 언어입니다.
+
+- JS는 DOM 안의 모든 element를 변경할수 있다.
+- JS는 DOM 안의 모든 attribute를 변경할수 있다.
+- JS는 DOM 안의 모든 CSS 를 변경할수 있다.
+- JS는 DOM 안의  element 나 attribute를 삭제할수 있다.
+- JS는 DOM 안에  element 나 attribute를 추가할수 있다
+- ''''''''''''JS는 DOM 안의 event를 다룰수 있다.
+- ''''''''''''JS는 DOM 안에 event를 추가할수 있다.    
+
+■ JavaScript 는 
+	window.document 객체를 통해 DOM 구조 다룹니다
+
+ -->
+<body>
+<!-- getElementById(아이디)  :  해당 '아이디' 값을 가진 element 한개 리턴 (여러개 있으면 첫번째만 리턴) -->
+<h2>getElementById(아이디)</h2>
+<p id="demo1">첫번째 demo 입니다</p>   
+<p id="demo1">두번째 demo 입니다</p>
+<p id="demo3">세번째 demo 입니다</p>
+
+<script>
+// '''''''''''''''''''id 값이 중복되는 경우 첫번째 element 만''''''''''''' 가져온다.
+	document.write('결과 : '+document.getElementById('demo1').innerHTML);
+	document.getElementById('demo3').innerHTML = "바꼇다리";
+</script>
+
+<hr>
+<!-- getElementsByTagName(태그) : '태그' 의 'element들' 을 '''배열'''로 리턴 -->
+<h2>getElementsByTagName(태그)</h2>
+<div>div 입니다</div>
+<div>div 입니다</div>
+<div>div 입니다</div>
+
+<script>
+// div element들을 찾아서 차례대로 "div1 입니다" "div2 입니다"..  로 내용 바꾸기
+	var elements = document.getElementsByTagName("div"); //elements 는 배열형식
+	for(i = 0; i<elements.length; i++){
+		var element = elements[i];
+		element.innerHTML = "div "+ (i+1) + " 번째 입니다";
+	}
+
+	// 아래 친구들은 아직 loading 되지 않아서 효과를 안먹는거임
+</script>
+
+<hr>
+<!-- getElementsByClassName(클래스) : '클래스' 의 'element들' 을 배열로 리턴 -->
+<h2>getElementsByClassName(클래스)</h2>
+<div class="c1 c2 c3">c1 c2 c3</div>
+<div class="c3">c3</div>
+<div class="c2 c3 c4">c2 c3 c4</div>
+<div class="c4 c5 c6">c4 c5 c6</div>
+
+<script>
+// c3 class 를 갖고 있는 element 의
+// 배경색을 노랑색으로 바꾸세요
+// getElementsByClassName("c3")
+// element.style.background
+	var classss = document.getElementsByClassName("c3");
+	for(i = 0; i<classss.length; i++){
+		var cls = classss[i];
+		cls.style.background="YELLOW";
+	}
+
+</script>
+
+<hr>
+<!-- getElementsByName(name) : 'name' 의 'form element들' 을 배열로 리턴 -->
+<h2>getElementsByName(name)</h2>
+<form>
+name1: <input type="text" value="name1" name="name1"/><br>
+name1: <input type="text" value="name1" name="name1"/><br>
+name2: <input type="text" value="name2" name="name2"/><br>
+</form>
+
+<script>
+// name=name1 인 element들을 찾아서
+// 배경색을 노란색으로 하고 입력사이즈를 50으로 변경해보기
+
+	var elements = document.getElementsByName('name1');
+	for(i = 0; i< elements.length; i++){
+		var element = elements[i];
+		element.style.background="cyan";
+		element.size = 50;
+		element.value = "하위바위";
+		
+	}
+
+</script>
+
+<hr>
+<!-- querySelectorAll(selector) : 'CSS selector' 의 'element들' 을 배열로 리턴 -->
+<h2>querySelectorAll(selector)</h2>
+
+<p class="intro">class intro</p>
+<p class="intro">class intro</p>
+<p class="retro">class retro</p>
+<script>
+// p.intro selector 에 해당하는 element 들을 찾아서 배경색 하늘색으로
+
+var elements = document.querySelectorAll('p.intro');
+for(i=0; i<elements.length; i++){
+	var element = elements[i];
+	element.style.background = "lightcyan";
+}
+
+</script>
+
+<!-- 
+HTML DOM 구조에서 object collection 사용 가능
+
+document.anchors
+document.body
+document.documentElement
+document.embeds
+document.forms		폼 객체를 가져옴
+document.head
+document.images
+document.links
+document.scripts
+document.title
+
+ -->
+
+
+<hr>
+<!-- document.forms : document 의 모든 <form> element 들 -->
+<h2>document.forms</h2>
+
+<form name="frm1">
+	<input value="폼 1_1" name="input1_1"/>
+	<input value="폼 1_2" name="input1_2"/>
+</form>
+<form name="frm2">
+	<input value="폼 2_1" name="input2_1"/>
+	<input value="롬 2_2" name="input2_2"/>
+	<input value="롬 2_3" name="input2_3"/>
+</form>
+<form name="frm3">
+	<input value="폼 3_1" name="input3_1"/>
+	<input value="폼 3_2" name="input3_2"/>
+	<input value="폼 3_3" name="input3_3"/>
+	<input value="폼 3_4" name="input3_4"/>
+</form>
+<p id="frm_result1"></p>
+<p id="frm_result2"></p>
+
+<script>
+// form 들을 다 뒤져서 form element 들의 value 들을 맞출수 있다
+ 
+ var frm1 = document.forms.frm1;  //form element 
+ var result = "";
+ for(i = 0 ; i<  frm1.length; i++){
+	 //frm.length 는 frm의 자식들의 개수를 의미
+	result += frm1.elements[i].value +" ";	//form 요소의 elements 배열
+	
+ }
+ 	document.getElementById('frm_result1').innerHTML = result;
+ 	document.getElementById('frm_result2').innerHTML = frm1.elements.length +"개";
+	
+</script>
+
+<hr>
+<!-- document.images : document 의 모든 <img> element 들 -->
+<h2>document.images</h2>
+
+<img src="https://www.w3schools.com/js/pic_htmltree.gif">
+<img src="https://www.w3schools.com/js/pic_navigate.gif">
+<p id="demo4"></p>
+
+<script>
+
+var elements = document.images;
+for(i=0; i< elements.length; i++){
+	var element = elements[i];
+	element.style.border = "4px solid blue";
+}
+document.getElementById('demo4').innerHTML = elements.length +"개의 이미지";
+</script>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

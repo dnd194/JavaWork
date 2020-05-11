@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BOM - location</title>
+</head>
+<!-- 
+window.location object
+
+브라우저의 현재 URL 정보를 다루거나,
+다른 페이지로 이동할때 사용함  ( 새로운 request 발생 ! )
+
+location.href  : 현 페이지의 href (URL) 값 리턴함.★★★
+location.hostname : 호스트 이름       ex) www.naver.com
+location.pathname :  현 페이지의 경로   (프로토콜 제외)
+location.protocol :  웹 프로토콜 리턴  (http: or https:)
+location.port : 포트번호  (80 http, 443 https 인 경우, 브라우저에서 안보여주거나 0 을 표시)
+location.assign : 새 웹문서 로딩
+location.search : 쿼리문자열 
+location.reload() : 새로고침
+
+
+ -->
+<body>
+<h3>location</h3>
+<script>
+	//TODO  // 현재시각: reload() 확인용
+</script>
+
+
+<p id="demo"></p>
+<button type="button" onclick="location.assign('https://www.naver.com')">assign()</button>
+<br><br>
+<button type="button" onclick="location.href='https://www.daum.net'"> location.href = </button>
+<br><br>
+<button type="button" onclick="location.reload()"> reload() </button>
+<br>
+
+
+<script>
+document.getElementById("demo").innerHTML = 
+"현재 페이지 URL : <br>" + location.href + "<br>" + 
+"호스트 이름 : <br>" + location.hostname + "<br>" + 
+"현 페이지 경로 : <br>" + location.pathname + "<br>" +
+"프로토콜 : <br>" + location.protocol + "<br>" +
+"포트번호 : <br> " + location.port + "<br>" +
+"쿼리문자열 : <br> " + location.search +"<br>"
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>RWD Grid View</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+	box-sizing: border-box;  /* RWD 필수! */
+}
+
+.header{
+	border: 1px solid red;
+	padding: 15px;
+}
+
+.clear{
+	clear: both;
+}
+
+/* class 값에 "col-" 를 가진 요소*/
+[class *= "col-"]{
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+}
+
+.col-1{width: 8.33%;}/* 전체를 12등분했을때 1칸의 퍼센트 8.33% */
+.col-2{width: 16.66%;}/* 전체를 12등분했을때 2칸의 퍼센트 16.66% */
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12{ width: 100%;}/* 전체를 12등분했을때 12칸의 퍼센트 100% */
+</style>
+
+</head>
+<!-- 
+반응형 웹 (Responsive Web)
+- 모든종류의 기기 (PC, 태블릿, 모바일..) 마다 최적화된 레이아웃 제공
+- HTML & CSS 만으로 구현됨.
+- JavsScript 아님.
+
+반응형 웹 제작시 단계
+1. viewport 설정
+2. grid 설정
+3. box-sizing 설정
+ -->
+<body>
+
+<!-- TODO : class 지정하기 -->
+<div class="header">
+<h1>일본여행</h1>
+</div>
+
+<div class="col-3">
+	<ul>
+		<li>항공편</li>
+		<li>도시</li>
+		<li>섬</li>
+		<li>음식</li>
+	</ul>
+</div>
+
+<div class="col-9">
+	<h1>도시</h1>
+	<p>도쿄	とうきょう	tokyo	東京	
+	요코하마	よこはま	yokohama	横浜	
+	나고야	なごや	nagoya	名古屋	
+	오사카	おおさか	osaka	大阪</p>
+</div>
+<div class="clear"></div>
+<div class="col-3">
+교토	きょうと	kyoto	京都
+</div>
+<div class="col-2">
+고베	こうべ	kobe	神戸
+</div>
+<div class="col-4">
+삿포로	さっぽろ	sapporo	札幌
+</div>
+<div class="col-3">
+센다이	せんだい	sendai	仙台
+</div>
+
+<div class="clear"></div>
+
+<div class="col-5">
+교토	きょうと	kyoto	京都
+</div>
+<div class="col-2">
+고베	こうべ	kobe	神戸
+</div>
+
+<div class="clear"></div>
+
+<div class="col-3">
+삿포로	さっぽろ	sapporo	札幌
+</div>
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

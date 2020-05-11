@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DOM bubble/capture</title>
+</head>
+<style>
+  ul,
+  li {
+    padding: 5px;
+    margin: 3px;
+  }
+
+  ul {
+    background-color: pink;
+  }
+
+  li {
+    background-color: cyan;
+  }
+</style>
+<!-- 
+element.addEventListener("이벤트", 함수, useCapture)
+
+https://javascript.info/bubbling-and-capturing
+
+
+window.event 객세 사용
+	event.stopPropagation();
+
+
+-->
+
+<body>
+  <!-- 겹쳐 있을때의 이벤트 분리  -->
+  <ul>
+    <li onclick="show(this);">Coffee</li>
+    <li onclick="show(this);">Tea
+      <ul>
+        <!-- 이벤트가 전달이 되는것을 propagation 이라고 한다.-->
+        <li onclick="event.stopPropagation(); show(this);">Black tea</li>
+        <!--   ''''stopPropagation''''' 을 해줘야함  ==> 하면 뒤에 tea는 안나오게 됨-->
+
+        <li onclick="show(this);">Green tea</li>
+        <!--  stoppropagation 을 안넣어줬기 때문에 계속 나오게 됨 -->
+      </ul>
+    </li>
+    <li>Milk</li>
+  </ul>
+
+  <script>
+    function show(e) {
+      //text만 보이기
+      alert(e.childNodes[0].nodeValue);
+    }
+  </script>
+
+  <br>
+  <ul id="ad">
+    <li>커피</li>
+    <li>차
+      <ul>
+        <li>홍차</li>
+        <li>녹차</li>
+      </ul>
+    </li>
+    <li>우유</li>
+  </ul>
+
+  <script>
+    //위 <li> 클릭하면 show(this) 가 작동되도록 이벤트 추가하기
+    // var elements = document.querySelectorAll('ul#ad>li>ul>li');  //그냥 그 태그만 되도록 작성해줘도됨
+    // for(i = 0; i<elements.length; i++){
+
+됨   //   elements[i].addEventListener("click",function(){show(this);});
+    // }
+
+    //아래방식처럼 bubbling, capturing 방식을 해도됨
+    var li = document.querySelectorAll("ul#ad li");
+
+    for (i = 0; i < li.length; i++) {
+      //li[i].addEventListener("click", function(){show(this);});  // bubbling 방식
+      li[i].addEventListener("click", function () {
+        show(this);
+      }, true); // capturing 방식
+    }
+  </script>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

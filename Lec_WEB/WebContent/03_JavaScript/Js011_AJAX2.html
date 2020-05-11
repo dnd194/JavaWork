@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX - XML</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 5px;
+    }
+  </style>
+</head>
+<script>
+  // 샘플 XML
+  var xml_1 = 'https://www.w3schools.com/js/cd_catalog.xml';
+  var xml_2 = 'https://www.w3schools.com/js/note.xml';
+</script>
+
+<body>
+  <h2>AJAX + XML 데이터 1</h2>
+
+  <button type="button" onclick="loadCdData()">내 CD 목록</button>
+  <button type="button" onclick="TODO">지우기</button>
+  <br><br>
+  <table id="demo"></table>
+
+  <script>
+    function loadCdData() {
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          myFunction(this.responseXML);     //XML --> DOM
+        }
+      };
+
+      xhttp.open('GET', xml_1, true);
+      xhttp.send();
+    }
+
+    function myFunction(xmlDOM) {
+
+      var i;
+
+      var table = "<tr><th>Artist</th><th>Title</th></tr>";
+      var x = xmlDOM.getElementsByTagName("CD");
+      for (i = 0; i < x.length; i++) {
+        table += "<tr>";
+        table += "<td>" + x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "</td>";
+        table += "<td>" + x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + "</td>";
+        table += "</tr>";
+      }
+      document.getElementById("demo").innerHTML = table;
+
+    }
+  </script>
+
+  <hr>
+  <h2>AJAX + XML 데이터 2</h2>
+
+  <p><b>Status:</b> <span id="A1"></span></p>
+  <p><b>Status text:</b> <span id="A2"></span></p>
+  <p><b>Response:</b> <span id="A3"></span></p>
+
+  <button onclick="loadNote(xml_2)">노트 데이터 가져오기</button>
+
+  <script>
+    function loadNote(url) {
+
+      // TODO
+
+    }
+  </script>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

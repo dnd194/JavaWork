@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BOM - screen</title>
+</head>
+<!-- 
+window.screen object  
+(window) 는 생략 가능
+
+'사용자 스크린 (모니터) 를 다루는 객체'
+
+다음과 같은 property 값이 있다.
+screen.width        스크린 크기
+screen.height
+screen.availWidth    사용 사용 가능한 영역 (OS 차지 영역 (ex:작업표시줄) 제외)    
+screen.availHeight
+screen.colorDepth     색상 bit 수
+screen.pixelDepth     (최근 브라우저에선 colorDepth 와 pixelDepth 는 같다)
+
+반면에 다음은 '브라우저'의 크기다
+window.innerWidth 와 window.innerHeight   브라우저 안 내부 영역 <body> 영역
+window.outerWidth 와 window.outerHeight   브라우저 창 전체 크기 
+
+	// 실제로는 브라우저 호환 등의 문제로 다음과 같이 체크해야 한다  (IE8 이하..)
+	var w = window.innerWidth
+	|| document.documentElement.clientWidth
+	|| document.body.clientWidth;
+	
+	var h = window.innerHeight
+	|| document.documentElement.clientHeight
+	|| document.body.clientHeight;
+
+ -->
+<script>
+function showScreen(){
+	// demo 라는 id를 가진 녀석의 innerhtml을 설정
+	document.getElementById("demo").innerHTML = 
+	"Screen width & height : " + screen.width + " x " + screen.height + "<br>" +
+	"availWidth & arailHeight : " + screen.availWidth + " x " + screen.availHeight + "<br>" +
+	"Screen Color Deptn : " + screen.colorDepth + "<br>" +
+	"Screen Pixel Depth: " + screen.pixelDepth + "<br>" +
+	"window.innerWidth x innerHeight: " + window.innerWidth + " x " + window.innerHeight + "<br>" + 
+	"window.outerWidth x outerHeight: " + window.outerWidth + " x " + window.outerHeight + "<br>"
+	;
+}
+
+
+
+</script>
+
+<!-- 
+	onload : 해당 element 의 로딩이 끝나면 호출
+	onresize : ''''''    screen (element)사이즈 변경될 때 마다    ''''''' 호출
+ -->
+<body onresize="showScreen()" onload="showScreen()">
+<p id="demo"></p>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

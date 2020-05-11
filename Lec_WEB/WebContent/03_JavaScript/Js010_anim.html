@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>DOM Animation</title>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+</head>
+<!-- 
+window 객체에 다음의 함수들이 있다.
+
+setInterval(함수, 시간간격) 
+	: '시간간격' 으로 함수 수행 , ms 단위
+	: 리턴값은 '애니메이션id' 객체 리턴
+	
+clearInterval('애니메이션id')
+	: ''애니메이션id' 의 애니메이션 종료
+ -->
+<body>
+<button onclick="clock();">시간</button>
+<br><br>
+<p id="timeboard"></p>
+<script>
+var clockAnimId = undefined;
+function clock(){
+
+    if(!clockAnimId){
+      //애니메이션 시작
+      clockAnimId = setInterval(tick, 1000);   //함수를 매개변수로 받음
+    }else{
+      //애니메이션 종료
+      clearInterval(clockAnimId);
+      clockAnimId = undefined;
+    }
+
+}
+
+function tick(){
+  var d = new Date();  //현재시간
+  document.getElementById("timeboard").innerHTML = 
+      d.getFullYear()+"/" + (d.getMonth()+1) +"/"+  // 월은 0 부터 시작
+      d.getDate() +" "+ 
+      d.getHours() + ":"+
+      d.getMinutes() + ":"+
+      d.getSeconds()
+      ;
+      
+}
+
+</script>
+
+<hr>
+
+<button onclick="myMove()">Click Me</button>
+<br><br>
+
+<div id ="container">
+<div id ="animate"></div>
+</div>
+
+<script>
+function myMove() {
+
+  var elem = document.getElementById('animate');
+  var pos = 0; 
+  
+  var id = setInterval(frame,5);
+  
+
+  function frame(){     //함수 안에서 함수정의
+    if(pos == 350){
+      clearInterval(id);
+    }else{
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+
+  }
+
+}
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

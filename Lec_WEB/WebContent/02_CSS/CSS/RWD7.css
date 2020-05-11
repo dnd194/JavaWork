@@ -1,0 +1,87 @@
+/* mobile fisrt */
+*{
+    box-sizing: border-box; 
+}
+
+.container{
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label{
+    display: inline-block;
+    padding: 12px 12px 12px 0;
+}
+
+input[type=submit]{
+    background-color: rgb(94, 204, 167);
+    color: azure;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;   /*손가락모양으로 커서가 바뀜*/
+    float: right;
+    width: 100%;
+    margin-top: 4px;
+}
+
+input[type=submit]:hover{
+    background-color: cadetblue;
+}
+
+.row:after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+[class*="col-"]{
+    width: 100%;
+}
+
+
+/* 600px 이상인 경우 */
+@media (min-width : 600px){
+    [class*="col-"]{
+        float: left;
+        margin-top: 6px;
+    }
+    input[type=submit]{
+        width: auto;
+
+    }   
+	.col-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+	.col-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

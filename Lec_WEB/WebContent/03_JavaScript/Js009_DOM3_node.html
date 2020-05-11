@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>DOM Navigation</title>
+</head>
+<!-- 
+DOM 에서 node 
+
+
+node type (종류) 와    nodeType 값
+	Element node		1       <h1 class="heading">W3Schools</h1>
+	Attribute node		2        class = "heading" (deprecated)
+	Text node			3        W3Schools
+	Comment node		8        
+	Document node		9        HTML 문서 자신, <html> 의 부모
+	DOCUMENT_TYPE_NODE	10       <!Doctype html>
+	
+	** 명심! Element node 가 text 를 갖고 있는 것이 아니다!!! 
+
+JS 로 DOM 의 node 간 navigate 할수 있다.
+- parentNode
+- childNodes[nodenumber]
+- firstChild
+- lastChild
+- nextSibling
+- previousSibling
+- attributes
+ -->
+<body>
+<h2>childNodes, nodeValue</h2>
+<!-- childNodes 와 nodeValue -->
+<h3 id="id01">My First Page</h3>
+<p id="id02"></p>
+
+<script>
+document.getElementById('id02').innerHTML =
+				document.getElementById('id01').firstChild.nodeValue;
+
+// nodeValue 는
+// 	- Element node 의 nodeValue 는 undefined
+//  - Text node 의 nodeValue 는 text값  == #text
+//  - Attribute node 의 noveValue 는 attribute value
+</script>
+<br><hr>
+<h2>document.body</h2>
+<p onclick="alert(document.body.innerHTML)">클릭하면 body 의 컨텐츠가!</p>
+
+
+<br><hr>
+<h2>document.documentElement</h2>
+<p onclick="alert(document.documentElement.innerHTML)">클릭하면 document 의 컨텐츠가!</p>
+
+<br><hr>
+<h2>nodeType</h2>
+<p id="id03"></p>
+<script>
+document.getElementById('id03').innerHTML = 
+		document.getElementById('id01').nodeType;  // 1: element node
+
+</script>
+
+
+
+
+<!-- document.body 노드 밑의 모든 child 노드의 nodeValue, nodeType 을 출력해보세요
+	
+	hint) document.body.childNodes 사용
+ -->
+<br><hr>
+<h2>childNodes, nodeName, nodeType, nodeValue</h2>
+<!-- body elment node 의 child 들의 nodeName, nodeType, nodeValue  -->
+<p id="id04"></p>
+<script>
+	var c = document.body.childNodes;
+
+	var txt = "";
+
+	for(i = 0; i<c.length; i++){
+		txt += c[i].nodeName + " | " + c[i].nodeType + " | " +c[i].nodeValue +"<br>";
+	}
+	document.getElementById('id04').innerHTML = txt;
+</script>
+
+<br><hr>
+<h2>attributes</h2>
+<!-- 특정element.attributes : attribute node 만 추출한다 -->
+<img id="img01"
+	src="https://www.w3schools.com/html/img_girl.jpg"
+	alt="girl"
+	width="150"
+	height="200"/>
+
+<p id="id05"></p>
+<script>
+
+var a = document.getElementById('img01').attributes;
+var txt = " ";
+for(i = 0; i < a.length; i++){
+	txt += a[i].nodeName + " | " + a[i].nodeType + " | " +a[i].nodeValue +"<br>";
+}
+document.getElementById('id05').innerHTML = txt;
+</script>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

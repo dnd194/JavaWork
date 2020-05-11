@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS Number</title>
+</head>
+<body>
+<script>
+var x = 3.14;
+var y = 3;
+var a = "10";
+var b = "20";
+document.write(a + b + "<br>");
+document.write(a * b + "<br>");
+document.write(a - b + "<br>");
+document.write(a / b + "<br>");
+
+document.write(y + "<br>");
+document.write(y.toString(10) + "<br>");
+document.write((15).toString(16) + "<br>"); // toString(진법)
+document.write((15).toString(2) + "<br>");
+
+document.write("<hr>");
+
+// new 를 사용해서 number 생성 가능
+y = new Number(123);  // 비추
+document.write(y + ":" + typeof(y) +"<br>");
+
+y = 123;
+document.write(y + ":" + typeof(y) +"<br>");
+
+y = (123).toString();
+document.write(y + ":" + typeof(y) +"<br>");
+
+y = new Number("123");  // 문자열에서 생성 가능
+document.write(y + ":" + typeof(y) +"<br>");
+
+// valueOf()
+x = 123;
+document.write(x.valueOf() + "<br>");
+
+y = new Number(123);   // object
+document.write(y.valueOf() + ":" + typeof(y.valueOf()) + "<br>");
+
+// 모~~든 JS 의 데이터 타입들은 valueOf() 와 toString() 가지고 있다
+
+</script>
+
+<hr>
+<h2>Number 타입으로 변환하기</h2>
+<script>
+// 3가지 방법
+//   1. Number()
+//   2. parseInt()
+//   3. parseFloat()
+
+result = Number("10") + "<br>" +
+		Number("    10    ") + "<br>" +
+		Number("10.33") + "<br>" + 
+		Number("10,33") + "<br>" +    // 결과 NaN : number 변환 불가
+		Number("10 33") + "<br>" +
+		Number(new Date()) + "<br>" +   // Date -> number 변환,  1970.1.1 00:00:00 부터 경과된 ms
+		Number(new Date("2019-11-20")) + "<br>" + 
+		Number(true) + "<br>" +   // boolean -> number
+		Number(false) + "<br>" +
+		"<hr>" + 
+		parseInt("10") + "<br>" +
+		parseInt("10.33") + "<br>" +   // ok  10
+		parseInt("10 33") + "<br>" +    // ok
+		parseInt("10살") + "<br>" +    // ok
+		parseInt("age 10") +            // X
+		"<hr>" +
+		parseFloat("10.0") + "<br>" +
+		parseFloat("10.33") + "<br>"
+;
+
+document.write(result);
+
+document.write(Number.POSITIVE_INFINITY + "<br>");
+document.write(Number.MIN_VALUE + "<br>");
+document.write(Number.MAX_VALUE + "<br>");
+
+
+
+</script>
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

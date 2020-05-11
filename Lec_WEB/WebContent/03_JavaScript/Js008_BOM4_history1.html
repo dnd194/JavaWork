@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>history 1</title>
+</head>
+<!-- 
+※ 본 예제는 history1 ~ history3 3개의 html 파일 필요, title 과 h1 주목.
+
+'브라우저가 기억하고 있는' 이전/이후 페이지로 이동 (★새로 request를  발생하는 것이 아니다★)
+
+history.back()   이전 페이지 이동
+history.forward()  이후 페이지 이동
+history.go(숫자)      이동 숫자,  -2 를 입력하면  2단계 이전 방문
+history.length      방문기록에 저장된 목록의 개수를 반환
+
+history object 로 이동시는 새로운 request 를 발생시키는 것이 아니라
+브라우저가 기억하는 사이트를 표시하는 것이기 때문에
+form 에 직전에 입력한 것까지도 그대로 복원된다.  (password, file 등은 브라우저 별로 예외)
+
+ -->
+<body>
+<h2>history 1</h2>
+<script>
+document.write(new Date() + "<br>"); // 시간 확인,  새로고침 여부 확인용
+
+// //history.length
+document.write("history.length : " + history.length  + "<hr>");
+</script>
+
+이름: <input type="text"/><br><br>
+
+<input type="button" value="history 2" onclick="location.href = 'Js008_BOM4_history2.html'"/>
+<input type="button" value="history 3" onclick="location.href = 'Js008_BOM4_history3.html'"/>
+<br>
+<hr>
+<input type="button" value="back()" onclick="history.back()">
+<input type="button" value="forward()" onclick="history.forward()">
+<input type="button" value="go(-1)" onclick="history.go(-1)">
+<input type="button" value="go(-2)" onclick="history.go(-2)">
+<input type="button" value="go(1)" onclick="history.go(1)">
+<input type="button" value="go(2)" onclick="history.go(2)">
+<br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

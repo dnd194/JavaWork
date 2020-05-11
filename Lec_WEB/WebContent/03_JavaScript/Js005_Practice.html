@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JSON 데이터 다루기</title>
+	<style>
+		table,
+		td,
+		th {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table {
+			width: 100%;
+		}
+	</style>
+</head>
+
+<script src="JS/Js006_Data.js"></script>
+
+<body>
+
+	<script>
+		document.write(typeof x + "<br>");
+		document.write("x.items.length =" + x.items.length + "<br>");
+		document.write(x.items.length + "개의 매물이 있습니다");
+		document.write(x.items[0].title + "<br>");
+		document.write(x.items[0].item.title + "<br>");
+		document.write(x.items[0].item.rent + "<br>");
+		document.write(x.items[0].item.deposit + "<br>");
+
+
+
+		document.write("<table>");
+		document.write("<tr>")
+		document.write("<td>"+"NO"+"</td>");
+		document.write("<th>"+"타이틀"+"</th>");
+		document.write("<th>"+"월세"+"</th>");
+		document.write("<th>"+"보증금"+"</th>");
+		document.write("</tr>")
+		for (i = 0; i < x.items.length; i++) {
+			document.write("<tr>");
+			
+				document.write("<td>" + (i+1) + "</td>");
+				document.write("<td>" + x.items[i].item.title + "</td>");
+				document.write("<td>"+x.items[i].item.rent + "</td>");
+				document.write("<td>"+x.items[i].item.deposit + "</td>");
+			
+			document.write("</tr>");
+
+		}
+		document.write("</table>");
+	</script>
+
+
+</body>
+
+</html>

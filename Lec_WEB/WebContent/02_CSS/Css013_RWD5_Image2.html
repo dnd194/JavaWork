@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RWD background image</title>
+<!-- 
+background-image 또한 크기에 따른 resizing 이 가능하다
+-->
+<style>
+div {
+  width: 100%;
+  height: 400px;
+  border: 1px solid red;
+  background-image: url('../img/img_flowers.jpg');
+  background-repeat: no-repeat;
+}
+
+div#bg1 {
+  background-size : contain
+	/*   
+	 background-size : contain
+	'''''''이미지의 종횡비(aspect ratio)는 유지된채 '''''''content 에 
+	맞추어진다.  content 에 빈 공간 발생 가능 (no-repeat 인 경우)
+	*/  
+}
+
+div#bg2 {
+  background-size: 100% 100%;
+  /*
+  background-size: 100% 100%;
+  	배경 이미지는 content 영역에 '''''빈 공간 없이 가득 채워지게 ''''''
+  	좌우 꽉 채워지게 늘어난다(혹은 줄어든다)
+  */
+}
+
+div#bg3 {
+  background-size: cover;
+  /*
+  background-size: cover;
+  	배경 이미지는 content 영역을 가득 채우긴 하나
+  	이미지의 종횡비가 유지된다.  ''''''이미지의 잘림(clip) 발생'''''''
+  */
+}
+</style>
+</head>
+<body>
+
+<p>브라우저 창 크기를 조정해보세요</p>
+<h3>background-size: contain</h3>
+<div id="bg1"></div>
+<hr>
+<h3>background-size: 100% 100%</h3>
+<div id="bg2"></div>
+<hr>
+<h3>background-size: cover</h3>
+<div id="bg3"></div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

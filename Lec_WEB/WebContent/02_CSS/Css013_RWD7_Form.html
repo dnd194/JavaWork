@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="CSS/RWD7.css" rel="stylesheet" type="text/css">
+</head>
+<!-- form 또한 reponsive 하게 작성 가능 -->
+<body>
+
+<h2>Responsive Form</h2>
+<p>브라우저를 늘렸다 줄였다 해보기</p>
+
+
+<!-- TODO : class 설정 -->
+
+<div class="container">
+  <form action="https://www.w3schools.com/action_page.php">
+    <div class="row">
+      <div class="col-3">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-9">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-3">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-9">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-9">
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-3">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="col-9">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>navigator</title>
+</head>
+<!-- 
+navigator 객체
+현재 방문자가 사용하는 브라우저 정보와 운영체제 정보 제공
+
+navigator.cookieEnabled   쿠키 사용여부 true/false
+navigator.appName    브라우저 이름.  (그런데 대체로 Netscape 리턴) 이정보는 믿지 말자.
+navigator.appCodeName    브라우저 코드이름  Mozilla (크롬, FF, IE, Safari, Opera 등..)
+navigator.product     브라우저 엔진 이름, 대부분 Gecko 일텐데 믿지 말자..
+navigator.userAgent    user-agent 헤더 (서버로 전송됨)
+navigator.platform     OS 정보
+navigator.language     언어정보
+navigator.online		online 상태 여부
+navigator.javaEnabled()   Java 사용 여부
+
+
+★ 위 정보들은 신뢰해선 안된다. 즉 위 정보로 브라우저 정보 파악하면 곤란
+
+
+
+ -->
+<body>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML =
+"cookiesEnabled : " + navigator.cookieEnabled + "<br>" +
+"appName : " + navigator.appName + "<br>" +
+"appCodeName : " + navigator.appCodeName + "<br>" +
+"product : " + navigator.product + "<br>" + 
+"version : " + navigator.appVersion + "<br>" +
+"userAgent : " + navigator.userAgent + "<br>" + 
+"platform : " + navigator.platform + "<br>" +
+"language : " + navigator.language + "<br>" +
+"online : " + navigator.online + "<br>" +
+"javaEnabled() : " + navigator.javaEnabled() + "<br>"
+
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

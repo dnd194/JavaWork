@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Images</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 
+https://www.w3schools.com/css/css_rwd_images.asp
+https://www.w3schools.com/howto/howto_css_image_responsive.asp
+ -->
+<style>
+
+/* image 가  확대축소 되게 하려면  */
+.responsive1 {
+    width: 100%;
+    height: auto;
+}
+
+/* image 가 축소는 될지언정, 화면이 커져도 이미지 '원래 크기' 이상 늘어나지 않게 하려면 */
+.responsive2 {
+     max-width: 100%;   /* 이미지 원래의 크기 100%만큼이 최대치 */
+    height: auto;
+}
+
+/* image 를 특정 maximum 사이즈 이내로 국한시킬 경우 */
+.responsive3 {
+    width: 100%;
+    max-width: 400px;    /* 최대 사이즈를 400px로 주면 400px 이상으로는 커지지 않음*/
+    height: auto;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Responsive Images</h2>
+
+
+<p>브라우저 윈도우를 확대 축소 시켜서 확인해보세요</p>
+
+<img src="../img/img_nature.jpg" alt="Nature" class="responsive1" width="600" height="400">
+
+<br>
+
+<img src="../img/img_nature.jpg" alt="Nature" class="responsive2" width="600" height="400">
+
+<br>
+
+<img src="../img/img_nature.jpg" alt="Nature" class="responsive3" width="600" height="400">
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

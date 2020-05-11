@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>media query</title>
+<style>
+body {
+	/* 기본 값 설정*/
+  background-color: lightgreen;
+  font-size : 20px;
+}
+
+div.pop {
+	background-color: yellow;
+	padding: 20px;
+}
+
+/* @media 에서
+	max-width: ~ : ~ 보다 작은 경우
+	min-width: ~ : ~ 보다 큰 경우 
+*/
+
+@media screen and (max-width: 600px){  
+    /*screen이 600px보다 작아지게 되면 적용*/
+    body{background-color: lightskyblue;}
+    p{color: whitesmoke;}
+}
+@media screen and (min-width: 600px){
+    /*screen이 600px보다 커지게 되면 적용*/
+    body{font-size: 30px;}
+    p{color:red}
+    div.pop{display: none;}
+}
+/* landscape vs portrait
+    종횡비에 따른 적용가능
+ */
+@media screen and (orientation: landscape){
+    h2::after{
+        content: ": landscape";
+    }
+    /* 가로 세로 비율에 따라 달라짐 */
+}
+@media screen and (orientation: portrait){
+    h2::after{
+        content: ": portrait";
+    }
+}
+</style>
+</head>
+<!-- 
+참조 : 
+	https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+
+@media Rule : 다양한 media query 규칙, 특징 들 
+	https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+ -->
+<body>
+<h2>media query</h2>
+<p>브라우저의 크기(폭)을 늘렸다 줄였다 해보세요. 600px 이하일때와 이상일때 배경색과 글꼴크기의 변화를 주목하시고 @media query 에서 min-width 와 max-width 의 값의 의미를 잘 이해합시다</p>
+<div class="pop">Example DIV.</div>
+
+</body>
+</html>
+
+
+

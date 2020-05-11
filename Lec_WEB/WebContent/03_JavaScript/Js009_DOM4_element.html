@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>DOM - Node</title>
+	<style>
+		div {
+			padding: 3px;
+		}
+
+		p {
+			background-color: cyan;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+
+		td {
+			background-color: orange;
+		}
+
+		span,
+		input {
+			display: inline-block;
+			width: 200px;
+		}
+	</style>
+</head>
+<!-- 
+
+	node 를 생성할수 있다.!
+	생성된 노드를 원하는 node 에 붙일수 있다.!
+	
+	document.createElement()
+	document.createTextNode()
+	
+	E.appendChild(A) : 
+		A를 E의 마지막 child 로 append 된다.
+	E.insertBefore(A,B) : 
+		E 의 child 중에  A를 B앞에 child 로 insert 한다.
+	E.removeChild(A) :
+		E 의 child 중에 A 를 제거한다.
+ -->
+
+<!-- 
+ 	attribute 를 세팅할수도 있다
+ 	E.setAttribute("attribute 이름", "attribute 값");
+ 	
+ 	attribute 를 제거
+ 	E.removeAttribute("attribute 이름");
+ 	
+ 	attribute 값 리턴
+ 	E.getAttribute("attribute 이름");  
+ 	
+ 	attribute 를 갖고 있는지 여부, true/false 리턴
+ 	E.hasAttribute("attribute 이름");   
+  -->
+
+<body>
+
+	<div id="div1" style="background-color: yellow">
+		div1입니다
+		<p id="p1">p1 입니다</p>
+		<p id="p2">p2 입니다</p>
+	</div>
+
+	<script>
+		var para;
+		var node;
+		var parent, child;
+		var element = document.getElementById("div1");
+
+		// 단계별로 확인해보자
+		para = document.createElement("p"); // <p> element 생성
+		node = document.createTextNode("appendChild() 로 추가"); //#text 노드 생성
+
+		// appendChild()
+		para.appendChild(node); // 연결완료  node 를 para 의 마지막 child로 연결
+		// para 는 p 태그 ,  node 는 text (내용물)  ==> 태그와 내용물 연결로 생각하면될듯
+		element.appendChild(para); //para 를 element 의 마지막 child 로 연결
+
+		// 셔 ㅌㅌ-  이라구욧!
+		//    ㅡ 
+		//    ㄹ
+		// insertBefore()
+		para = document.createElement("p"); // <p> element 생성
+		node = document.createTextNode("insertBefore() 로 추가"); //#text 노드 생성
+		para.appendChild(node)
+		child = document.getElementById('p1');
+		element.insertBefore(para, child);
+
+		// removeChild()
+		parent = document.getElementById('div1');
+		child = document.getElementById('p2');
+		parent.removeChild(child);
+	</script>
+
+
+	<div>
+		<table id="table1">
+			<tr>
+				<th>이름</th>
+				<th>아이디</th>
+			</tr>
+			<tr>
+				<td>
+					<!-- this 는 그 element다 -->
+					<span onclick="doChange(this);">
+						홍길동
+					</span>
+				</td>
+				<td>
+					<span onclick="doChange(this);">
+						Mr.Hong
+					</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<script>
+		var table1 = document.getElementById('table1');
+		// table1.style.border="4px dotted red"
+
+		// table1.setAttribute('style','border : 4px dotted black');
+		//setAttribute 를 이용하여 key , value 형식으로 셋팅하는방법 
+
+		// style 의 setProperty 를 이용하는 방법 key value 형식
+		table1.style.setProperty('border', '4px dotted black');
+
+	</script>
+
+	<script>
+		function doChange(e){
+			var nodeName = e.nodeName.toUpperCase();  //다 대문자로 만들기 
+			var parent = e.parentNode;
+
+			if(nodeName == "SPAN"){
+				// e 가 span 이였으면 <input> 으로 바꾸기
+				var txt = e.innerHTML.trim();
+				parent.removeChild(e);
+
+				var node = document.createElement("input");
+				node.value = txt;
+
+				node.setAttribute('onfocusout','doChange(this)');
+				node.setAttribute('onkeydown','doEnter(this)');
+				parent.appendChild(node);
+				node.focus();
+			}else if(nodeName =="INPUT"){
+				// e 가 input 이였으면 <span> 으로 바꾸기
+				var txt = e.value.trim();
+				parent.removeChild(e);  //input 삭제
+
+				var node = document.createElement('span');
+				var txtNode = document.createTextNode(txt);
+				node.appendChild(txtNode);
+				node.setAttribute('onclick','doChange(this)');
+				parent.appendChild(node);
+
+					
+			}
+		}
+
+		function doEnter(e){
+			if(event.keyCode == 13){   // 엔터에대한 키 상수 코드값은 13
+				doChange(e);
+			}
+		}
+	</script>
+
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

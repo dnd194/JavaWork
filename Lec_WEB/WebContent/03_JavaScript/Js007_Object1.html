@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JS Object</title>
+</head>
+<body>
+<h2>JavaScript object 추가</h2>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+	x=10;		//windows 객체의 property x  가 된다.
+
+	document.write('x = ', x ,"<br>");
+
+	delete x;
+	//document.write('x = ', x);
+	x= 200; 
+	function myFunction(){
+		var a = 20;
+		b = 30;
+		document.write('a= ', a, "<br>");
+		document.write('b= ', b, "<br>");
+
+		document.write('x = ', x ,"<br>");
+		
+	}
+	myFunction();
+	// document.write('a= ', a, "<br>");  ==> Uncaught ReferenceError: a is not defined
+	
+	//var 를 사용하지 않으면 함수안에서 선언해도 바깥에서도 사용할 수 있다.
+	//var 를 사용하지 않으면 지역변수처럼 사라지지않는다.  window 객체가 됨
+	document.write('b= ', b, "<br>");
+	document.write('window.b= ', window.b, "<br>");
+	document.write('window.x= ', window.x, "<br>");  //보통 window 는 생략함
+
+	var p1 = {
+		x:1000
+		, showInfo : function(){
+			var x = 4000;
+			document.write(x ,"<br>" ,this.x,"<br>" , window.x);
+		}
+
+	};
+	
+	p1.showInfo();  //3가지 x 값 출력
+
+// 방법1 : object 타입 변수 선언
+document.getElementById("demo1").innerHTML = ""; // TODO
+
+
+// 방법2 : new Object() 로 생성
+// TODO
+
+document.getElementById("demo2").innerHTML = ""; // TODO
+
+//위 방법들의 단점은, '한개의 object' 밖에 생성 불가.
+// 그러나 다음에 소개할 생성자를 사용하여 object type 자체를 정의할수 있다.
+
+// 방법3 : 생성자(Constructor)로도 가능하다
+// TODO
+
+document.getElementById("demo3").innerHTML = ""; // TODO
+
+
+/* this 의 정체!
+ - JS code 를 소유한(own) object다!
+ - '함수 안'에서의 this 는 함수를 소유한(own) object다
+ - 'object 안'에서의 this 는  object 그 자신이다.
+ - '생성자(constructor) 안'에서의 this 는 그 자체가 값을 갖고 있진 않다.
+   	단지, 생성된 새로운 object에서 치환된다.
+   	즉 new 로 생성된 새로운 object 가 바로 this 가 된다.
+ - this 는 변수가 아니다!! 키워드다!!  따라서 this 의 값을 수정할수 없다
+*/
+
+
+</script>
+</body>
+</html>

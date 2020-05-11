@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RWD : 다른크기 이미지</title>
+<!-- 
+PC에선 '대용량 이미지'로 보여주어도 관계 없으나, 모바일에는 부담된다.
+따라서, media query 등을 사용하여 모바일 환경에서는 '저용량 이미지'로 
+바꾸어 보여주게 할수도 있다.
+
+	https://www.w3schools.com/css/css_rwd_images.asp
+ -->
+
+<style>
+/* For width smaller than 400px: */
+
+body {
+  background-repeat: no-repeat;
+  background-image: url('../img/img_smallflower.jpg'); 
+}
+
+/* For width 400px and larger: */
+@media screen and (min-width: 400px){
+    body{
+      background-image: url('../img/img_flowers.jpg');
+    }
+}
+
+</style>
+</head>
+<body>
+
+<p style="margin-top:360px;">Resize the browser width and the background image will change at 400px.</p>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

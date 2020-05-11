@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript DataTypes</title>
+</head>
+<!-- 
+	JS의 자료형(data type) : https://www.w3schools.com/js/js_datatypes.asp
+	
+	number
+	string
+	boolean
+	array
+	object
+	function
+	undefined
+	
+	JS의 자료형(타입) 은 가변적(dynamic) 하다.
+	
+ -->
+ 
+<body>
+
+<script>
+
+document.write("<h1>JavaScript 의 데이터타입</h1>");
+
+document.write("<h2>var, undefined</h2>");
+var x;              // Now x is undefined
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+//아예 선언안된 변수 사용하면 에러다 (에러 라인 이후 진행안됨.)
+//document.write("y = " + y + "  [" + typeof(y)+ "]<br>");
+
+y = 10;  // var 없이도 선언 가능 
+document.write("y = " + y + "  [" + typeof(y)+ "]<br>");
+
+delete y;  // var 없이 선언한 변수 삭제 가능
+//document.write("y = " + y + "  [" + typeof(y)+ "]<br>");
+
+//───────────────────────────────────────────────────────────────────────
+document.write("<h2>number, string 타입</h2>");
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+x = 5;           	// Now x is a Number
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+x = "John";      // Now x is a String
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+x = 16 + 4 + "Volvo";
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+x = "Volvo" + 16 + 4;
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+x = undefined;
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+x = "10" + 10;		// 이건 문자열 연산을 하는데..
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+x = "10" * 10;		// 쓰발... 이건 왜 number 형변환 되는건데..
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+
+// NaN : Not a Number
+x = "a" * 10;
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+
+// Infinity 
+x = 10 / 0;
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+// null
+x = null;
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+//───────────────────────────────────────────────────────────────────────
+document.write("<h2>boolean 타입</h2>");
+x = ( 10 > 5 )
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+x = (10 == "10"); 
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+x = (10 === "10");
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+
+// 조건절에서의 이슈.
+x = (true)?true:false;   // 당연히 boolean 값은 그대로..
+document.write("if(true) = " + x + "  [" + typeof(x)+ "]<br>");
+x = (10)?true:false;
+document.write("if(10) = " + x + "  [" + typeof(x)+ "]<br>");
+x = (0)?true:false;   // false
+document.write("if(0) = " + x + "  [" + typeof(x)+ "]<br>");
+x = ('0')?true:false;   // true
+document.write("if('0') = " + x + "  [" + typeof(x)+ "]<br>");
+x = ('')?true:false;   // false
+document.write("if('') = " + x + "  [" + typeof(x)+ "]<br>");
+x = ('hello')?true:false;
+document.write("if('hello') = " + x + "  [" + typeof(x)+ "]<br>");
+
+// 없는 변수값은??
+//x = (bbb)?true:false;   // 에러 발생,  console 에서 확인해보자
+//document.write("if(bbb) = " + x + "  [" + typeof(x)+ "]<br>");
+
+x = ([])?true:false;  // 비어있는 array 는 true
+document.write("if([]) = " + x + "  [" + typeof(x)+ "]<br>");
+x = ({})?true:false;  // 비어있는 object 는 true
+document.write("if({}) = " + x + "  [" + typeof(x)+ "]<br>");
+
+
+x = (null)?true:false;
+document.write("if(null) = " + x + "  [" + typeof(x)+ "]<br>");
+x = (undefined)?true:false;
+document.write("if(undefined) = " + x + "  [" + typeof(x)+ "]<br>");
+x = (NaN)?true:false;
+document.write("if(NaN) = " + x + "  [" + typeof(x)+ "]<br>");
+x = (Infinity)?true:false;   // <-- 요건 true 다.
+document.write("if(Infinity) = " + x + "  [" + typeof(x)+ "]<br>");
+
+
+//───────────────────────────────────────────────────────────────────────
+document.write("<h2>array 타입</h2>");
+x = [10, 20, 30];
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+document.write("x[0] = " + x[0] + "  [" + typeof(x[0])+ "]<br>");
+document.write("x[3] = " + x[3] + "  [" + typeof(x[3])+ "]<br>");
+document.write("x.length = " + x.length + "<br>");
+
+// 자바 스크립트의 배열원소는 어떠한 타입도 가능
+x = ['Car', 10, 3.14, true];
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+for(i = 0; i < x.length; i++){
+	document.write("x[" + i + "] = " + x[i] + "  [" + typeof(x[i])+ "]<br>");
+}
+
+// for~in 문으로 추출 가능
+// 단 아래의 i 는 '배열원소' 값이 아니라 '배열 인덱스' 다
+for(i in x){
+	document.write("x[" + i + "] = " + x[i] + "  [" + typeof(x[i])+ "]<br>");
+}
+
+
+x = ['Kim', 171.3,
+		[93, 74, 100, 74]
+	];
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+document.write("x[2] = " + x[2] + "  [" + typeof(x[2])+ "]<br>");
+document.write("x[2].length = " + x[2].length + "  [" + typeof(x[2].length)+ "]<br>");
+document.write("x[2][1] = " + x[2][1] + "  [" + typeof(x[2][1])+ "]<br>");
+
+//───────────────────────────────────────────────────────────────────────
+document.write("<h2>function 타입</h2>");
+function a(arg){
+	return arg;
+}
+document.write("a = " + a + "  [" + typeof(a)+ "]<br>");
+
+x = a;  // 함수가 변수에 대입되다?  함수 이름이 곧 데이터다!?!?
+		
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+document.write("a(30) = " + a(30) + "  [" + typeof(a(30))+ "]<br>");
+document.write("x(55) = " + x(55) + "  [" + typeof(x(55))+ "]<br>");  // 헉! 호출가능!
+
+
+// JavaScript 는 아래와 같이 함수 정의도 가능하다!!!
+x = function(arg){
+	return arg * 2;
+}
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+document.write("x(100) = " + x(100) + "  [" + typeof(x(100))+ "]<br>");
+
+//───────────────────────────────────────────────────────────────────────
+document.write("<h2>object 타입</h2>");
+x = {firstName:"John", lastName:"Doe"};    // Object
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+document.write("x.firstName = " + x.firstName + "  [" + typeof(x.firstName)+ "]<br>");
+document.write("x['firstName'] = " + x['firstName'] + "  [" + typeof(x['firstName'])+ "]<br>");
+
+// for~in 문으로 추출 가능
+for(k in x){   // 프로퍼티 이름이 추출됨 (string)
+	document.write("x['" + k + "'] = " + x[k] + "  [" + typeof(x[k])+ "]<br>");
+}
+
+// 없는 프로퍼티는 
+document.write("x.address = " + x.address + "  [" + typeof(x.address)+ "]<br>");
+
+// 오브젝트의 타입도 얼마든지 각각 개별적
+// ● 프로퍼티를 하나하나 추가해가면서 확인해보자.
+x = {
+		name:"kim",
+		age: 34,
+		height: 172.3,
+		score: [94, 35, 79],
+		getScore: function(n){
+			return this.score[n];  // this 빼면 에러.. 여기서는
+		},
+		getTotal: function(){
+			var sum = 0;
+			for(i = 0; i < this.score.length; i++){
+				sum += this.score[i];
+			}
+			return sum;
+		},
+		getAvg : function(){
+			return this.getTotal() / this.score.length;
+		}
+	};
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+document.write("x.name = " + x.name + "  [" + typeof(x.name)+ "]<br>");
+// object 의 property 는 다음과 같이 사용 가능.
+document.write("x['name'] = " + x['name'] + "  [" + typeof(x['name'])+ "]<br>");
+document.write("x.age = " + x.age + "  [" + typeof(x.age)+ "]<br>");
+document.write("x.height = " + x.height + "  [" + typeof(x.height)+ "]<br>");
+document.write("x.score[2] = " + x.score[2] + "  [" + typeof(x.score[2])+ "]<br>");
+document.write("x.getScore = " + x.getScore + "  [" + typeof(x.getScore)+ "]<br>");
+document.write("x.getScore(2) = " + x.getScore(2) + "  [" + typeof(x.getScore(2))+ "]<br>");
+document.write("x.getTotal() = " + x.getTotal() + "  [" + typeof(x.getTotal())+ "]<br>");
+document.write("x.getAvg() = " + x.getAvg() + "  [" + typeof(x.getAvg())+ "]<br>");
+
+//───────────────────────────────────────────────────────────────────────
+document.write("<h2>array 타입 (2)</h2>");
+x = [
+	"Kim", 34, 172.3,
+	{ kor: 94, eng: 35, math: 79 },
+	[
+		{
+			address: "서울",
+			year: 1998
+		},
+		{
+			address: "제주",
+			year: 2012		
+		}
+	],
+	
+	function(n){return this[3][n];},
+	function(){
+		var sum = 0;
+		for(k in this[3]){
+			sum += this[3][k];
+		}
+		return sum;
+	}
+];
+document.write("x = " + x + "  [" + typeof(x)+ "]<br>");
+document.write("x.length = " + x.length + "  [" + typeof(x.length)+ "]<br>");
+document.write("x[3].kor = " + x[3].kor + "  [" + typeof(x[3].kor)+ "]<br>");
+document.write("x[4][1].year = " + x[4][1].year + "  [" + typeof(x[4][1].year)+ "]<br>");
+document.write("x[5]('eng') = " + x[5]('eng') + "  [" + typeof(x[5]('eng'))+ "]<br>");
+document.write("x[6]() = " + x[6]() + "  [" + typeof(x[6]()) + "]<br>");
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
