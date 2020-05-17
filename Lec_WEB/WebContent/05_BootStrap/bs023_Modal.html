@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<!--
+BS4  Modal
+
+.modal   :  modal 생성
+.modal-content	: border, background-color 등을 갖춘 model 스타일링. header, body, footer 추가할때 사용
+.modal-dialog-centered	: 화면 정중앙 배치 (가로/세로)
+.modal-dialog-scrollable : modal 안에 스크롤바 생성
+.modal-header	: modal header 스타일 정의
+.modal-body	 : modal body 스타일 정의
+.modal-footer : modal footer 스타일 정의, 기본 우측정렬. 변경하려면 justify-content-start 혹은 justify-content-center 를 같이 사용
+.modal-sm	: small modal 설정
+.modal-lg	: large modal 설정
+.fade	: 애니메이션 효과 fade in / out
+
+
+참조]
+https://www.w3schools.com/bootstrap4/bootstrap_modal.asp
+https://www.w3schools.com/bootstrap4/bootstrap_ref_js_modal.asp
+jQuery 예제 https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_ref_js_modal_js&stacked=h
+
+-->
+<body>
+
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary">
+    Open modal
+  </button>
+
+  <!-- The Modal -->
+  <div id="myModal">
+    <div>
+      <div>
+      
+        <!-- Modal Header -->
+        <div>
+          <h4>Modal Heading</h4>
+          <button type="button">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div>
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div>
+          <button type="button">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>

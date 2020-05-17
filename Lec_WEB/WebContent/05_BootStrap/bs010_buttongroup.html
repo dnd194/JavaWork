@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BS4-ButtonGroup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<!-- 
+여러개의 버튼이 연결된 형태
+ -->
+<body>
+<div class="container">
+  <h2>Button Group</h2>
+  <p>&lt;div&gt; 와 <b>.btn-group</b> 으로 버튼그룹 생성:</p>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+</div>
+<hr>
+
+<div class="container">
+  <h2>Button Groups Sizes</h2>
+  <p><b>.btn-group-*</b> 로 버튼그룹 사이즈 조정</p>
+  <h3>Large Buttons:</h3>
+  <div class="btn-group btn-group-lg">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+  <h3>Default Buttons:</h3>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+  <h3>Small Buttons:</h3>
+  <div class="btn-group btn-group-sm">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <h2>Vertical Button Group</h2>
+  <p><b>.btn-group-vertical</b> 를 사용하면 수직형태의 버튼그룹 생성</p>
+  <div class="btn-group-vertical">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <h2>중첩(Nesting) Button Groups</h2>
+  <p>중첩된 버튼그룹으로 드룹다운 메뉴(dropdown menus) 생성예</p>
+  <p>.dropdown-* 은 나중에 배웁니다</p>
+  <div class="btn-group">
+    <button type="button" class="btn btn-dark">Apple</button>
+    <button type="button" class="btn btn-success">Samsung</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+      Sony
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item">Tablet</a>
+        <a class="dropdown-item">Smartphone</a>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Split Buttons & Dropdown</h2>
+  <p>중첩 버튼그룹을 사용하지 않고.. caret 을 별도의 버튼으로</p>
+  <div>
+    <button type="button">Sony</button>
+    <button type="button">
+      <span></span>
+    </button>
+    <div>
+      <a>Tablet</a>
+      <a>Smartphone</a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Vertical Button Group with Dropdown</h2>
+  <div>
+    <button type="button">Apple</button>
+    <button type="button">Samsung</button>
+    <div>
+      <button type="button">
+        Sony
+      </button>
+      <div>
+        <a>Tablet</a>
+        <a>Smartphone</a>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Button Group</h2>
+  <p>버튼 그룹은 기본적으로 "inline" 이다. 따라서 일련의 버튼그룹은 횡으로 늘어선다</p>
+  <div>
+    <button type="button">Apple</button>
+    <button type="button">Samsung</button>
+    <button type="button">Sony</button>
+  </div>
+  <div>
+    <button type="button">BMW</button>
+    <button type="button">Mercedes</button>
+    <button type="button">Volvo</button>
+  </div>
+</div>
+
+</body>
+</html>

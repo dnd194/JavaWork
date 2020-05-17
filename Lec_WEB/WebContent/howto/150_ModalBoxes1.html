@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="CSS/150_ModalBoxes1.css" rel="stylesheet" type="text/css">
+<title>Modal Boxes</title>
+</head>
+<body>
+<!-- modal 로 작동하는 레이어드 팝업 (layered popup> -->
+<button id="myBtn">Modal 팝업</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <p>팝업창의 내용입니다. 어쩌구 저쩌구</p>
+  </div>
+
+</div>
+
+<script>
+
+var modal = document.getElementById('myModal');
+var btn = document.getElementById('myBtn');
+var span = document.getElementsByClassName('close')[0];
+
+//버튼을 클랙하면 팝업 보이게 하기
+// 버튼을 누르면 다음과 같은 함수가 동작하도록 한다~~
+btn.onclick=function(){
+  modal.style.display = 'block';
+}
+
+//팝업의 x 버튼 누르면 닫히게하기
+span.onclick = function(){
+  modal.style.display = 'none';
+}
+
+//팝업창 바깥을 클릭해도 팝업이 닫히게 하기  
+// ==> (modal) 이것을 modal 이라고 한다.    modal <==> modeless
+window.onclick = function (e) {
+  // onclick 의 타겟(target) 이 modal = document.getElementById('myModal')이면~~
+  if(e.target == modal){
+    modal.style.display = 'none';
+  }
+  
+}
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+

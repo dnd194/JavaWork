@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery HTML 다루기</title>
+<style>
+p#test1{
+	color:blue;
+	background-color:yellow;
+}
+</style>
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+/*
+1. Get
+text() - HTML 요소의 content 리턴
+html() - HTML 요소의 content 리턴 (HTML 태그 포함)
+val() - 폼 요소의 value 리턴
+attr() - Attribute 값 리턴
+css() - css 값 리턴
+
+2. Set
+text(string) - HTML 요소의 content 변경
+html(string) - HTML 요소의 content 변경 (HTML 태그 포함)
+val(value) - 폼 요소의 value 값 변경
+attr(name, value) - Attribute 값 변경
+css(property, value) - css 값 변경
+*/
+
+$(document).ready(function(){
+	// 1. Get
+    $("#btn11").click(function(){
+        alert("text(): " + $('#tex11').text());
+    });
+    $("#btn12").click(function(){
+        alert("html(): " +$('#test1').html());
+    });
+    $("#btn13").click(function(){
+        alert("val(): " +$('#test2').val());
+    });
+    $("#btn14").click(function(){
+        alert("attr():" + $('#test3').attr('href'));
+    });
+    $("#btn15").click(function(){
+        // alert("css():" + $('#test1').css('color'));
+        
+        // 한꺼번에 여러가지 css 값을 읽어 올수도 있다
+        var cssObj = $('#test1').css(["color","background"]);
+        alert("css() : "+ cssObj.color + " " + cssObj.background);
+    });
+
+    // 2. Set
+    // 매개변수를 주면 값을 변경할수 있다.
+    $("#btn21").click(function(){
+        $('#test1').text("test1 : hawi");       //  태그도 text 그대로 나온다 
+    });
+    $("#btn22").click(function(){
+        $('#test1').html("test1 : <b>hawi</b>");   // 태그가 먹힌다.
+    });
+    $("#btn23").click(function(){
+        $('#test2').val("하위하위");
+    });
+
+    $("#btn24").click(function(){
+        // $('#test3').attr('href', 'https://www.google.com');        
+        // 한꺼번에 여러 attribute 변경 가능
+        // href 와 title 변경하기
+        //읽어 올 때는 배열 , 변경할 때는 object 
+        $('#test3').attr({
+            href : 'https://www.google.com',
+            title : "구글로 바뀜"
+        });
+    });
+    $("#btn25").click(function(){
+    	
+    	// $('#test1').css('color', 'red');
+    	
+    	// 한꺼번에 여러 CSS 변경 가능
+    	// 글자색 --> white ,   배경색 -->  gray
+        
+        $('#test1').css({
+            color: 'white',
+            
+        });
+    });
+    
+    // $(selector)  <-- 여러개의 element 일수도 있다.
+    // 과연 이때 text(), html(), val() 값은 어케 동작하나?
+    // text(), html(), val() 은 callback 함수를 매개변수로 넘겨줄수 있다.
+    // callback 함수의 매개변수는 2개 (index, oldvalue)이고
+    // 결국 callback 함수의 리턴값이 새로운 값으로 된다.
+   
+    $("#btn31").click(function(){
+        var result = "";
+        // result += $(".c1").text();
+        // alert(result);
+        
+        //text(함수) <-- 이 함수는 select 된 각 element 에 대해 동작한다.
+        //  i -> index    ,    oldvalue : 값 (value)
+        // $('.c1').text(function (i, oldvalue) {     //==> c1 의 갯수 5번 i = 0,1,2,3,4
+        //     result += i + " : " + oldvalue +"\n";
+        // });
+        // alert(result);
+
+        //callback 함수에 return 값이 있으면 '변경'  발생
+        //return 해주는 값으로 다 바껴버림
+        $('.c1').text(function(i , oldvalue){
+            return oldvalue + "(" + i + ")" ;
+            // 기존의 oldvalue = > c1 월요일
+            // 새로운 값은 ( i ) 값 
+            // 한번 더 누르면 기존의 값으로 바뀐 (i) 뒤에 (i) 가 덮어 씌워짐
+        });
+        
+    });
+    $("#btn32").click(function(){
+		$('.c1').html(function(i ,oldvalue){
+            return oldvalue + "<b>(" + i + ")</b>";
+        });
+    });
+    $("#btn33").click(function(){
+		$('.i1').val(function(i,oldvalue){
+            return oldvalue+ "(" + i + ")" ;
+        });
+    });
+    $("#btn34").click(function(){
+		$('.c1').attr("title", function(i,oldvalue){
+            return oldvalue+ "(" + i + ")" ;
+        });
+    });
+    
+});
+</script>
+
+<body>
+
+<p id="test1" >test1: 이것은 <b>굵은</b> 텍스트다</p>
+<p>test2: <input type="text" id="test2" value="아이언맨"></p>
+<p>test3: <a href="https://www.naver.com" id="test3" title="대표포탈">네이버</a></p>
+<hr>
+<h2> GET: text(), html(), val(), attr(), css()</h2>
+<button id="btn11">btn11 text()</button>
+<button id="btn12">btn12 html()</button>
+<button id="btn13">btn13 val()</button>
+<button id="btn14">btn14 attr()</button>
+<button id="btn15">btn15 css()</button>
+<hr>
+<h2> SET: text(..), html(..), val(..), attr(..), css(..)</h2>
+<button id="btn21">btn21 text(..)</button>
+<button id="btn22">btn22 html(..)</button>
+<button id="btn23">btn23 val(..)</button>
+<button id="btn24">btn24 attr(..)</button>
+<button id="btn25">btn25 css(..)</button>
+<hr>
+
+<h2>Callback 함수</h2>
+<p class="c1" title="월">c1 월요일</p>
+<p class="c1" title="화">c1 화요일</p>
+<p class="c1" title="수">c1 수요일</p>
+<p class="c1" title="목">c1 목요일</p>
+<p class="c1" title="금">c1 금요일</p>
+<input class="i1" type="text" value="월요일"/>
+<input class="i1" type="text" value="화요일"/>
+<input class="i1" type="text" value="수요일"/>
+<br>
+<button id="btn31">btn31 text(func)</button>
+<button id="btn32">btn32 html(func)</button>
+<button id="btn33">btn33 val(func)</button>
+<button id="btn34">btn34 attr(func)</button>
+<hr>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

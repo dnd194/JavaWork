@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+/* 팦업창 설계 */
+.modal{
+    /* 윈도우 전체를 차지하게 함 */
+    width: 100%;
+    height: 100%;
+    /* height 값을 빼면 content 영역만큼 height 가 잡힘 */
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.4);
+    /* 여기까지  */
+    
+    /* 팝업창은 최상단에 보여야하므로 z-index 사용; */
+    z-index: 1;
+
+    /*필요한 경우 스크롤바 생기기*/
+    overflow: auto;
+    
+    /* 팝업창은 기본적으로 안보여야하므로 */
+    display: none;   /*영역을 잡아야하므로 일단 주석하고 설계*/
+}
+
+/* 팝업창 내용 구성 설계 */
+.modal-content{
+    width: 80%;
+    background-color: rgb(185, 226, 226); /**/
+
+    /* 위쪽 15% 띄고 좌우는 auto */
+    /* %일 경우에 하나만 써져있으면 위쪽에 먹힘 */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid rgb(124, 226, 209);
+}
+/* x 버튼 css */
+.close{
+    font-size: 28px;
+    font-weight: bold;
+    color: darkgreen;
+    float: right;
+}
+.close:hover, .close:focus{
+    color: black;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

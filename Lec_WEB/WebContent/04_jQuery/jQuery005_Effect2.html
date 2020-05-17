@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>animate()</title>
+<style>
+div.square {
+	background:#98bf21;
+	height:100px;
+	width:100px;
+	position:absolute;
+	text-align: center;
+}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script> 
+/*
+	거의 대부분의 CSS property 에 대해 애니메이션이 가능하다.
+	그러나!
+	property 이름은 camel notation 으로 되어야 한다..
+	즉 CSS 에서 padding-left 는 jQuery 애니메이션에서는 paddingLeft 이어야 한다
+	
+	또한, 기본적은 jQuery 라이브러리에선 color 애니메이션은 없다.
+	color 애니메이션을 하려면 추가적인 plugin을 포함해야 한다 http://plugins.jquery.com/
+	
+	animate() 함수: CSS property 에 대해서 animation 수행
+	
+		$(selector).animate({params},speed,callback);
+*/
+
+
+$(document).ready(function(){
+
+	$('#btn01').click(function (e) { 
+		e.preventDefault();
+		$('div#d01').animate({left:'250px'})
+	});
+	
+    // 여러가지 애니메이션 동시에
+	$('#btn02').click(function (e) { 
+		e.preventDefault();
+		$('div#d02').animate({
+			left:'250px',
+			opacity : '0.5',
+			height : '150px',
+			width : '150px'
+		})
+	});
+	    
+    // 상대적인 값 (relative value)를 지정한 애니메이션 가능
+	$('#btn03').click(function (e) { 
+		e.preventDefault();
+		$('div#d03').animate({
+			left : '250px',
+			height : '+=150px',
+			width : '+=150px'
+		})
+	});
+    
+    // pre-defined 값 설정 가능
+    // "show", "hide", "toggle"
+	$('#btn04').click(function (e) { 
+		e.preventDefault();
+		$('div#d04').animate({
+			height :'toggle',
+			width : 'toggle'
+		})
+	});
+	
+
+	// 애니메이션 Queue 설정
+	// 
+	$('#btn05').click(function (e) { 
+		e.preventDefault();
+		var div = $("div#d05");
+		//줄 만 세워놓음 
+		// 애니메이션은 non - blocking 방식
+		div.animate({height : '300px' , opacity : '0.4'}, 'slow');
+		div.animate({width : '300px' , opacity : '0.8'}, 'slow');
+		div.animate({height : '100px' , opacity : '0.4'}, 'slow');
+		div.animate({width : '100px' , opacity : '0.8'}, 'slow');
+		alert("hawi")  // blocking 방식
+	});
+	
+
+	// #btn06 을 click() 하면  #d06 이
+	// 1. 오른쪽으로 100px 이동하고,  width 는 200px 로 'slow' 하게 변하기
+	// 2. 글자크기가 fontSize   3em 로 'slow' 하게 커지기  
+	$('#btn06').click(function (e) { 
+		e.preventDefault();
+		$('div#d06').animate({
+			right : '100px',
+			width : '200px',
+			fontSize : '3em'
+		},'slow');
+
+		// 주의 !! animate() 는 color에 대한 효과는 먹지않음
+		// 그러나 에러는 뜨지 않는다.
+	});
+	
+    
+    // jQuery 의 모든 '액션'에 관한 메소드는 method chainging 이 된다.
+    // $(selector).action()
+	$('#btn07').click(function (e) { 
+		e.preventDefault();
+		$('div#d07').css("color","red")
+					.slideUp(2000)
+					.slideDown(2000)
+	});
+});
+     
+</script> 
+
+<body>
+
+<div style="height:150px">
+<button id="btn01">btn01</button>
+<div id="d01" class="square">d01</div>
+</div>
+
+<div style="height:150px">
+<button id="btn02">btn02</button>
+<div id="d02" class="square">d02</div>
+</div>
+
+<div style="height:150px">
+<button id="btn03">btn03</button>
+<div id="d03" class="square">d03</div>
+</div>
+
+<div style="height:150px">
+<button id="btn04">btn04</button>
+<div id="d04" class="square">d04</div>
+</div>
+
+
+<div style="height:150px">
+<button id="btn05">btn05</button>
+<div id="d05" class="square">d05</div>
+</div>
+
+
+<div style="height:150px">
+<button id="btn06">btn06</button>
+<div id="d06" class="square">d06</div>
+</div>
+
+
+<div style="height:150px">
+<button id="btn07">btn07</button>
+<div id="d07" class="square">d07</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

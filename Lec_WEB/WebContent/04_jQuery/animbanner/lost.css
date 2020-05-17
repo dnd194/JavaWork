@@ -1,0 +1,207 @@
+@charset "UTF-8";
+/* ad-1 아래있는 모든 요소 */
+#ad-1 *{
+    list-style: none;  
+    /* li 기본 스타일 제거  */
+    margin: 0px;
+}
+/* 컨테이너 구조 잡기 */
+#ad-1{
+    width: 100%;
+    height: 300px;
+    position: relative;   
+    /* 내부 animation 객체 
+    => position : absolute 를 위해서 
+    relative 로 부모를 만들어줌 */
+    overflow: hidden;
+    /* position , url , 반복여부 */
+    background: center ,url("image/background.png"), no-repeat;
+    /* background-image: url("image/background.png");
+    background-position: center;
+    background-repeat: repeat;    */
+}
+#ad-1 ul#water{
+
+}
+#ad-1 li#water-back{
+    background-image: url("image/water-back.png");
+    background-repeat: repeat-x;
+    z-index: 1;
+    width: 110%;
+    height: 84px;
+    position: absolute;
+    left: -20px;
+    bottom: 10px;
+}
+#ad-1 li#water-front{
+    background-image: url("image/water-front.png");
+    background-repeat: repeat-x;
+    z-index: 3;
+    width: 110%;
+    height: 158px;
+    position: absolute;
+    bottom: -70px;
+    left: -30px;
+}
+/* 구름 */
+#ad-1 #clouds{
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+}
+#ad-1 #cloud-group-1{
+    position: absolute;
+    left: 0px;
+    width: 720px;
+}
+#ad-1 #cloud-group-2{
+    position: absolute;
+    left: 720px;
+    width: 720px;
+}
+#ad-1 .cloud-1{
+    width: 172px;
+    height: 121px;
+    background-image: url("image/cloud-1.png");
+    position: absolute;
+    left: 40px;
+    top: 10px;
+}
+#ad-1 .cloud-2{
+    width: 121px;
+    height: 75px;
+    background: url("image/cloud-2.png");
+    position: absolute;
+    left: 300px;
+    top: -25px;
+}
+#ad-1 .cloud-3{
+    width: 132px;
+    height: 105px;
+    background: url("image/cloud-3.png");
+    position: absolute;
+    left: 530px;
+    top: -5px;
+}
+/* 보트 container */
+#ad-1 ul#boat{
+    width: 249px;
+    height: 215px;
+    position: absolute;
+    left: 20px;
+    bottom: 25px;
+    z-index: 2;
+    overflow: visible;
+}
+/* 보트만들기 */
+#ad-1 ul#boat li{
+    width: 249px;
+    height: 215px;
+    background: url("image/boat.png");
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    overflow: visible;
+
+}
+/* 물음표 만들기 */
+#ad-1 #question-mark{
+    width: 24px;
+    height: 50px;
+    background: url("image/question-mark.png");
+    position: absolute;
+    /* 보트 container의 위에서부터 30px */
+    top: -30px; 
+    right: 34px;
+}
+/* content 효과 */
+#ad-1 #content{
+    width: 325px;
+    margin: 40px;
+    text-align: center;
+    float: right;
+    position: relative;
+    /* z-index 는 position : static 에서는 절대로 쓰이지 않는다 */
+    z-index: 4;
+    overflow: visible;
+}
+#ad-1 #content h2{
+    color: rgb(7, 103, 182);
+    font-size: 48px;
+    line-height: 50px;
+    text-shadow: 0px 0px 4px #fff;
+    letter-spacing: -2px;
+    
+}
+#ad-1 #content h3{
+    color: rgb(32, 34, 36);
+    font-size: 25px;
+    line-height: 31px;
+    text-shadow: 0px 0px 4px #fff;
+    letter-spacing: -2px;
+}
+/* form css */
+#ad-1 #content form{
+    margin: 30px 0px 0px 6px;
+    position: relative;
+}
+#ad-1 #content #email{
+    width: 158px;
+    height: 48px;
+    background : rgb(250, 211, 166);
+    color:white;
+    padding: 0px 20px;
+    text-shadow: 1px 1px 0px #e0c9ad;
+    box-shadow: -1px -1px -1px #fff;
+    border: 1px solid rgb(162, 145, 125);
+    border-image: none ;
+    font-size: 16px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; 
+    float: left;
+}
+#ad-1 #content #submit{
+    height: 50px;
+    color: rgb(19,125,213);
+    background: white;
+    font-weight: bold;
+    padding: 0px 15px;
+    border-width: 1px 1px 1px medium;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-style: solid solid solid none;
+    border-color: rgb(162, 145, 125) rgb(162, 145, 125) rgb(162, 145, 125) currentColor;
+    cursor: pointer;
+    text-shadow: 1px 1px 0px #fff;
+    float: left;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

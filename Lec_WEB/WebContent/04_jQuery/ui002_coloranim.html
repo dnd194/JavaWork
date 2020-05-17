@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Color Animation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">  -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <!-- 아래 코드 빼면 color animation 안됨 -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <style>
+    .toggler {
+      width: 500px;
+      height: 200px;
+      position: relative;
+    }
+
+    #button {
+      padding: .5em 1em;
+      text-decoration: none;
+    }
+
+    #effect {
+      width: 240px;
+      height: 170px;
+      padding: 0.4em;
+      position: relative;
+      background: #fff;
+    }
+
+    #effect h3 {
+      margin: 0;
+      padding: 0.4em;
+      text-align: center;
+    }
+  </style>
+</head>
+<script>
+  $(document).ready(function () {
+    var state = true;
+    $('#button').on('click', function () {
+      if(state){
+        
+        $('#effect').animate({
+          width: 500,
+          color: "rgb(120,200,110)",
+          backgroundColor : "black"
+        },1000);
+      }else{
+        $('#effect').animate({
+          width: 240,
+          color: "rgb(12,23,211)",
+          backgroundColor : "black"
+        },1000);
+      }
+      //state 값 반전 
+      state = !state ; 
+    });
+  });
+</script>
+
+<body>
+  <div class="toggler">
+    <div id="effect" class="ui-widget-content ui-corner-all">
+      <h3 class="ui-widget-header ui-corner-all">Animate</h3>
+      <p>
+        Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus
+        sed, hendrerit vitae, mi.
+      </p>
+    </div>
+  </div>
+
+  <button id="button" class="ui-state-default ui-corner-all">Toggle Effect</button>
+
+</body>
+
+</html><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

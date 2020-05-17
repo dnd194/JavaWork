@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery AJAX</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+/*
+ 	jQuery를 사용하는 중요한 이유중 하나가
+ 		AJAX를 간편히 구현할수 있기 때문!
+ 		AJAX를 브라우저 호환성 고민하지 않고 구현할수 있기 때문!
+ 	
+ 	실제 JavaScript 만으로 AJAX를 구현할경우, 브라우저 특성별 코드들을 만드는등 복잡한 과정 많음.
+ 	jQuery 는 이를 간편화 하였다.
+ */
+
+ /*
+ 	load() 함수
+ 	$(selector).load(URL, data, callback);
+ 	
+ 	서버로부터 데이터를 읽어와서 select된 element 에 넣음
+ 	
+ 	URL:  request 할 url
+ 	data :  쿼리스트링에 해당하는 데이터  (key-value 쌍으로 이루어짐)
+ 	callback : load() 완료후 수행할 함수
+ */ 
+ 
+$(document).ready(function(){
+				// ※ 우선 아래 url 의 내용을 확인해보자
+		var url = "https://www.w3schools.com/jquery/demo_test.txt";  
+	
+		// 예제를 위해서 서버에서 돌려야 한다  ( request 이기 때문)
+	    $("#btn01").click(function(){
+	    	$('#div1').load(url);
+	    	
+	    });
+		
+		// jQuery selector 를 붙이는 것도 가능!
+	    $("#btn02").click(function(){
+	    // "https://www.w3schools.com/jquery/demo_test.txt #p1"
+	    	$('#div1').load(url+'#p1')
+	    });
+		
+		// callback 함수는 3개의 parameter 받는다
+		//    responseTxt : AJAX request 성공하면 받은 내용
+		//    statusTxt : AJAX request status 내용
+		//    xhr : XMLHttpRequest object
+	    $("#btn03").click(function(){
+	        $("#div1").load(url, 
+	        		function(responseTxt, statusTxt, xhr){
+			            if(statusTxt == "success")
+			                alert("성공\n" + xhr.status + "\n" + xhr.statusText);
+			            if(statusTxt == "error")
+			                alert("에러\n" + xhr.status + "\n" + xhr.statusText);
+			        });	    	
+	    });
+});
+ 
+</script>
+<body>
+<div id="div1">
+<h2>jQuery AJAX</h2>
+</div>
+
+<button id="btn01">btn01 load()</button>
+<button id="btn02">btn02 load(selector)</button>
+<button id="btn03">btn03 load(func)</button>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

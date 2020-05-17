@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BS4 Navigation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+  <h2>Navigation</h2>
+  <p>수평 menu 기본</p>
+  <p>&lt;ul&gt; 에는 <b>.nav</b>, &lt;li&gt; 에는 <b>.nav-item</b>, &lt;a&gt; 에는 <b>.nav-link</b></p>
+  <ul>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Nav. 정렬</h2>
+  <p>죄측정렬 (default):</p>
+  <ul>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+  
+  <p>중앙정렬 <b>.justify-content-center</b></p>
+  <ul>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+    
+  <p>우측정렬 <b>.justify-content-end</b></p>
+  <ul>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>수직 Nav</h2>
+  <p><b>.flex-column</b> 사용</p>
+  <ul>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Navigation Tabs</h2>
+  <p><b>.nav</b> 과 <b>.nav-tabs</b> 사용. <b>.active</b> 현재 선택된 메뉴 활성화.</p>
+  <!-- toggle 은 마지막 예제 참조 -->
+  <ul>
+    <li>
+      <a>Active</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Navigation Pills</h2>
+  <p><b>.nav</b> 와  <b>.nav-pills</b> 사용</p>
+  <ul>
+    <li>
+      <a>Active</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>배분정렬(Justified) Tabs/Pills</h2>
+  <p>tabs/pills 을 배분정렬 (동일한 width) 시키기 <b>.nav-justified</b></p>
+  <ul>
+    <li>
+      <a>Active</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul><br>
+
+  <p>tabs 배분정렬</p>
+  <ul>
+    <li>
+      <a>Active</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Pills + Dropdown</h2>
+  <ul>
+    <li>
+      <a>Active</a>
+    </li>
+    <li>
+      <a>Dropdown</a>
+      <div>
+        <a>Link 1</a>
+        <a>Link 2</a>
+        <a>Link 3</a></div>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Tabs + Dropdown</h2>
+  <ul>
+    <li>
+      <a>Active</a>
+    </li>
+    <li>
+      <a>Dropdown</a>
+      <div>
+        <a>Link 1</a>
+        <a>Link 2</a>
+        <a>Link 3</a></div>
+    </li>
+    <li>
+      <a>Link</a>
+    </li>
+    <li>
+      <a>Disabled</a>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div>
+	<!--  
+		각 link 에 data-toggle="tab"
+	
+		각 tab 마다 .tab-pane 과 고유 id 부여
+		그리고 위 tab 을 <div> 로 감싼뒤 .tab-content 지정
+		
+		   .tab-pane 에 .fade 를 지정하면 애니메이션 효과
+	 -->
+
+
+  <h2>토글가능한(Toggleable) Tabs</h2>
+  <br>
+  <!-- Nav tabs -->
+  <ul>
+    <li>
+      <a>Home</a>
+    </li>
+    <li>
+      <a>Menu 1</a>
+    </li>
+    <li>
+      <a>Menu 2</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div>
+    <div id="home"><br>
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1"><br>
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2"><br>
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>토글가능한(Toggleable) Pills</h2>
+  <p>data-toggle="pill" 지정</p>
+  <br>
+  <!-- Nav pills -->
+  <ul>
+    <li>
+      <a>Home</a>
+    </li>
+    <li>
+      <a>Menu 1</a>
+    </li>
+    <li>
+      <a>Menu 2</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div>
+    <div id="home"><br>
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1"><br>
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2"><br>
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

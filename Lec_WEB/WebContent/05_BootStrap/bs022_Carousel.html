@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<!--
+BS4 Carousel : 계속 순환하는 슬라이드쇼
+
+등장요소]
+  slide : 
+  item : 슬라이드의 매 페이지가 보여주는 요소
+  inticator : 현재 보여지고 있는 슬라이드를 표현한다 (보통 작은 점으로 표시)
+  control : 이전/다음 슬라이드
+
+사용 클래스]
+.carousel	 :  carousel 생성
+.carousel-indicators	:  carousel 에 indicator 추가. 총 몇장인지, 현재 몇번째 슬라이드인지 보여줌.
+.carousel-inner	  : carousel 에 장착하는 슬라이드
+.carousel-item	 : 슬라이드의 각 화면 (item) 요소
+.carousel-control-prev	: 이전 화면
+.carousel-control-next	: 다음 화면
+.carousel-control-prev-icon	: 이전 화면 아이콘
+.carousel-control-next-icon	: 다음 화면 아이콘
+.carousel-caption : 캡션
+.slide	 : 슬라이드의 요소 전환 효과, 효과를 원치 않으면 빼도 된다.
+
+
+data-ride="caoursel"  : carousel 활성화
+data-slide 와 data-slide-to : 어떤 슬라이드 아이템으로 갈지 결정
+  data-slide -> prev, next
+  data-slide-to -> 몇번째 아이템?
+
+
+  참조]
+  https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp
+  레퍼런스 : https://www.w3schools.com/bootstrap4/bootstrap_ref_js_carousel.asp
+
+  jQuery 사용버전
+    https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_ref_js_carousel_js
+-->
+
+<body>
+
+<div id="demo">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <div>
+    <div>
+      <img src="https://www.w3schools.com/bootstrap4/la.jpg" alt="Los Angeles" width="1100" height="500">
+    </div>
+    <div>
+      <img src="https://www.w3schools.com/bootstrap4/chicago.jpg" alt="Chicago" width="1100" height="500">
+    </div>
+    <div>
+      <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="New York" width="1100" height="500">
+    </div>
+  </div>
+  <a href="#demo">
+    <span></span>
+  </a>
+  <a href="#demo">
+    <span></span>
+  </a>
+</div>
+
+</body>
+</html>

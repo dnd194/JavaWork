@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation banner</title>
+    <link href="lost.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- 배너 만들기 -->
+    <!-- 전체 적인 contatiner -->
+    <div class="ad" id="ad-1">
+        <!-- 바다 만들기 -->
+        <ul id="water">
+            <li id="water-back"></li>
+            <li id="water-front"></li>
+        </ul>
+        <!-- 구름 만들기 -->
+        <div id="clouds">
+            <ul id="cloud-group-1">
+                <li class="cloud-1"></li>
+                <li class="cloud-2"></li>
+                <li class="cloud-3"></li>
+            </ul>
+            <ul id="cloud-group-2">
+                <li class="cloud-1"></li>
+                <li class="cloud-2"></li>
+                <li class="cloud-3"></li>
+            </ul>
+        </div>
+
+        <!-- 보트 만들기 -->
+        <ul id="boat">
+            <li>
+                <div id="question-mark"></div>
+            </li>
+        </ul>
+        <div id="content">
+            <h2 id="title1">내 동료가 되라!</h2>
+            <h3 id="title2">키미노..</h3>
+            <form id="form">
+                <input type="text" id="email" value="" placeholder="emailAddress">
+                <button id="submit">Guide me</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="lost.js" type="text/javascript"></script>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>element & content</title>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  /*
+   jQuery 를 사용하면 HTML element 나 content 를 쉽게 다룰수 있습니다
+
+  append() - content ''''맨끝에 ''''삽입
+  prepend() - content ''''맨앞에 ''''삽입 
+  after() - element 다음에 삽입
+  before() - element 이전에 삽입
+
+ remove() :  element 삭제
+ empty() : element 의 child element 들 삭제
+
+*/
+  $(document).ready(function () {
+    $("#btn11").click(function () {
+      $('p').append("<b>하위하위</b>");
+    });
+
+    $("#btn12").click(function () {
+      $('ol').append("<li>추가됬다리</li>");
+    });
+
+    // append, prepend 등에 여러개 매개변수 가능
+    $("#btn13").click(function () {
+
+      var txt1 = "<b> I </b>"; // 1. HTML 텍스트 로 작성
+
+      var txt2 = "<b> am </b>"; // 2. JS DOM 으로 작성
+      txt2 = document.createElement("b");
+      txt2.innerHTML = "am";
+
+      var txt3 = "<b> IRONMAN </b>"; // 3. jQuery 로 작성
+      txt3 = $('<i></i>').text("IRONMAN")  // 이렇게 하면 i  element 가 만들어진다
+      $('p').append(txt1, txt2, txt3);
+    });
+
+
+    $("#btn21").click(function () {
+      $('p').prepend("<b>하위하위</b>");
+    });
+
+    // TODO
+    // #btn22 를 클릭하면 <ol> 의 아이템<li>를 '''''앞에''''''추가
+    $("#btn22").click(function () {
+      $('ol').prepend("<li>추가됬다리</li>");
+    });
+
+    //--------------------------------------------
+    // after() & before()
+    $("#btn31").click(function () {
+      $('img').before("<b>before</b>");
+      //img 앞쪽에 b 태그가 생김
+    });
+    $("#btn32").click(function () {
+      $('img').after("<b>after</b>");
+      //img 뒤쪽에 b 태그가 생김
+    });
+    // #btn33 버튼 클릭하면
+    // I Love jQuery 가 <img> 뒤에 생성시키기
+    // after() 
+
+    $("#btn33").click(function () {
+      
+      var txt1 = "<b> I </b>"; // 1. HTML 텍스트 로 작성
+
+      var txt2 = "<b> am </b>"; // 2. JS DOM 으로 작성
+      txt2 = document.createElement("b");
+      txt2.innerHTML = "am";
+
+      var txt3 = "<b> IRONMAN </b>"; // 3. jQuery 로 작성
+      txt3 = $('<i></i>').text("IRONMAN")  // 이렇게 하면 i  element 가 만들어진다
+      $('img').after(txt1, txt2, txt3);
+    });
+
+    //--------------------------------------------------
+    // remove() :  element 삭제
+    // empty() : element 의 child element 들 삭제
+    $("#btn41").click(function () {
+      $('p').remove();
+    });
+    $("#btn42").click(function () {
+      $('ol').empty();
+    });
+    $("#btn43").click(function () {
+      // remove() 의 매개변수로 jQuery selector 를 넣을수 있다
+      $('p').remove('#test');
+    });
+  });
+</script>
+
+<body>
+  <h2>append(), prepend()</h2>
+
+  <p>This is a paragraph.</p>
+  <p id="test">This is another paragraph.</p>
+
+  <ol>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </ol>
+
+  <button id="btn11">btn11 append(text)</button>
+  <button id="btn12">btn12 append()</button>
+  <br><br>
+  <button id="btn21">btn21 prepend(text)</button>
+  <button id="btn22">btn22 prepend()</button>
+  <br><br>
+  <button id="btn13">btn13 append(,,)</button>
+  <hr>
+
+  <h2>before(), after()</h2>
+  <img src="https://www.w3schools.com/images/w3jquery.gif" alt="jQuery"><br><br>
+
+  <button id="btn31">btn31 before</button>
+  <button id="btn32">btn32 after</button>
+  <button id="btn33">btn33 after(,,)</button>
+  <hr>
+
+  <h2>remove(), empty()</h2>
+  <p>This is a paragraph.</p>
+  <p id="test">This is another paragraph.</p>
+
+  <ol>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </ol>
+  <button id="btn41">btn41 remove()</button>
+  <button id="btn42">btn42 empty()</button>
+  <button id="btn43">btn43 remove(filter)</button>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

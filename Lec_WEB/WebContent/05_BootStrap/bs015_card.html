@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BS4 Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<!-- 
+	BS4 의 Card란?
+	테두리에 담긴 컨텐츠 박스.
+	header, footer contnet, color 등의 요소 포함 가능
+ -->
+<body>
+<div>
+  <h2>Card 기본</h2>
+  <p><b>.card</b> 와 그 안에 컨텐트는 <b>.card-body</b></p>
+  <div>
+    <div>Basic card</div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Card Header 와 Footer</h2>
+  <p><b>.card-header</b> 와 <b>.card-footer</b></p>
+  <div>
+    <div>Header</div>
+    <div>Content1</div>
+    <div>Footer</div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Cards 와 Contextual 색상</h2>
+  <p><b>.bg-*</b> 사용</p>
+  <div>
+    <div>Basic card</div>
+  </div>
+  <br>
+  <div>
+    <div>Primary card</div>
+  </div>
+  <br>
+  <div>
+    <div>Success card</div>
+  </div>
+  <br>
+  <div>
+    <div>Info card</div>
+  </div>
+  <br>
+  <div>
+    <div>Warning card</div>
+  </div>
+  <br>
+  <div>
+    <div>Danger card</div>
+  </div>
+  <br>
+  <div>
+    <div>Secondary card</div>
+  </div>
+  <br>
+  <div>
+    <div>Dark card</div>
+  </div>
+  <br>
+  <div>
+    <div>Light card</div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Card titles, text, and links</h2>
+  <p><b>.card-title</b> 를 h 요소에 지정.</p> 
+  <p><b>.card-text</b> 는  마지막 (혹은 유일한 )p 의 bottom margin 제거</p>
+  <p><b>.card-link</b> 는 a 링크를 파란색으로, hover효과 추가</p>
+  <div>
+    <div>
+      <h4>Card title</h4>
+      <p>Some example text. Some example text.</p>
+      <a href="#">Card link</a>
+      <a href="#">Another link</a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Card Image</h2>
+  <p><b>.card-img-top</b> 이미지 상단 배치</p>
+  <div>
+    <img>
+    <div>
+      <h4>John Doe</h4>
+      <p>Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="#">See Profile</a>
+    </div>
+  </div>
+  <br>
+  
+  <p><b>.card-img-bottom</b> 이미지 하단 배치</p>
+  <div>
+    <div>
+      <h4>Jane Doe</h4>
+      <p>Some example text some example text. Jane Doe is an architect and engineer</p>
+      <a href="#">See Profile</a>
+    </div>
+    <img>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Card Image 오버레이 Overlay</h2>
+  <p><b>.card-img-overlay</b></p>
+  <div>
+    <img>
+    <div>
+      <h4>John Doe</h4>
+      <p>Some example text some example text. Some example text some example text. Some example text some example text. Some example text some example text.</p>
+      <a href="#">See Profile</a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>여러 Columnd을 가진 Cards</h2>
+  <p><b>.card-columns</b> 으로 컬럼 나눔</p>
+  <p><strong>Note:</strong> 576px 이하 에선 세로로 늘어섬</p>
+  <div>
+    <div>
+      <div>
+        <p>Some text inside the first card</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the second card</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the third card</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the fourth card</p>
+      </div>
+    </div>  
+    <div>
+      <div>
+        <p>Some text inside the fifth card</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the sixth card</p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Card Deck</h2>
+  <p><b>.card-deck</b> - <strong>동일 height 와 width</strong> card 생성, card 개수에 따라 자동으로 레이아웃 맞춤</p>
+  <p>첫번째 card 안의 컨텐츠만 일부러 많이 두어 확인케 했습니다</p>
+  <p><strong>Note:</strong> 576px 이하 에선 세로로 늘어섬</p>
+  <div>
+    <div>
+      <div>
+        <p>Some text inside the first card</p>
+        <p>Some more text to increase the height</p>
+        <p>Some more text to increase the height</p>
+        <p>Some more text to increase the height</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the second card</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the third card</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the fourth card</p>
+      </div>
+    </div>  
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Card Group</h2>
+  <p><b>.card-group</b> 는 .card-deck 과 유사</p>
+  <p>차이점은 card 사이의 left, right margins 이 없다</p>
+  <p>첫번째 card 안의 컨텐츠만 일부러 많이 두어 확인케 했습니다</p>
+  <p><strong>Note:</strong> 576px 이하 에선 세로로 늘어섬</p>
+  <div>
+    <div>
+      <div>
+        <p>Some text inside the first card</p>
+        <p>Some more text to increase the height</p>
+        <p>Some more text to increase the height</p>
+        <p>Some more text to increase the height</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the second card</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the third card</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p>Some text inside the fourth card</p>
+      </div>
+    </div>  
+  </div>
+</div>
+
+</body>
+</html>

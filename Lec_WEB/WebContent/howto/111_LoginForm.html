@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="CSS/111_LoginForm.css" rel="stylesheet" type="text/css">
+<title>Login Form</title>
+
+</head>
+<body>
+<h2>Modal Login Form</h2>
+
+<!-- Button to open the modal login form -->
+<button id="loginbtn" onclick="TODO" style="width: auto;">Login</button>
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+
+	<!-- Form : 이 위치에 form 을 넣습니다 -->	
+	<form class="modal-content animate" action="https://www.w3schools.com/action_page.php" method="post">
+	  <div class="imgcontainer">
+  		<!-- 닫기버튼  -->
+  		<span class="close">&times;</span>
+  		<!-- 이미지  -->
+  		<img src="../img/avatar2.png" class="avatar" alt="Avatar">
+	  </div>
+	
+	  <div class="container" style="background: lightblue;">
+		<!-- 로그인 form -->
+		<label for="uname"> UserName : 
+			<input type="text" placeholder="Enter UserName" name="uname" required>
+		</label>
+		
+		<label for="psw">Password : 
+			<input type="password" name="psw" placeholder="Enter Password" required>
+		</label>
+		<button type="submit">Login</button>
+		<label for="">
+			<input type="checkbox" name="remember" checked>Remember me
+		</label>
+	</div>
+	
+	  <div class="container" style="background-color:#f1f1f1">
+	    <!-- 취소 버튼 -->
+	    <button type="button" class="cancelbtn">Cancel</button>
+	    <!-- 비밀번호 잊으셨나요? -->
+	    <span class="psw">Forgot <a href="#">password?</a></span>
+	  </div>
+	</form>
+
+</div>
+
+
+<script>
+
+var loginbtn = document.getElementById('loginbtn');
+var modal = document.getElementById('id01');
+var close = document.getElementsByClassName('close')[0];
+
+loginbtn.onclick = function(){
+	modal.style.display="block";
+}
+close.onclick = function () {
+	modal.style.display='none';
+}
+</script>
+
+</body>
+</html>

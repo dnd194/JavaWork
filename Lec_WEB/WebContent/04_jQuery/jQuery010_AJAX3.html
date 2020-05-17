@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery + AJAX</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<body>
+<h3>$.ajax() : 서울시 지하철 승하차 인원 정보</h3>
+<form>
+날짜 (yyyyMMdd): <input type="text" name="date" id="date" value="20181001"/><br><br>
+
+<button id="btn_load" type="button"">승하차정보 가져오기</button>
+<button id="btn_remove" type="button"">지우기</button>
+</form>
+<br><br>
+<h2>AJAX + XML</h2>
+<table id="demoXML"></table>
+<hr>
+<h2>AJAX + JSON</h2>
+<table id="demoJSON"></table>
+<script>
+/*
+$.ajax() 함수
+  jQuery 내의 모든 AJAX 관련 함수는 내부적으로 $.ajax()를 호출한다
+  load(), get(), post() 등을 사용하지 못하는 경우는 $.ajax() 를 사용하면 된다.
+
+[참조]
+http://api.jquery.com/jquery.ajax/
+https://www.w3schools.com/jquery/ajax_ajax.asp
+
+
+[구문]
+$.ajax({name:value, name:value, ... })
+
+위 name:value 에 전달되어질 주요 name 들은 다음과 같다
+
+url ★: request 보낼 url
+
+type ★ : "GET" 혹은 "POST"
+
+data : request 에 전송할 데이터, object 타입, POST 방식인 경우 여기에 넘겨야 한다
+	ex) data : {"id" : "scott", "pw" : "tiger"}
+
+cache : 이전의 동일 url 로 request 한결과를 cache 할지 여부 (디폴트값은 true!)
+
+async : 비동기 여부 (디폴트값은 true)
+
+contentType : 서버에 데이터 전송시 사용할 content type
+		디폴트는 "application/x-www-form-urlencoded"
+
+success(result,status,xhr) ★ : 
+	request 성공한 경우 수행하는 함수
+	- result - response 받은 데이터, 
+	           JSON 인 경우 이미 파싱 완료되어 JSON object 상태!
+	           XML 인 경우 이미 파싱 완료되어 DOM object 상태!
+	- status - response status 값
+	- xhr - XMLHttpRequest
+
+error(xhr,status,error) :
+	request 실패한 경우 수행하는 함수
+
+beforeSend(xhr) :
+	request 직전에 수행하는 함수
+
+complete(xhr,status) :
+	request 처리 종료후 수행하는 함수, success / error 함수 끝난후.
+	
+dataFilter(data,type) :
+	response 갓 받은 데이터 (raw data)를 처리할때 수행하는 함수
+	
+*/
+
+var api_key = "616a757750646e643736526f415644";
+ 
+ $(document).ready(function(){
+	 $("#btn_load").click(function(){
+		 var date = document.getElementById("date").value.trim();
+		 
+		 // XML
+		 var url = "http://openapi.seoul.go.kr:8088/" + api_key + "/xml/CardSubwayStatsNew/1/5/" + date;
+		
+		$.ajax({
+			type: "GET",
+			url: url,
+			cache : false,
+			success: function (data, status) {
+				if(status == "success") parseXML(data);
+			}
+		});
+		 
+		// JSON
+		url = "http://openapi.seoul.go.kr:8088/" + api_key + "/json/CardSubwayStatsNew/1/5/" + date;
+		 
+		$.ajax({
+			type: "GET",
+			url: url,
+			cache : false,
+			success: function (data, response) {
+				if(response == "success") parseJSON(data);
+			}
+		});
+		
+	 });
+	 
+	 $("#btn_remove").click(function(){
+		$("#demoXML").html("");
+		$("#demoJSON").html("");
+	 });
+ });
+ 
+ function parseXML(xmlDOM) {
+	var table = "<tr><th>호선</th><th>역명</th><th>승차인원</th><th>하차인원</th></tr>";
+	$(xmlDOM).find("row").each(function(){
+		table += "<tr>";
+		table += "<td>" + $(this).find("LINE_NUM").text() + "</td>";
+		table += "<td>" + $(this).find("SUB_STA_NM").text() + "</td>";
+		table += "<td>" + $(this).find("RIDE_PASGR_NUM").text() + "</td>";
+		table += "<td>" + $(this).find("ALIGHT_PASGR_NUM").text() + "</td>";		
+		table += "</tr>";
+	});
+	$("#demoXML").html(table);
+}
+
+function parseJSON(jsonObj) {
+	var row = jsonObj.CardSubwayStatsNew.row;
+	var i;
+
+	var table = "<tr><th>호선</th><th>역명</th><th>승차인원</th><th>하차인원</th></tr>";
+	for (i = 0; i < row.length; i++) {
+		table += "<tr>"; 
+		table += "<td>" + row[i].LINE_NUM + "</td>";
+		table += "<td>" + row[i].SUB_STA_NM + "</td>";
+		table += "<td>" + row[i].RIDE_PASGR_NUM + "</td>";
+		table += "<td>" + row[i].ALIGHT_PASGR_NUM + "</td>";
+		table += "</tr>"; 
+	}
+	$("#demoJSON").html(table);
+}
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

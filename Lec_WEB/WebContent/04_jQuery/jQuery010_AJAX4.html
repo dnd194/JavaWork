@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery + AJAX</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<!--
+	도로명 주소 오픈 API
+	홈 : https://www.juso.go.kr/addrlink/main.do
+	호출 API : https://www.juso.go.kr/CommonPageLink.do?link=/addrlink/devAddrLinkRequestSample
+			↑ 위 페이지 들어가서 'API정보/요청변수/출력결과' 문서 읽기!
+			★API 승인키 신청 : 개발용, 90일
+
+			GET 방식 / POST 방식 둘다 지원함
+	
+	var api_key = "devU01TX0FVVEgyMDE5MTIwMzIzNDY0NzEwOTI3NTE=";
+
+	내 api = "devU01TX0FVVEgyMDIwMDUxMjE3MTAxOTEwOTc1MDg=";
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<body>
+<h3>$.ajax()+post : 도로명 주소</h3>
+<form name="form" id="form" method="post">
+	현재페이지: <input type="number" name="currentPage" value="1"/><br> <!-- 요청 변수 설정 (현재 페이지. currentPage : n > 0) -->
+	페이지당출력개수: <input type="number" name="countPerPage" value="10"/><br><!-- 요청 변수 설정 (페이지당 출력 개수. countPerPage 범위 : 0 < n <= 100) --> 
+	승인키: <input type="text" name="confmKey" value="devU01TX0FVVEgyMDIwMDUxMjE3MTAxOTEwOTc1MDg="/><br><!-- 요청 변수 설정 (승인키) -->
+	검색어: <input type="text" name="keyword" value="테헤란로" onkeydown="enterSearch();"/><br><br><!-- 요청 변수 설정 (키워드) -->
+	<input type="button" onClick="getAddr();" value="검색하기"/>
+</form><br>
+<div id="list" ></div><!-- 검색 결과 리스트 출력 영역 -->
+<script>
+/* POST 방식 request
+	$.ajax({name:value, name:value, ... })
+
+	url ★: request 보낼 url
+	type ★ : "GET" 혹은 "POST"
+	data : request 에 전송할 데이터, object 타입, POST 방식인 경우 여기에 넘겨야 한다
+		ex) data : {"id" : "scott", "pw" : "tiger"}
+
+		이때 form element 의 '''''''serialize()'''''''''를 사용하면 form 의 데이터를 한번에 object 화 된다.
+*/
+
+function getAddr(){
+	// 적용예 (api 호출 전에 검색어 체크) 	
+	if (!checkSearchedWord(document.form.keyword)) {
+		return ;
+	}
+	
+	$.ajax({
+		url :"http://www.juso.go.kr/addrlink/addrLinkApiJsonp.do" , //인터넷망
+		
+		type:"POST",
+		// data : {   //POST 방식일 때는 DATA 형식이 필요함
+		// 	currentPage : $('#form').find('[name ="currentPage"]').val(),
+		// 	countPerPage : $('#form').find('[name="countPerPage"]').val(),
+		// 	confmKey : $('#form').find('[name="confmKey"]').val(),
+		// 	keyword : $('#form').find('[name="keyword"]').val()
+		// },
+		data : $('#form').serialize(),
+		dataType:"JSONP" , 
+		crossDomain : true,		// cross -domain 문제 (JSON with Padding)
+		success : function(xmlStr){
+			$('#list').find("");
+			makeList(xmlStr.returnXml);
+		}
+
+	});
+	
+}
+
+function makeList(xmlStr){
+	var htmlStr = "";
+	htmlStr += "<table>";
+	$(xmlStr).find("juso").each(function(){
+		htmlStr += "<tr>";
+		htmlStr += "<td>"+$(this).find('roadAddr').text()+"</td>";    // 전체 도로명 주소
+		htmlStr += "<td>"+$(this).find('roadAddrPart1').text()+"</td>"; // 도로명 주소 (참고항목제외)
+		htmlStr += "<td>"+$(this).find('roadAddrPart2').text()+"</td>"; // 도로명주소 참고항목
+		htmlStr += "<td>"+$(this).find('jibunAddr').text()+"</td>";  // 지번주소
+		htmlStr += "<td>"+$(this).find('engAddr').text()+"</td>";  // 도로명주소(영문)
+		htmlStr += "<td>"+$(this).find('zipNo').text()+"</td>";  // 우편번호
+		htmlStr += "<td>"+$(this).find('admCd').text()+"</td>";  // 행정구역코드
+		htmlStr += "<td>"+$(this).find('rnMgtSn').text()+"</td>";  // 도로명코드
+		htmlStr += "<td>"+$(this).find('bdMgtSn').text()+"</td>";  // 건물관리번호
+		htmlStr += "<td>"+$(this).find('detBdNmList').text()+"</td>";  // 상세건물명
+		/** API 서비스 제공항목 확대 (2017.02) **/
+		htmlStr += "<td>"+$(this).find('bdNm').text()+"</td>";  // 건물명
+		htmlStr += "<td>"+$(this).find('bdKdcd').text()+"</td>"; // 공동주택여부(1 : 공동주택, 0 : 비공동주택)
+		htmlStr += "<td>"+$(this).find('siNm').text()+"</td>";  // 시도명
+		htmlStr += "<td>"+$(this).find('sggNm').text()+"</td>";  // 시군구명
+		htmlStr += "<td>"+$(this).find('emdNm').text()+"</td>"; // 읍면동명
+		htmlStr += "<td>"+$(this).find('liNm').text()+"</td>";  // 법정리명
+		htmlStr += "<td>"+$(this).find('rn').text()+"</td>";  // 도로명
+		htmlStr += "<td>"+$(this).find('udrtYn').text()+"</td>";  // 지하여부(0 : 지상, 1 : 지하)
+		htmlStr += "<td>"+$(this).find('buldMnnm').text()+"</td>";  // 건물본번
+		htmlStr += "<td>"+$(this).find('buldSlno').text()+"</td>"; // 건물부번
+		htmlStr += "<td>"+$(this).find('mtYn').text()+"</td>";  // 산여부(0 : 대지, 1 : 산)
+		htmlStr += "<td>"+$(this).find('lnbrMnnm').text()+"</td>";  // 지번본번(번지)
+		htmlStr += "<td>"+$(this).find('lnbrSlno').text()+"</td>";  // 지번부번(호)
+		htmlStr += "<td>"+$(this).find('emdNo').text()+"</td>";  // 읍면동일련번호
+		htmlStr += "</tr>";
+	});
+	htmlStr += "</table>";
+	$("#list").html(htmlStr);
+}
+
+//특수문자, 특정문자열(sql예약어의 앞뒤공백포함) 제거
+function checkSearchedWord(obj){
+	if(obj.value.length >0){
+		//특수문자 제거
+		var expText = /[%=><]/ ;
+		if(expText.test(obj.value) == true){
+			alert("특수문자를 입력 할수 없습니다.") ;
+			obj.value = obj.value.split(expText).join(""); 
+			return false;
+		}
+		
+		//특정문자열(sql예약어의 앞뒤공백포함) 제거
+		var sqlArray = new Array(
+			//sql 예약어
+			"OR", "SELECT", "INSERT", "DELETE", "UPDATE", "CREATE", "DROP", "EXEC",
+             		 "UNION",  "FETCH", "DECLARE", "TRUNCATE" 
+		);
+		
+		var regex;
+		for(var i=0; i<sqlArray.length; i++){
+			regex = new RegExp( sqlArray[i] ,"gi") ;
+			
+			if (regex.test(obj.value) ) {
+			    alert("\"" + sqlArray[i]+"\"와(과) 같은 특정문자로 검색할 수 없습니다.");
+				obj.value =obj.value.replace(regex, "");
+				return false;
+			}
+		}
+	}
+	return true ;
+}
+
+function enterSearch() {
+	var evt_code = (window.netscape) ? ev.which : event.keyCode;
+	if (evt_code == 13) {    
+		event.keyCode = 0;  
+		getAddr(); //jsonp사용시 enter검색 
+	} 
+}
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

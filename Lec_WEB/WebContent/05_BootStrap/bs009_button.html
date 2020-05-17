@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BS4 button</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+  <h2>BS4 Button 스타일</h2>
+  <p><b>.btn</b> 과 <b>.btn-*</b> 클래스 사용</p>
+  <button type="button" class="btn">Basic</button>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-dark">Dark</button>
+  <button type="button" class="btn btn-light">Light</button>
+  <button type="button" class="btn btn-link">Link</button>
+</div>
+<hr>
+
+<div>
+  <h2>Button 스타일 적용 범위</h2>
+  <p>&lt;a&gt;,&lt;button&gt;,&lt;input&gt; 에 쓰일수 있다</p>
+  <a href="#">Link Button</a>
+  <button type="button" class="btn btn-info">Button</button>
+  <input type="button" class="btn btn-info" value="Kelvin">
+  <input type="submit" class="btn btn-info" value="Im">
+</div>
+<hr>
+
+<div>
+  <h2>Button Outline</h2>
+  <p><b>.btn-outline-*</b> 클래스</p>
+  <button type="button" class="btn btn-outline-primary">Primary</button>
+  <button type="button" class="btn btn-outline-secondary">Secondary</button>
+  <button type="button" class="btn btn-outline-success">Success</button>
+  <button type="button" class="btn btn-outline-info">Info</button>
+  <button type="button" class="btn btn-outline-warning">Warning</button>
+  <button type="button" class="btn btn-outline-danger">Danger</button>
+  <button type="button" class="btn btn-outline-dark">Dark</button>
+  <button type="button" class="btn btn-outline-light text-dark">Light</button>
+</div>
+<hr>
+
+<div class="container">
+  <h2>Button Sizes</h2>
+  <p><b>.btn-lg</b> <b>.btn-md</b> <b>.btn-sm</b></p>
+  <button type="button" class="btn btn-primary btn-lg">Large</button>
+  <button type="button" class="btn btn-primary btn-md">Default = medium</button>    
+  <button type="button" class="btn btn-primary btn-sm">Small</button>
+</div>
+
+<hr>
+
+<div class="container">
+  <h2>Block Level Buttons</h2>
+  <p>좌우폭 100% 사용하는 버튼</p>
+  <p><b>.btn-block</b> 클래스</p>
+  <button type="button" class="btn btn-primary btn-block">Button 1</button>
+  <button type="button" class="btn btn-success btn-block">Button 2</button>
+  <br>
+  
+  <h2>Large Block Level Buttons</h2>
+  <button type="button" class="btn btn-primary btn-lg btn-block">Button 1</button>
+  <button type="button" class="btn btn-success btn-lg btn-block">Button 2</button>
+  <br>
+  
+  <h2>Small Block Level Buttons</h2>
+  <button type="button" class="btn btn-primary btn-sm btn-block">Button 1</button>
+  <button type="button" class="btn btn-success btn-sm btn-block">Button 2</button>
+</div>
+
+<hr>
+
+<div class="container">
+  <h2>Button 상태 : active, disabled</h2>
+  <p><b>.active</b>, <b>.disabled</b></p>
+  <button type="button" class="btn btn-primary">Primary Button</button>
+  <button type="button" class="btn btn-primary active">Active Primary</button>
+  <button type="button" class="btn btn-primary" disabled>Disabled Primary</button>
+  <a href="#" class="btn btn-primary disabled">Disabled Link</a>
+</div>
+
+</body>
+</html>

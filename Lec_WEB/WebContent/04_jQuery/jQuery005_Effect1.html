@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery effect</title>
+<style>
+p {
+	background-color: cyan;
+	width : 120px;
+	height : 50px;
+    padding : 0px 3px;
+}
+</style>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+// hide(), show(), toggle() 함수
+// ** size 와 opacity 변함
+// $(selector).hide(speed,callback);
+// $(selector).show(speed,callback);
+// $(selector).toggle(speed,callback);
+// speed 는 millisecond 나 혹은 "slow", "fast"
+$(document).ready(function(){
+	// #hide1 버튼이 click 되면 #p1 을 hide() 
+	// #show1 버튼이 click 되면 #p1 을 show()
+    $("#hide1").click(function(){
+        $('#p1').hide();
+    });
+    $("#show1").click(function(){
+        $('#p1').show();
+    });
+
+    $("#hide2").click(function(){
+		$('#p21').hide('slow');
+		$('#p22').hide('fast');
+		$('#p23').hide(2000);
+    });
+    
+    // #show2 버튼을 click 하면 위의 3개가 show()
+    // show()의 매개변수 주기
+    $("#show2").click(function(){
+		$('#p21').show('slow');
+		$('#p22').show('fast');
+		$('#p23').show(2000);
+    });
+    
+    // #toggle2 버튼을 click 하면 위의 3개가 toggle()
+    // toggle() 의 매개변수 주기
+    $("#toggle2").click(function(){
+		
+    });
+	
+// fadeIn() fadeOut() fadeToggle() fadeTo() 함수
+// ** opacity 가 변함.
+// $(selector).fadeIn(speed,callback);    
+//$(selector).fadeOut(speed,callback);
+//$(selector).fadeToggle(speed,callback);
+//$(selector).fadeTo(speed,opacity,callback);
+
+    $("#fadeIn1").click(function(){
+        // TODO
+    });
+    $("#fadeOut1").click(function(){
+        // TODO
+    });
+	
+
+    $("#fadeIn2").click(function(){
+		$('#p41').fadeIn('slow');
+		$('#p42').fadeIn('fast');
+		$('#p43').fadeIn(2000);
+    });
+    
+	// #fadeOut2 버튼을 click() 하면 
+	// 위 3개 #p41, #p42, #p43 을 fadeOut()
+	// 매개변수 주기
+    $("#fadeOut2").click(function(){
+    	$('#p41').fadeOut('slow');
+    	$('#p42').fadeOut('fast');
+    	$('#p43').fadeOut(2000);
+    });
+	
+	// #fadeToggle2 버튼을 click() 하면 
+	// 위 3개 #p41, #p42, #p43 을 fadeToggle()
+	// 매개변수 주기
+    $("#fadeToggle2").click(function(){
+    	$('#p43').fadeToggle(2000);
+    	$('#p42').fadeToggle('slow');
+    	$('#p41').fadeToggle('fast');
+    });
+
+
+    $("#fadeTo3").click(function(){
+    	$('#p51').fadeTo('slow', 0.15);
+    	$('#p52').fadeTo('slow', 0.4);
+    	$('#p53').fadeTo('slow', 0.7);
+    });
+    
+// slideDown() slideUp() slideToggle()
+// $(selector).slideDown(speed,callback);
+// $(selector).slideUp(speed,callback);
+// $(selector).slideToggle(speed,callback);
+	$("#slideUp").click(function(){
+		$('#p61').slideUp();
+		$('#p62').slideUp('slow');
+		$('#p63').slideUp('fast');
+		$('#p64').slideUp(2000);
+	});
+	
+	// #slideDown을 click() 하면 위 네개를
+	// slideDown() 시키기
+	// 매개변수 주기
+	$("#slideDown").click(function(){
+		$('#p61').slideDown();
+		$('#p62').slideDown('slow');
+		$('#p63').slideDown('fast');
+		$('#p64').slideDown(2000);
+	});
+	
+	// #slideToggle을 click() 하면 위 네개를
+	// slideToggle() 시키기
+	// 매개변수 주기
+	$("#slideToggle").click(function(){
+		$('#p61').slideToggle();
+		$('#p62').slideToggle('slow');
+		$('#p63').slideToggle('fast');
+		$('#p64').slideToggle(2000,tada);
+		// 2번째 매개변수로 함수를 넣어주면 실행후 다음함수를 실행함
+	});
+	 
+});
+
+function tada(){
+	alert("짜잔");
+}
+
+
+</script>
+
+<body>
+<h2>hide() show() toggle()</h2>
+<button id="hide1">hide1</button>
+<button id="show1">show1</button>
+<br>
+<p  id="p1">p1<br>hide&show</p>
+<br>
+<button id="hide2">hide2</button>
+<button id="show2">show2</button>
+<button id="toggle2">#toggle2</button>
+<br>
+<p  id="p21">p21<br>slow</p>
+<p  id="p22">p22<br>fast</p>
+<p  id="p23">p23<br>2000</p>
+<hr>
+
+<h2>fadeIn() fadeOut() fadeToggle() fadeTo()</h2>
+<button id="fadeIn1">fadeIn1</button>
+<button id="fadeOut1">fadeOut1</button>
+<br>
+<p id="p3" style="display:none;">p3<br>fadeIn</p>
+<br>
+
+<button id="fadeIn2">fadeIn2</button>
+<button id="fadeOut2">fadeOut2</button>
+<button id="fadeToggle2">fadeToggle2</button>
+<br>
+<p id="p41" style="display:none;">p41<br>slow</p>
+<p id="p42" style="display:none;">p42<br>fast</p>
+<p id="p43" style="display:none;">p43<br>2000</p>
+<br>
+
+<button id="fadeTo3">fadeTo3</button>
+<p id="p51" >p51<br>0.15</p>
+<p id="p52" >p52<br>0.4</p>
+<p id="p53" >p53<br>0.7</p>
+<hr>
+
+<h2>slideDown() slideUp() slideToggle()</h2>
+
+<button id="slideUp">slideUp</button>
+<button id="slideDown">slideDown</button>
+<button id="slideToggle">slideToggle</button>
+<p id="p61">p61<br>slideUp/Down</p>
+<p id="p62">p62<br>slow</p>
+<p id="p63">p63<br>fast</p>
+<p id="p64">p64<br>2000</p>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

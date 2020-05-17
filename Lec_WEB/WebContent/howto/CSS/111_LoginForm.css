@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/* modal */
+.modal{
+    /* 처음에는 안보이게하게 */
+    display: none;
+
+    /* 전체 커버 */
+    width: 100%;
+    height: 100%;
+    background : rgba(0,0,0,0.2);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1 ;
+    overflow: auto;
+    padding-top: 60px;
+}
+/* form container꾸미기 */
+.modal-content{
+    background-color: #f2f2f2;
+    width: 80%;
+    margin: 5px auto;
+    border: 1px solid #888;
+}
+/* x버튼을 감싸는 부모 꾸미기 
+        x버튼을 안쪽으로 오게하기 위해
+                position relative*/
+.imgcontainer{
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+/* x버튼 꾸미기 */
+.close{
+    font-size: 35px;
+    font-weight: bold;
+    color: #000;
+    /* 부모 contatiner
+            우상단 으로 포지션 설정 */
+    position: absolute;
+    /* absolute 의 기본값은 0 0 임 */
+    right: 25px;
+    top: 0;
+}
+.close:hover, .close:focus{
+    color: red ;
+    cursor: pointer;
+}
+img.avatar{
+    /* 이미지의 원래크기의 */
+    width: 40%;
+    /* 이미지로 radius 를 줄 수 있음 */
+    border-radius: 50%;
+}
+/* ------------------------------- */
+/* form  */
+.container{
+    padding: 16px;
+
+}
+input[type="text"], input[type="password"]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    display: inline-block;
+    /* border,margin 
+            같은 것을 자기 넓이로 포함 */
+    box-sizing: border-box;
+}
+/* 버튼 기본 스타일 만들기 */
+button{
+    width: 100%;
+    background-color: #4caf50;
+    color: whitesmoke;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    margin: 8px 0 ;
+    cursor: pointer;
+}
+button:hover{
+    opacity: 0.8;
+}
+/* 취소버튼 css 덮어씌우기 */
+.cancelbtn{
+    /* 내부를 담는 content 만큼의 폭 */
+    width: auto;
+    padding: 10px 18px;
+    background : #f44337;
+}
+span.psw{
+    float: right;
+    padding-top: 16px
+}
+
+/* 380px 이하 화면에서 RWD */
+@media screen and (max-width : 380px){
+    .cancelbtn{
+        width: 100%;
+    }
+    span.psw{
+        float: none;
+        display: block;
+    }
+}
+
+
+/* animation zoom 효과 */
+.animate{
+    animation: animatezoom 0.6s;
+}
+@keyframes animatezoom{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

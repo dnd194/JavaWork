@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Selector</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+// 2가지 방법으로 없앨 수 있음
+
+// $(function(){
+//     $('button').click(function(){
+//         $('p#test').hide();
+//     });
+// });
+
+$(function(){
+    $('button').click(function(){
+        $('p:nth-child(2)').hide();
+    });
+});
+
+</script>
+</head>
+<!-- 
+기본적으로 jQuery Selector 는
+CSS Selector 를 그대로 사용한다.
+그러나, 그 밖에도 jQuery 에서 제공하는 고유한 selector 들이 있다.
+
+jQuery 에서 모든 selector 들은 $( ) 안에 명시된다.
+
+
+$("*")    모든 element
+$(this)		현재 element
+
+$("p.intro")
+$("p:first")
+$("ul li:first")
+$("[href]")
+$("a[target='_blank']")
+
+
+https://api.jquery.com/category/selectors/
+
+https://api.jquery.com/button-selector/
+
+ -->
+ 
+<body>
+
+<h2>This is a heading</h2>
+
+<p>This is a paragraph.</p>
+<p id="test">This is another paragraph.</p>
+
+<button>Click me</button>
+
+<!-- 
+https://www.w3schools.com/jquery/trysel.asp
+
+
+$("#Lastname")
+$(".intro")
+$(".intro, #Lastname")
+$("h1")
+$("h1, p")
+$("p:first")      // 첫 p element
+$("p:last")
+$("tr:even")
+$("tr:odd")
+$("p:first-child")
+$("p:first-of-type")
+$("p:last-child")
+$("p:last-of-type")
+$("li:nth-child(1)")
+$("li:nth-last-child(1)")
+$("li:nth-of-type(2)")
+$("li:nth-last-of-type(2)")
+$("b:only-child")
+$("h3:only-of-type")
+$("div > p")
+$("div p")
+$("ul + p")
+$("ul ~ table")
+$("ul li:eq(0)")
+$("ul li:gt(0)")
+$("ul li:lt(2)")
+$(":header")
+$(":header:not(h1)")
+$(":animated")
+$(":focus")
+$(":contains(Duck)")
+$("div:has(p)")
+$(":empty")
+$(":parent")
+$("p:hidden")
+$("table:visible")
+$(":root")
+$("p:lang(it)")
+$("[id]")
+$("[id=my-Address]")
+$("p[id!=my-Address]")
+$("[id$=ess]")
+$("[id|=my]")
+$("[id^=L]")
+$("[title~=beautiful]")
+$("[id*=s]")
+$(":input")
+$(":text")
+$(":password")
+$(":radio")
+$(":checkbox")
+$(":submit")
+$(":reset")
+$(":button")
+$(":image")
+$(":file")
+$(":enabled")
+$(":disabled")
+$(":selected")
+$(":checked")
+$("*")
+ -->
+
+</body>
+</html>

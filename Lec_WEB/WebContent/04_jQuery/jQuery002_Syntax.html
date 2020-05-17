@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Syntax</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- 
+기본적은 jQuery 구문은 
+
+'''''''''''HTML element 선택 +  그 element 에 동작(action) 수행'''''''''''''
+
+	기본구문:
+	
+	$(selector).action()
+	
+		$ : jQuery 에 접근하기 위한 함수
+		(selector) : 다양한 방법으로 element 선택 가능.
+	
+	문자열 은 '''CSS Selector'''
+	$(this).hide() - 현재 element.
+	$("p").hide() - 모든 <p> element 를 숨긴다
+	$(".test").hide() - class="test" 인 모든 element 를 숨긴다 
+	$("#test").hide() - id="test" 인 모든 element 를 숨긴다
+
+ -->
+
+<script>
+	// 	기본적으로 jQuery을 사용하는 웹페이지들은
+	//	다음 코드로 시작함
+	//$(document).ready(함수);   document 는 문서 객체를 의미 ==>> 전체 
+
+	//'document' 즉, 웹문서의 로딩이 '완료'되면
+	//ready() 의 매개변수로 주어진 함수를 수행
+	// 순차적으로 수행  hawi 가 먼저 나오고 hawi2 가 나옴
+	// $(document).ready(function(){
+	// 	alert('hawi');
+	// });
+
+	// $(document).ready(function(){
+	// 	alert("hawi2")
+	// });
+
+	// 축약된 형태도 많이 사용
+	//$(함수);   바로 function 갈겨도 됨
+	$(function () {
+		alert("축약된 형태입니다");
+	});
+	
+	$(function(){
+		$('button').click(function(){    //버튼을 가진 요소를 클릭 하면
+			$('p').hide();				// p 요소를 hide 하게 하는 함수가 실행되게함
+		});
+	});
+</script>
+
+<body>
+
+	<h2>jQuery 기본구문</h2>
+
+	<p>p 요소 입니다</p>
+	<p>이것도 p 요소 입니다</p>
+
+	<button>클릭</button>
+
+</body>
+
+</html>

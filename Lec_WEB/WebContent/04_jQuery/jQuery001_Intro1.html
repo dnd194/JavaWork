@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Intro</title>
+</head>
+
+<script>
+	function hideP() {
+
+		var elements = document.getElementsByTagName('p'); //태그가 p 인 요소들 모두 담기
+		for (i = 0; i < elements.length; i++) {
+			// elements[i].addEventListener("click", function () {   //이름없는 함수를 만들어주것
+			// 	this.style.display = "none";
+			// });
+			//아래와 같이 도 가능
+			elements[i].addEventListener("click",hideElement);
+		}
+	} // end hideP()
+
+	function hideElement() {
+		this.style.display = "none";
+	}
+
+	// //함수나 변수 이름으로  '' $ '' 사용 가능
+	// $ = 10;
+	// alert($ * 10);
+</script>
+
+<body onload="hideP();">
+
+	<p>없어지는 마술을 보여줄께.</p>
+	<p>요것도.</p>
+	<p>따다~~!</p>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>filtering</title>
+<style>
+div {
+	border: 1px solid black;
+}
+.selected {
+	background-color: yellow;
+}
+#btnbox{
+	position:fixed;
+	right: 0px;
+	top: 0px;
+	border: 1px cyan solid;
+	width: 150px;
+	background-color: rgba(255,255,255,0.7);
+}
+
+button {
+	color: black;
+	border: 1px solid black;
+	margin: 2px;	
+}
+
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+/*
+ 이미 select 된 element 에 대해 추가적으로 select 하는 (필터링) 하는 함수
+ first()
+ last()
+ eq()
+ filter()
+ not() 
+ */
+
+ $(document).ready(function(){
+	 //div 안에는 p가 2개 씩 있는 구조
+
+
+	 // 버튼 클릭되면 일단 selected 클래스 제거
+	 $("button").click(function(){
+		$("*").removeClass("selected");
+	});
+	 //---------------------------------------
+	 // first() select 된것들중 첫번째 것만
+	 $("#btn11").click(function(){
+
+		 //first 가 없으면 div 가 모두 선택됨
+	 	$('div').first().addClass('selected');
+	 });
+
+	 // last() select 된것들중 마지막
+	 $("#btn12").click(function(){
+		$('div').last().addClass('selected');
+			 
+	 });
+
+	// eq(i) 인덱스로 선택 가능
+	 $("#btn13").click(function(){
+		$('div').eq(2).addClass('selected');
+	});
+	
+	// filter() 
+	 $("#btn14").click(function(){
+		$('div').filter('.intro').addClass('selected');
+	});
+	
+	// not()
+	 $("#btn15").click(function(){
+		 //div 중에 클래스가 intro 인 녀석 빼고 모두 효과
+		$('div').not('.intro').addClass('selected');
+	});
+	 
+	 
+ });
+ 
+</script>
+<body>
+
+<h1>필터링</h1>
+
+<p>paragraph1</p>
+<div class="intro">
+	<p>class = intro 입니당</p>
+  <p>paragraph2-1</p>
+  <p>paragraph2-2</p>
+</div>
+<br>
+
+<div>
+  <p>paragraph3-1</p>
+  <p>paragraph3-2</p>
+</div>
+<br>
+
+<div>
+  <p>paragraph4-1</p>
+  <p>paragraph4-2</p>
+</div>
+
+<br>
+
+<span id="btnbox">
+	<button id="btn11">btn11 first()</button>
+	<button id="btn12">btn12 last()</button>
+	<button id="btn13">btn13 eq()</button>
+	<button id="btn14">btn14 filter()</button>
+	<button id="btn15">btn15 not()</button>
+</span>
+
+</body>
+</html>

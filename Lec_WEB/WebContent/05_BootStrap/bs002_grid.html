@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>BS Grid</title>
+</head>
+<!-- 
+BS4 도 12 grid 시스템 사용
+
+다음과 같이 5종류의 class 제공
+screen width  별로 다음과 같다
+
+.col- (extra small devices - 576px 미만)
+.col-sm- (small devices - 576px 이상)
+.col-md- (medium devices - 768px 이상)
+.col-lg- (large devices - 992px 이상)
+.col-xl- (xlarge devices - 1200px 이상)
+
+
+BS4 grid 의 기본 구조
+
+방법1]
+우선은 <div class="row"> 를 만들고 
+그 안에 넣고자 하는 컬럼 들을 넣는다  .col-*-*  클래스들을 넣는다.
+	첫번째 * 는 screen width : sm, md, lg, xl 
+	두번째 * 는 컬럼개수  : 1 ~ 12
+
+	<div class="row">
+	  <div class="col-*-*"></div>
+	  <div class="col-*-*"></div>
+	</div>
+	<div class="row">
+	  <div class="col-*-*"></div>
+	  <div class="col-*-*"></div>
+	  <div class="col-*-*"></div>
+	</div>
+
+방법2]
+걍 아래와 같이 하면 BS4 에서 알아서 균등 배분 함
+아래와 같은 경우 1/3 = 33.3% 씩 차지
+	<div class="row">
+	  <div class="col"></div>
+	  <div class="col"></div>
+	  <div class="col"></div>
+	</div>
+
+-->
+
+<!-- 애네는 '''''''''''''''''''''''''모바일 first 방식''''''''''''''''''''''''''''''을 사용함 -->
+<body>
+    <div class="container-fluid">
+        <h1>균등폭</h1>
+        <p>균등한 폭의 컬럼들로 구성 class="col" 의 개수만큼 분배</p>
+        <p>화면을 늘렸다 줄여도 균등폭 유지</p>
+        <div class="row">
+            <!-- row는 12칸의 grid로 되어있고  
+                                col의 개수에 따라 col의 넓이가 자동적으로 변화한다.-->
+            <div class="col" style="background-color:lavender;">.col</div>
+            <div class="col" style="background-color:orange;">.col</div>
+            <div class="col" style="background-color:lavender;">.col</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <h1>반응형</h1>
+        <p>화면을 늘렸다 줄여보자</p>
+        <p>.col-sm-* (576px 이상) 이다</p>
+        <p>576px 보다 작아지면, 100%가 된다</p>
+        <div class="row">
+            <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+            <div class="col-sm-6" style="background-color:lavenderblush;">.col-sm-6</div>
+            <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+        </div>
+    </div>
+    <hr>
+
+
+
+</body>
+
+</html>

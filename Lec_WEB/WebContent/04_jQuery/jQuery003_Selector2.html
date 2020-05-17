@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Selector</title>
+<style>
+  div {
+    background: yellow;
+    border: 1px solid #AAA;
+    width: 80px;
+    height: 80px;
+    margin: 0 5px;
+    float: left;
+  }
+  div.colored {
+    background: green;
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+
+</script>
+</head>
+<body>
+
+<button id="run">Run</button>
+ 
+<div></div>
+<div id="mover"></div>
+<div></div>
+
+<script>
+//    :animated 라는 selector 는 
+// 현재 animation 중인 element 에 적용
+$('#run').click(function(){
+  $('div:animated').toggleClass("colored");
+  //      '''toggleClass'''
+  //colored 라는 클래스가 없으면 입혀주고  있으면 없애줌
+});
+
+function animateIt(){     //함수정의
+  
+  $('#mover').slideToggle("slow", animateIt);  
+  //2번째 매개변수는 slow를 실행하고 나서 실행할 함수
+  //이거는재귀함수 느낌은 아님
+}
+animateIt();
+
+</script>
+
+</body>
+</html>

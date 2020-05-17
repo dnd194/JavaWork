@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+#myImg{
+    cursor: pointer;
+    border-radius: 5px;
+}
+#myImg:hover{
+    opacity: 0.7;
+    /* 모든 css property 에 대해 transition 발생 */
+    transition : 0.8s;
+}
+/* modal  */
+.modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: hsla(180, 60%, 4%, 0.9);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: auto;
+    /* 이미지가 top 에서 100px 떨어져보이기 */
+    padding-top: 100px; 
+
+    display: none;
+}
+/* content (modal 안의 img) 꾸미기 */
+.modal-content{
+    width: 80%;
+    max-width: 700px;
+    /* '''''''margin을 주기위해 display 를 block ''''''''로 바꿔줌 */
+    /* inline 은 위아래 마진을 먹지 않음 */
+    display: block;
+    margin: auto;
+}
+#caption{
+    color: #ccc;
+    text-align: center;
+    font-weight: bold;
+    width: 80%;
+    /* 이미지 와 border를 맞춰줘야하기 때문에 */
+    max-width: 700px;
+    padding: 10px 0;
+    display: block;
+    margin: auto;
+    height: 150px;
+}
+.close{
+    font-size: 40px;
+    font-weight: bold;
+    color: wheat;
+    /* 버튼 위치 우상단 코너 */
+    position: absolute;
+    top: 15px;
+    right: 35px;
+
+    transition: 0.4s;
+}
+.close:hover , .close:focus{
+    cursor: pointer;
+    color: tomato;
+    text-decoration: none;
+}
+
+/* 모바일 에서는 100%로 보이게 하기*/
+@media only screen and (max-width : 700px){
+    .modal-content{
+        width: 100%;
+    }
+}
+
+.modal-content, #caption{
+    animation: zoom 0.6s ;
+}
+
+@keyframes zoom{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

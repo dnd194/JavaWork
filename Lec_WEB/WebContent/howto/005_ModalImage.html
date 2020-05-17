@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Modal Image</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="CSS/005_ModalImage.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h2>Modal Image</h2>
+<p>hidden 이미지가 기본적으로 존재</p>
+<p>JavaScript로 modal 안에 이미지 보여지게 함. 
+modal 안의 텍스트도 alt 를 사용해서 나타나게 함</p>
+
+<img id="myImg" src="../img/img_fjords.jpg" alt="Trolltunga, Norway" width="300" height="200">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img   class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+
+var modal = document.getElementById('myModal');
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById('img01');
+var captionText = document.getElementById("caption");
+
+img.onclick=function(){
+  modal.style.display = 'block';
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+  // this 는 img 임
+}
+var close = document.getElementsByClassName('close')[0];
+close.onclick = function () {
+  modal.style.display = 'none';
+}
+
+
+</script>
+</body>
+</html>

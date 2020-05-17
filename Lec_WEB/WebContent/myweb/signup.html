@@ -4,29 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Signup & register</title>
+    <link href="CSSpile/signup.css" rel="stylesheet" type="text/css">
     <style>
-        #logocontatiner {
-            margin: 0 auto;
-            border: 1px solid #ccc;
-            height: auto;
+        h1{
             text-align: center;
-            padding-top: 10px;
-            width: 100%;
-            
+            padding: 16px;
         }
+        .toggle-option{
         
+    border-bottom: 4px solid #509e2f;
+        }
     </style>
 </head>
 
 <body>
 
     <div id="logocontatiner">
-        <img id="logo" src="st.png" alt="logo">
+        <img id="logo" src="IMGpile/st.png" alt="logo">
     </div>
-    
-    <form>
 
+    <form class="modal-content" action="/action_page.php">
+        <div class="container">
+            <h1 class="toggle-option">Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+
+            <input type="text" placeholder="First Name" name="fname" required>
+            <input type="text" placeholder="Last Name" name="lname" required>
+
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+            <p>At least 8 characters, 1 uppercase letter, 1 number & 1 symbol</p>
+            <label id="label1">
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:0px">By signing up, you
+                agree to the <a href="#"><span>Terms of Service</span></a> and <a href="#"><span>Privacy Policy</span></a>
+            </label>
+
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">Sign Up</button>
+                <button type="button" class="cancelbtn">Cancel</button>
+            </div>
+        </div>
     </form>
 
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>when & then</title>
+	<style>
+		.box1 {
+			width: 150px;
+			height: 150px;
+			background-color: #3f8d3f;
+			position: absolute;
+			left: 50px;
+			top: 0;
+		}
+
+		.box2 {
+			width: 150px;
+			height: 150px;
+			background-color: #82d3f2;
+			position: absolute;
+			left: 50px;
+			top: 150px;
+		}
+
+		.box3 {
+			width: 150px;
+			height: 150px;
+			background-color: yellow;
+			position: absolute;
+			left: 50px;
+			top: 300px;
+		}
+	</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+	/*
+	$.when() 함수는 
+	thenable object 들 (다른말로 deferred object)들의
+	이벤트가 끝나면 리턴타입은 Promise 객체 리턴
+	https://api.jquery.com/jquery.when/
+		  
+	deferred.then() 함수
+	deferred 들이 다 마무리 되면 콜백 함수 호출
+	https://api.jquery.com/deferred.then/
+ */
+	$(document).ready(function () {
+		$("#run").click(function (e) {
+			var $box1 = $(".box1");
+			var $box2 = $(".box2");
+			var $box3 = $(".box3");
+
+			// 
+			// $box1.animate({left : '200px'},1000);  
+			// //box2 는 이미 top에서 150 떨어져 있음
+			// $box2.animate({top : '0px'},1500);
+			// $box3.animate({top:"150px"},2000);
+
+			//box 1 과 box 2 의 animation이 다 끝나고 box3 를 움직이고 싶을때는?
+
+			// $box1.animate({left : '200px'},1000);  
+			// $box2.animate({top : '0px'},1500,function () {  
+			// 	$box3.animate({top:"150px"},1000);
+			// });
+
+			// delay 를 사용   ==> delay()
+			// $box1.animate({left : '200px'},1000);  
+			// $box2.animate({top : '0px'},1500);
+			// $box3.delay(1500).animate({top:"150px"},2000);
+			
+			// $box1 과 $box2 중 누가먼저 끝나는지 알 수 없다면
+			// 얼마후에 끝나는지 알 수 없다면???  (callback 을 쓰지 않고 사용해보기)
+
+			// '''''$.when() '''''사용  사실상 이게 제일 많이 쓰일듯 
+			// 이벤트들이 끝나면 수행하는 Promise 객체 return 
+			// thenable object   or   deferred object  
+
+			$box1.animate({left : '200px'},1000);  
+			$box2.animate({top : '0px'},1500);
+			// when 의 매개변수 들이 끝나면  then 의 함수를 동작
+			//then을 여러번 붙여도 됨
+			$.when($box1, $box2).then(function(){
+				// alert('complete'); 확인용
+				$box3.animate({top:"150px", left : '200px'},2000);
+			}).then(function(){
+				$box1.animate({top:'300px'},2000)
+			})
+		});
+	});
+</script>
+
+<body>
+	<button id="run">run</button>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

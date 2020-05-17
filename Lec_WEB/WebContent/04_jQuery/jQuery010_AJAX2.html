@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery + AJAX</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<body>
+<h3>$.get() $.post() : 서울시 지하철 승하차 인원 정보</h3>
+<form>
+날짜 (yyyyMMdd): <input type="text" name="date" id="date" value="20181001"/><br><br>
+
+<button id="btn_load" type="button"">승하차정보 가져오기</button>
+<button id="btn_remove" type="button"">지우기</button>
+</form>
+<br><br>
+<h2>AJAX + XML</h2>
+<table id="demoXML"></table>
+<hr>
+<h2>AJAX + JSON</h2>
+<table id="demoJSON"></table>
+<script>
+/* jQuery 의 AJAX 함수 get(), post()
+
+	$.get(URL, callback);
+	$.post(URL, data, callback);
+	*/
+	// <!-- 616a757750646e643736526f415644 -->
+	
+var api_key = "616a757750646e643736526f415644";
+
+$(document).ready(function () {
+	$("#btn_load").click(function () {
+		var date = document.getElementById("date").value.trim();
+
+		// XML
+			// 이미 data 에 XML DOM object로 넘어온다
+			// application/xml;charset=UTF-8
+			//var parser = new DOMParser();
+			//data <- parser.paseFromString(responseTxt, "text/xml");
+		var url = "http://openapi.seoul.go.kr:8088/" + api_key + "/xml/CardSubwayStatsNew/1/5/" + date;
+		$.get(url, function(data, status){
+			// alert(status);  //확인용
+			if(status =="success"){
+				parseXML(data);
+			}
+		});
+
+		// JSON
+		url = "http://openapi.seoul.go.kr:8088/" + api_key + "/json/CardSubwayStatsNew/1/5/" + date;
+		
+			// 이미 data 에 JSON object 로 넘어온다
+			// application/json;charset=UTF-8
+			// data <- JSON.parse(responseTxt);
+			$.get(url, function(data, status){
+				if(status =="success"){
+					parseJSON(data);
+				}
+			});
+
+
+	});
+
+	// 지우기
+	$("#btn_remove").click(function () {
+		// $("#demoXML").html("");
+		// $("#demoJSON").html("");
+
+		$('#demoXML').empty();
+		$('#demoJSON').empty();
+	});
+});
+
+// XML 파싱의 경우 jQuery 에서 제공해주는 
+// DOM 관련 함수들을 사용하면 간결해진다.
+function parseXML(xmlDOM) {
+	// TODO : jQuery 함수를 사용하여 재작성 해보기
+	// var i;
+
+	var table = "<tr><th>호선</th><th>역명</th><th>승차인원</th><th>하차인원</th></tr>";
+	// alert($(xmlDOM).find('row').length); //5개 나옴
+
+	//find(selector)
+	//select 된 element 에서 다시 select 한다
+
+	//each(함수)
+	//select 된 element 각각에 적용하는 함수
+	$(xmlDOM).find('row').each(function(){
+		table += "<tr>";
+		table += "<td>" +$(this).find('LINE_NUM').text() +"</td>";
+		table += "<td>" +$(this).find('SUB_STA_NM').text() +"</td>";
+		table += "<td>" +$(this).find('RIDE_PASGR_NUM').text() +"</td>";
+		table += "<td>" +$(this).find('ALIGHT_PASGR_NUM').text() +"</td>";
+		table += "</tr>";
+	});
+	$('#demoXML').html(table);
+
+	// JAVASCRIPT
+	// var x = xmlDOM.getElementsByTagName("row");
+	// for (i = 0; i < x.length; i++) {
+	// 	table += "<tr>";
+	// 	table += "<td>" + x[i].getElementsByTagName("LINE_NUM")[0].childNodes[0].nodeValue + "</td>";
+	// 	table += "<td>" + x[i].getElementsByTagName("SUB_STA_NM")[0].childNodes[0].nodeValue + "</td>";
+	// 	table += "<td>" + x[i].getElementsByTagName("RIDE_PASGR_NUM")[0].childNodes[0].nodeValue + "</td>";
+	// 	table += "<td>" + x[i].getElementsByTagName("ALIGHT_PASGR_NUM")[0].childNodes[0].nodeValue + "</td>";		
+	// 	table += "</tr>";
+	// }
+	// document.getElementById("demoXML").innerHTML = table;
+}
+
+function parseJSON(jsonObj) {
+	var row = jsonObj.CardSubwayStatsNew.row;
+	var i;
+
+	var table = "<tr><th>호선</th><th>역명</th><th>승차인원</th><th>하차인원</th></tr>";
+	for (i = 0; i < row.length; i++) {
+		table += "<tr>"; 
+		table += "<td>" + row[i].LINE_NUM + "</td>";
+		table += "<td>" + row[i].SUB_STA_NM + "</td>";
+		table += "<td>" + row[i].RIDE_PASGR_NUM + "</td>";
+		table += "<td>" + row[i].ALIGHT_PASGR_NUM + "</td>";
+		table += "</tr>"; 
+	}
+
+
+	//  ↓ jQuery 함수로 수정 가능
+	// document.getElementById("demoJSON").innerHTML = table;
+	$('#demoJSON').html(table);
+}
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Intro</title>
+<!-- 
+	jQuery 란?
+	JavaScript 라이브러리 중 하나입니다.
+	JavaScript 의 프로그래밍을 혁신적으로 단순화 시키고 편리하게 제작가능케 함
+	가장 널리 쓰이고, 가장 오래 쓰여온 JavaScript 라이브러리로
+	오늘날 주요 웹사이트는 거의다 jQuery를 사용함.
+	
+	
+	주요기능)
+	- HTML DOM 을 쉽게 다룰수 있다
+	- CSS 를 쉽게 다룰수 있다.
+	- HTML 이벤트 등도 쉽게 다룰수 있다
+	- 다양한 이펙트 와 애니메이션도 쉽게 다룰수 있다.
+	- AJAX 를 쉽게 다룰수 있다.
+	- 코드 보안성(?) 쉽게 다룰수 있다 (?)
+	
+
+	공식사이트: http://jquery.com/
+	모토: write less, do more
+	일본어: ジェイクエリー
+	
+	다운로드시 2가지 버젼)
+	압축된 버젼 :     jquery.min.js  (배포용)
+	비악축 버젼 :     jquery.js  (개발,디버깅용)
+	
+	
+	다양한 CDN 존재)
+	-구글CDN  https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+	-MS CDN  https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js
+	
+	※ CDN : Content Delivery Network  혹은 Content Distribution Network
+	컨텐츠의 배포를 위해 세계 곳곳에 다운로드 가능한 서버에 컨텐츠를 배치시키고 다운로드 가능케 함.
+	CDN 의 이점 : 이미 방문한 사이트를 통해 이미  해단 컨텐츠가 다운로드되어 캐시 된 경우 로딩속도 향상 기대
+	
+	
+ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	//ready() 는 매개변수로 함수가 와야한다.  
+	// document가 다 로딩되면 ready() 안에있는 매개변수 함수를 실행하세요
+	$(document).ready(function(){
+		$('p').click(function(){
+			$(this).hide();
+		});  //클릭에도 함수가 들어가야함   .addEventListener 랑 동일한 기능
+	});
+
+</script>
+ 
+</head>
+<body>
+
+<p>jQuery로 없어지는 마술을 보여줄께.</p>
+<p>요것도.</p>
+<p>따다~~!</p>
+
+</body>
+</html>

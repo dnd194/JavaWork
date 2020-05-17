@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BS4 - Pagination</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<!--
+	페이징 기능(Pagination)은 게시판 과 같이, 항목이 많은 페이지에 쓰임
+	<ul> 에 .pagination 세팅
+	<li> 에 .page-item 그리고 <a> 에 .page-link   
+ -->
+<body>
+
+<div>
+  <h2>Pagination 기본</h2>
+  <p>&lt;ul&gt; 에 <b>.pagination</b> 세팅</p>
+  <p>&lt;li&gt; 에 <b>.page-item</b> 그리고 &lt;a&gt; 에 <b>.page-link</b> </p>                  
+  <ul>
+    <li>Previous</a></li>
+    <li>1</a></li>
+    <li>2</a></li>
+    <li>3</a></li>
+    <li>Next</a></li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Pagination - Active 상태</h2>
+  <p>&lt;li&gt; 에 <b>.active</b> </p>
+  <ul>
+    <li>Previous</a></li>
+    <li>1</a></li>
+    <li>2</a></li>
+    <li>3</a></li>
+    <li>Next</a></li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Pagination - Disabled 상태</h2>
+  <p>&lt;li&gt; 에 <b>.disabled</b> </p>
+  <ul>
+    <li>Previous</a></li>
+    <li>1</a></li>
+    <li>2</a></li>
+    <li>3</a></li>
+    <li>Next</a></li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Pagination - Sizing</h2>
+  <p><b>.pagination-lg</b> 혹은 <b>.pagination-sm</b></p>
+
+  <p>Large:</p>
+  <ul>
+    <li>Previous</a></li>
+    <li>1</a></li>
+    <li>2</a></li>
+    <li>3</a></li>
+    <li>Next</a></li>
+  </ul>
+
+  <p>Default:</p>
+  <ul>
+    <li>Previous</a></li>
+    <li>1</a></li>
+    <li>2</a></li>
+    <li>3</a></li>
+    <li>Next</a></li>
+  </ul>
+
+  <p>Small:</p>
+  <ul>
+    <li>Previous</a></li>
+    <li>1</a></li>
+    <li>2</a></li>
+    <li>3</a></li>
+    <li>Next</a></li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Pagination 정렬</h2>
+  <p>유틸리티 클래스 사용</p>
+  <!-- BS4 의 Utility/Helper 클래스는 따로 공부 -->
+  <p>&lt;ul&gt; 에 <b>.justify-content-center</b> 혹은 <b>.justify-content-end</b></p>                  
+  <ul>
+    <li>Previous</a></li>
+    <li>1</a></li>
+    <li>2</a></li>
+    <li>Next</a></li>
+  </ul>
+  <ul>
+    <li>Previous</a></li>
+    <li>1</a></li>
+    <li>2</a></li>
+    <li>Next</a></li>
+  </ul>
+  <ul>
+    <li>Previous</a></li>
+    <li>1</a></li>
+    <li>2</a></li>
+    <li>Next</a></li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Breadcrumbs</h2>
+  <p><b>.breadcrumb</b></p>                  
+  <ul>
+    <li>Photos</a></li>
+    <li>Summer 2017</a></li>
+    <li>Italy</a></li>
+    <li>Rome</li>
+  </ul>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+.USJGu {
+    margin-top: 24px;
+    width: 100%;
+    font-size: 18px;
+    color: rgb(1, 1, 1);
+    letter-spacing: -1px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 16px;
+    margin-left: 20px;
+}
+.text-center {
+    text-align: center;
+}
+.fa-question-circle:before {
+    content: "\f059";
+}
+.USJGu sup {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 18px;
+    padding-left: 4px;
+    top: -0.2em;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.gtKVaz {
+    font-family: RingsideWideSSm-Medium_Web;
+    color: rgb(8, 160, 92);
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    margin-right: 40px;
+}
+.hAKfpT {
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    position: absolute;
+    width: 1px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0px;
+}
+.fINYvD {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-left: 0px;
+    margin: 0px -8px;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.fINYvD > * {
+    
+    display: inline-block;
+    padding: 0px 8px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.bCufAv {
+    max-width: 215px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(250, 250, 250);
+    border-image: initial;
+    border-radius: 3px;
+}
+.tile {
+    color: #000;
+    text-align: left;
+    position: relative;
+}
+.lmWSbq {
+    margin: 16px;
+}
+.ftvbug {
+    max-width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.bKAXcS {
+    background-color: rgb(250, 250, 250);
+    text-align: left;
+    padding: 16px;
+}
+.hugwvm {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.3;
+}
+.tile .change {
+    font-weight: 400;
+}
+.ixhmNJ {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.3;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: capitalize;
+}
+.lmWSbq:hover{
+    animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }

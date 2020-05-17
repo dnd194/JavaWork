@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>BS4 ListGroup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<!-- 
+	<ul> 에 .list-group 
+	<li> 에 .list-group-item
+ -->
+<body>
+<div>
+  <h2>List Group 기본</h2>
+  <p>&lt;ul&gt; 에 <b>.list-group</b> &lt;li&gt; 에 <b>.list-group-item</b></p>
+  <ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
+</div>
+<br>
+
+<div>
+  <h2>Active Item</h2>
+  <p><b>.active</b></p>
+  <ul>
+    <li>Active item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>List Group 에 link 걸기</h2>
+  <p>ul 대신에 div 를,  li 대신에 a  <b>.list-group-item-action</b></p>
+  <!-- ul 대신에 div 를,  li 대신에 a 를 
+  .list-group-item-action 은 마우스 올려놓았을때 효과
+  -->
+  <div>
+    <a href="#">First item</a>
+    <a href="#">Second item</a>
+    <a href="#">Third item</a>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>List Group 와  Disabled</h2>
+  <p><b>.disabled</b></p>
+  <div>
+    <a href="#">Disabled item</a>
+    <a href="#">Disabled item</a>
+    <a href="#">Third item</a>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>Flush / Remove Borders</h2>
+  <p><b>.list-group-flush</b> 테두리 제거</p>
+  <ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+    <li>Fourth item</li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>List Group 와 Contextual 색상</h2>
+  <p><b>.list-group-item-*</b> 사용</p>
+  <ul>
+    <li>Success item</li>
+    <li>Secondary item</li>
+    <li>Info item</li>
+    <li>Warning item</li>
+    <li>Danger item</li>
+    <li>Primary item</li>
+    <li>Dark item</li>
+    <li>Light item</li>
+  </ul>
+</div>
+<hr>
+
+<div>
+  <h2>Linked Items + 색상 + Link</h2>
+  <p><b>.list-group-item-action</b></p>
+  <div>
+    <a href="#">Action item</a>
+    <a href="#">Success item</a>
+    <a href="#">Secondary item</a>
+    <a href="#">Info item</a>
+    <a href="#">Warning item</a>
+    <a href="#">Danger item</a>
+    <a href="#">Primary item</a>
+    <a href="#">Dark item</a>
+    <a href="#">Light item</a>
+  </div>
+</div>
+<hr>
+
+<div>
+  <h2>List Group With Badges</h2>
+  <p><b>.badge</b> 와  utility/helper 사용</p>
+  <ul>
+    <li>
+      Inbox
+      <span>12</span>
+    </li>
+    <li>
+      Ads
+      <span>50</span>
+    </li>
+    <li>
+      Junk
+      <span>99</span>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+</body>
+</html>
