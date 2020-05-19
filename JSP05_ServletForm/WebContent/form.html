@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>서블릿_폼</title>
+</head>
+<body>
+<!-- 이걸 받은 Servlet 이 필요하다. 만들어준다 urlmapping은 FormOk 로  -->
+	<form action="FormOk" method="post">
+		<input type="hidden" name="data1" value="alpha"> <input
+			type="hidden" name="data2" value="beta"> Name: <input
+			type="text" name="name" size="15" /><br /> ID: <input type="text"
+			name="id" size="15" /><br /> PassWord: <input type="password"
+			name="pw" size="15" /><br /> 취미 : <input type="checkbox"
+			name="hobby" value="sports" /> 스포츠 <input type="checkbox"
+			name="hobby" value="tour" /> 여행 <input type="checkbox" name="hobby"
+			value="movie" /> 영화감상 <input type="checkbox" name="hobby"
+			value="hiking" /> 등산<br /> 성별 :<input type="radio" name="gender"
+			value="man" /> 남성 <input type="radio" name="gender" value="woman" />여성<br />
+		<select name="local">
+			<option value="sel">서울</option>
+			<option value="kwang">광주</option>
+			<option value="busan">부산</option>
+			<option value="kang">강릉</option>
+		</select><br /> <br /> <br /> 메모:
+		<textarea rows="5" cols="10" name="memo"></textarea>
+
+		<br /> <input type="submit" value="전송" /> <input type="reset"
+			value="초기화" />
+	</form>
+</body>
+</html>
+
+
