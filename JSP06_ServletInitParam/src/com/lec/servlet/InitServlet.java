@@ -11,9 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class InitServlet
- */
+//@WebInitParam은  import 필요
+
 @WebServlet(urlPatterns = {"/InitS"},
 				initParams = {
 						@WebInitParam(name = "id", value = "test11"),
@@ -34,6 +33,8 @@ public class InitServlet extends HttpServlet {
 	//초기화 된 parameter 가져오는 함수 ServletConfig
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		ServletConfig 의 메소드를 사용한다.
+//		선택하고 CTRL+T 누르면 hierarchy 를 볼수 있다
+
 		String id = getInitParameter("id"); // ==> xml init-param 에서 id 값을 가져옴
 		String pw = getInitParameter("pw");
 		String local = getInitParameter("local");
@@ -41,7 +42,9 @@ public class InitServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		//html , head, body 다 생략한 상태에서도 됨
-		// web.xml에서 초기화한 값들이 찍힌다.
+		// web.xml에서 초기화한 값들이 찍힌다. 
+//		(현재는 주석상태라서 servlet에서 정한 값이 찍힌다.)
+//		@WebInitParam 로 정의 해줬음
 		out.println("id : " + id+ "<br>");
 		out.println("pw : " + pw+ "<br>");
 		out.println("local : " + local+ "<br>");
