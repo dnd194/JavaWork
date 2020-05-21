@@ -66,7 +66,7 @@
 		
 		pstmt.setString(1, name);
 		pstmt.setInt(2, age);
-		pstmt.setInt(3, foot);
+// 		pstmt.setInt(3, foot);
 		pstmt.setString(4, intro);
 		
 		cnt= pstmt.executeUpdate();
