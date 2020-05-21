@@ -10,6 +10,7 @@
 <title>SessionList</title>
 </head>
 <body>
+<!-- 하나의 session sessionName 과 sessionValue 로 이루어져있어 그리고 고유한 Id도 있지-->
 <%
 	// 유효한 세션이 있는 확인하는 메서드
 	if(request.isRequestedSessionIdValid()){
@@ -47,7 +48,6 @@
 	<input type="submit" value="세션  삭제">
 </form>
 <hr>
-
 <%
 	String sessionId = session.getId(); //세션도 일정시간이 지나면 사라짐
 	
