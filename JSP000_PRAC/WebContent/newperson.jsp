@@ -13,7 +13,9 @@
 		
 		var name = frm.name.value.trim();
 		var age = frm.age.value;
-		var intro = frm.into.value.trim();
+		var intro = frm.intro.value.trim();
+		var region = frm.region.value.trim();
+		var footsize = frm.footsize.value; 
 		if(name ==""){
 			alert("어이어이.. 이름은 적으라구");
 			frm.name.focus();
@@ -31,7 +33,16 @@
 			frm.intro.focus();
 			return false;
 		}
-		
+		if(region ==""){
+			alert("지역");
+			frm.region.focus();
+			return false;
+		}
+		if(footsize ==""){
+			alert("발크기");
+			frm.region.focus();
+			return false;
+		}
 	}
 
 </script>

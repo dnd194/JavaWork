@@ -44,4 +44,5 @@ SELECT * FROM test_write ORDER BY wr_uid DESC;
 INSERT INTO test_write(wr_uid, wr_subject, wr_content, wr_name)
 	SELECT test_write_seq.nextval, wr_subject, wr_content, wr_name FROM test_write;
 
+DELETE FROM test_write WHERE wr_uid > 20;
 

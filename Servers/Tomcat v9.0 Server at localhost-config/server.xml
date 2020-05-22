@@ -113,8 +113,19 @@
 				<Context docBase="JSP08_TagDirective" path="/JSP08_TagDirective" reloadable="true" source="org.eclipse.jst.jee.server:JSP08_TagDirective"/>
 				<Context docBase="JSP09_ImplicitObject" path="/JSP09_ImplicitObject" reloadable="true" source="org.eclipse.jst.jee.server:JSP09_ImplicitObject"/>
 				<Context docBase="JSP10_ActionTag" path="/JSP10_ActionTag" reloadable="true" source="org.eclipse.jst.jee.server:JSP10_ActionTag"/>
-			<Context docBase="JSP11_Cookie" path="/JSP11_Cookie" reloadable="true" source="org.eclipse.jst.jee.server:JSP11_Cookie"/><Context docBase="JSP12_Session" path="/JSP12_Session" reloadable="true" source="org.eclipse.jst.jee.server:JSP12_Session"/><Context docBase="JSP13_Exception" path="/JSP13_Exception" reloadable="true" source="org.eclipse.jst.jee.server:JSP13_Exception"/><Context docBase="JSP14_JavaBean" path="/JSP14_JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JSP14_JavaBean"/><Context docBase="JSP15_JDBC" path="/JSP15_JDBC" reloadable="true" source="org.eclipse.jst.jee.server:JSP15_JDBC"/><Context docBase="JSP16_PRAC" path="/JSP16_PRAC" reloadable="true" source="org.eclipse.jst.jee.server:JSP16_PRAC"/></Host>
+				<Context docBase="JSP11_Cookie" path="/JSP11_Cookie" reloadable="true" source="org.eclipse.jst.jee.server:JSP11_Cookie"/>
+				<Context docBase="JSP12_Session" path="/JSP12_Session" reloadable="true" source="org.eclipse.jst.jee.server:JSP12_Session"/>
+				<Context docBase="JSP13_Exception" path="/JSP13_Exception" reloadable="true" source="org.eclipse.jst.jee.server:JSP13_Exception"/>
+				<Context docBase="JSP14_JavaBean" path="/JSP14_JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JSP14_JavaBean"/>
+				<Context docBase="JSP000_PRAC" path="/JSP000_PRAC" reloadable="true" source="org.eclipse.jst.jee.server:JSP000_PRAC"/>
+				<Context docBase="JSP16_DAODTO" path="/JSP16_DAODTO" reloadable="true" source="org.eclipse.jst.jee.server:JSP16_DAODTO"/>
+
+				<Context docBase="JSP17_ConnectionPool" path="/JSP17_ConnectionPool" reloadable="true" source="org.eclipse.jst.jee.server:JSP17_ConnectionPool" useNaming="true">
+					<Resource auth="Container" description="DB Connection" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="5" maxTotal="50" maxWaitMillis="5000" name="jdbc/testDB" password="tiger0316" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="scott0316"/>
+				</Context>
+			<Context docBase="JSP15_JDBC" path="/JSP15_JDBC" reloadable="true" source="org.eclipse.jst.jee.server:JSP15_JDBC"/>
+			<Context docBase="JSP18_MVC" path="/JSP18_MVC" reloadable="true" source="org.eclipse.jst.jee.server:JSP18_MVC"/></Host>
 			<!--뒤에 host 지워버리면 큰일 납니다~~ -->
 		</Engine>
 	</Service>
-</Server>
+</Server><!-- <Context docBase="JSP17_ConnectionPool" path="/JSP17_ConnectionPool" reloadable="true" source="org.eclipse.jst.jee.server:JSP17_ConnectionPool" useNaming="true"> --><!-- 					<Resource auth="Container" description="DB Connection" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="5" maxTotal="50" maxWaitMillis="5000" name="jdbc/testDB" password="tiger0316" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="scott0316"/> --><!-- 				</Context> -->
