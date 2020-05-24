@@ -171,11 +171,11 @@ table, th, td {
 <%-- 위 트랜잭션이 마무리 되면 페이지 보여주기 --%>
 
 <%-- 페이징 --%>
-<%-- <jsp:include page="pagination.jsp"> --%>
-<%-- 	<jsp:param value="<%= writePages %>" name="writePages"/> --%>
-<%-- 	<jsp:param value="<%= totalPage %>" name="totalPage"/> --%>
-<%-- 	<jsp:param value="<%= curPage %>" name="curPage"/> --%>
-<%-- </jsp:include> --%>
+<jsp:include page="pagination.jsp">
+	<jsp:param value="<%= writePages %>" name="writePages"/>
+	<jsp:param value="<%= totalPage %>" name="totalPage"/>
+	<jsp:param value="<%= curPage %>" name="curPage"/>
+</jsp:include>
 
 
 

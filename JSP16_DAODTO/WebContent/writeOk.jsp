@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" 
-    import = "java.sql.*"  
-    %>  
-    <jsp:useBean id="dao" class="com.lec.beans.WriteDAO"></jsp:useBean>
-    <%-- DAO Bean 생성 --%>
-    
+	pageEncoding="UTF-8" import="java.sql.*"%>
+<jsp:useBean id="dao" class="com.lec.beans.WriteDAO"></jsp:useBean>
+<%-- DAO Bean 생성 dao 에서 연결을 해주기 때문에 필수임--%>
+
 <%--     
     <%
     	request.setCharacterEncoding("utf-8");  //한글 인코딩
@@ -33,31 +31,37 @@
 %> --%>
 
 <%
-	request.setCharacterEncoding("utf-8");  //한글 인코딩  post로 받아오기때문에 꼭해줘야함
+	request.setCharacterEncoding("utf-8"); //한글 인코딩  post로 받아오기때문에 꼭해줘야함
 %>
 <jsp:useBean id="dto" class="com.lec.beans.WriteDTO"></jsp:useBean>
-<jsp:setProperty property="*" name="dto"/>
-    <%
-//     	int cnt = dao.insert(subject, content, name);
-    /* 위에 구문이 끝나고 자원을 닫아줌 */
-    
-    	int cnt = dao.insert(dto);
-    %>
-    
-<!-- 위 트랜잭션이 마무리되면 페이지 보여주기 -->
+<jsp:setProperty property="*" name="dto" />
+<!--  여기 jsp:usebean 위치 맨위로 옮기거나 바꾸면 한글인코딩 안됌 ㅋㅋㅋㅋㅋㅋ -->
 <% 
-	if(cnt == 0 ){ %>
-		<script>
-			alert("등록실패~~");
-			history.back();  //브라우저가 기억하는 직전 페이지
-		</script>
-<% }else{ %>
-		<script>
-			alert("등록 성공, 리스트를 출력합니다~~");
-			location.href("list.jsp");  //브라우저가 기억하는 직전 페이지
-		</script>
-<% } %>
-	
+	//     	int cnt = dao.insert(subject, content, name);
+	/* 위에 구문이 끝나고 자원을 닫아줌 */
+
+	int cnt = dao.insert(dto);
+%>
+
+<!-- 위 트랜잭션이 마무리되면 페이지 보여주기 -->
+<%
+	if (cnt == 0) {
+%>
+<script>
+	alert("등록실패~~");
+	history.back(); //브라우저가 기억하는 직전 페이지
+</script>
+<%
+	} else {
+%>
+<script>
+	alert("등록 성공, 리스트를 출력합니다~~");
+	location.href("list.jsp"); //브라우저가 기억하는 직전 페이지
+</script>
+<%
+	}
+%>
+
 
 
 

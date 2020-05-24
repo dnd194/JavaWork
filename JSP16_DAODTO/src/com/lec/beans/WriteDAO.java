@@ -98,14 +98,14 @@ public class WriteDAO {
 	
 			WriteDTO dto = new WriteDTO(uid, subject ,content, name, viewCnt);
 			dto.setRegDate(regDate);
-			list.add(dto);
+			list.add(dto);  //1개씩 while문을 돌리며 넣어줌
 		}//end while
-		int size = list.size();
+		int size = list.size();   // size 변수에 arrayList 의 길이(size())를 담음  
 		if(size == 0 ) return null;
-		arr = new WriteDTO[size];
-		list.toArray(arr);
+		arr = new WriteDTO[size];   // 길이가 size인 WriteDTO 타입배열을 만듬
+		list.toArray(arr);  //WriteDTO 형태를 가진 배열 arr을 WriteDTO 형태를 가진 arrayList로 만들어줌
 		
-		return arr;
+		return arr;     //그리고 arrayList<WriteDTO> arr을 return 해줌
 	
 	}// end createArray
 	
