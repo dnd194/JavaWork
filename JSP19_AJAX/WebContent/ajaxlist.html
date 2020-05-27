@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery + AJAX</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+<h1>목록 보기 : AJAX</h1>
+<form>
+<button id="btn_load" type="button">목록 가져오기</button>
+<button id="btn_remove" type="button">목록 지우기</button>
+</form>
+<br><br>
+<h2>AJAX + XML</h2>
+<table id="demoXML"></table>
+<hr>
+<h2>AJAX + JSON</h2>
+<table id="demoJSON"></table>
+
+<script>
+
+
+$(document).ready(function(){
+	$("#btn_load").click(function(){
+		 
+		 
+		 // XML
+		 var url = "http://localhost:8082/JSP19_AJAX/list.ajax?reqType=xml";
+		 
+		 
+		 
+		$.ajax({
+			type: "GET",
+			url: url,
+			cache : false,
+			success: function (data, status) {
+				if(status == "success") parseXML(data);
+			}
+		});
+		 
+		// JSON
+		url = "http://localhost:8082/JSP19_AJAX/list.ajax?reqType=json";
+		 
+		$.ajax({
+			type: "GET",
+			url: url,
+			cache : false,
+			success: function (data, response) {
+				if(response == "success") parseJSON(data);
+			}
+		});
+		
+	 });
+	$("#btn_remove").click(function(){
+		$("#demoXML").html("");
+		$("#demoJSON").html("");
+	 });
+});
+ 
+function parseXML(xmlDOM) {
+	var table = "<tr><th>id</th><th>작성자</th><th>글제목</th><th>글내용</th><th>조회수</th><th>작성일</th></tr>";
+	$(xmlDOM).find("Data").each(function(){
+		table += "<tr>";
+		table += "<td>" + $(this).find("uid").text() + "</td>";
+		table += "<td>" + $(this).find("name").text() + "</td>";
+		table += "<td>" + $(this).find("subject").text() + "</td>";
+		table += "<td>" + $(this).find("content").text() + "</td>";		
+		table += "<td>" + $(this).find("viewcnt").text() + "</td>";		
+		table += "<td>" + $(this).find("regdate").text() + "</td>";		
+		table += "</tr>";
+	});
+	$("#demoXML").html(table);
+}
+
+function parseJSON(jsonObj){
+	var data = jsonObj.data;
+	var i;
+
+	var table = "<tr><th>id</th><th>작성자</th><th>글제목</th><th>글내용</th><th>조회수</th><th>작성일</th></tr>";
+	for (i = 0; i < data.length; i++) {
+		table += "<tr>"; 
+		table += "<td>" + data[i].uid + "</td>";
+		table += "<td>" + data[i].name + "</td>";
+		table += "<td>" + data[i].subject + "</td>";
+		table += "<td>" + data[i].content + "</td>";
+		table += "<td>" + data[i].viewcnt + "</td>";
+		table += "<td>" + data[i].regdate + "</td>";
+		table += "</tr>"; 
+	}
+	$("#demoJSON").html(table);
+}
+ 
+</script>
+
+</body>
+</html>
+

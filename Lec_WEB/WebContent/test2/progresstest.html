@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <title>Document</title>
+    </head>
+    
+    <body>
+    <input type="button" id="test" value="통신 시작">
+	<!-- progress bar -->
+	<div id="loading-prograss" class="loading-prograss" style="display: none">
+		<div class="spinner-border text-secondary" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<!-- /progress bar -->
+
+	<!-- Bootstrap js -->
+	<!-- Popper JS -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- /Bootstrap js -->
+        <!-- jQuery library -->
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('#test').on('click', function() {
+            $.ajax({
+                type : 'POST',
+                data : {
+                    email : email,
+                    password : password
+                },
+                datatype : 'json',
+                url : 'memberLogin',
+                success : function(data) {
+                },
+                error : function(xhr, status, error) {
+                    alert('ajax error');
+                }
+            });
+            $(document).ajaxStart(function() {
+                $('#loading-prograss').show();
+            });
+            $(document).ajaxStop(function() {
+                $('#loading-prograss').hide();
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
