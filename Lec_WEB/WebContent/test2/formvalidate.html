@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼검증</title>
+    <style>
+
+        /* <!-- 스타일은 우리 꺼로 해야함--> */
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+        /* Styles */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Open Sans";
+            font-size: 14px;
+        }
+
+        .container {
+            width: 500px;
+            margin: 25px auto;
+        }
+
+        .title {
+            margin-bottom: 1rem;
+        }
+
+        form {
+            padding: 20px;
+            background: #2c3e50;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        form label,
+        form input,
+        form button {
+            border: 0;
+            margin-bottom: 3px;
+            display: block;
+            width: 100%;
+        }
+
+        form input {
+            height: 25px;
+            line-height: 25px;
+            background: #fff;
+            color: #000;
+            padding: 0 6px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            height: 30px;
+            line-height: 30px;
+            background: #e67e22;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            cursor: pointer;
+        }
+
+        form .error {
+            color: #ff0000;
+        }
+
+        .article-reference {
+            margin-top: 15px;
+        }
+
+        .article-reference a {
+            color: #e67e22;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script>
+        // Wait for the DOM to be ready
+        $(function () {
+            // Initialize form validation on the registration form.
+            // It has the name attribute "registration"
+            $("form[name='registration']").validate({
+                // Specify validation rules
+                rules: {
+                    // The key name on the left side is the name attribute
+                    // of an input field. Validation rules are defined
+                    // on the right side
+                    firstname: "required",
+                    lastname: "required",
+                    email: {
+                        required: true,
+                        // Specify that email should be validated
+                        // by the built-in "email" rule
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8,
+                        maxlength: 15
+                    }
+                },
+                // Specify validation error messages
+                messages: {
+                    firstname: "성을 입력해주세요",
+                    lastname: "이름을 입력해주세요",
+                    password: {
+                        required: "비밀번호는 필수 입니다",
+                        minlength: "비밀번호는 8자리 이상입니다."
+                    },
+                    email: "Please enter a valid email address"
+                },
+                // Make sure the form is submitted to the destination defined
+                // in the "action" attribute of the form when valid
+                submitHandler: function (form) {
+                    form.submit();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 회원 가입 폼은 우리 대로 맞추고 validate에 추가해주면 될거같음-->
+        <h2 class="title">폼검증 우리는 매장주소도 추가해주면 될듯</h2>
+        <form action="#" name="registration">
+            <!-- 여기서 action 이랑 name 처리 해주면될듯-->
+
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" id="firstname" placeholder="IM">
+
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" placeholder="Kelvin">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="dnd194@gmail.com">
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;">
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="article-reference">
+            화이팅합시다요
+            <!-- 주소는 우리가 바꾸면됨 -->
+            <a href="https://www.sitepoint.com/basic-jquery-form-validation-tutorial/" target="_blank">Basic jQuery Form
+                Validation Example</a> on <a href="http://sitepoint.com/" target="_blank">SitePoint</a> by
+            <a href="https://github.com/julmot" target="_blank"> 아 상빈씨</a>.
+        </div>
+    </div>
+</body>
+
+</html>

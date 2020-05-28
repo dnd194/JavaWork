@@ -7,12 +7,18 @@
 </head>
 <body>
 <form action="pay.jsp" method="post">
-제품명 : <input type="text" name="product"><br>
-이름 : <input type="text" name="name"><br>
-email : <input type="email" name="email"><br>
-address : <input type="text" name="address"><br>
-phone : <input type="number" name="phone"><br>
-totalPrice : <input type="number" name="totalPrice"><br>
+<!-- 제품명 : <input type="text" name="product"><br> -->
+제품 : <select name="product">
+	<option value="30day">30일 이용</option>
+	<option value="60day">60일 이용</option>
+	<option value="90day" selected>90일 이용</option>
+	<option value="120day">120일 이용</option>
+</select><br>
+이름 : <input type="text" name="name" value="임상빈"><br>
+email : <input type="email" name="email" value="dnd194@gmail.com"><br>
+address : <input type="text" name="address" value="서울"><br>
+phone : <input type="number" name="phone" value="01047157676"><br>
+totalPrice : <input type="number" name="totalPrice" value=20000><br>
 <input type="submit">
 </form>
 </body>

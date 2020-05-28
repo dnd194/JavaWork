@@ -104,18 +104,18 @@
 				<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
 				<!-- 이클립스에서 default로 폴더명과 같은 이름으로 path를 만들어줌 -->
-				<Context docBase="JSP02_ServletBasic" path="/JSP02_ServletBasic" reloadable="true" source="org.eclipse.jst.jee.server:JSP02_ServletBasic"/>
-				<Context docBase="JSP03_ServletGetPost" path="/JSP03_ServletGetPost" reloadable="true" source="org.eclipse.jst.jee.server:JSP03_ServletGetPost"/>
-				<Context docBase="JSP04_ServletLifeCycle" path="/JSP04_ServletLifeCycle" reloadable="true" source="org.eclipse.jst.jee.server:JSP04_ServletLifeCycle"/>
-				<Context docBase="JSP05_ServletForm" path="/JSP05_ServletForm" reloadable="true" source="org.eclipse.jst.jee.server:JSP05_ServletForm"/>
-				<Context docBase="JSP06_ServletInitParam" path="/JSP06_ServletInitParam" reloadable="true" source="org.eclipse.jst.jee.server:JSP06_ServletInitParam"/>
-				<Context docBase="JSP07_ServletContext" path="/Serv" reloadable="true" source="org.eclipse.jst.jee.server:JSP07_ServletContext"/>
-				<Context docBase="JSP08_TagDirective" path="/JSP08_TagDirective" reloadable="true" source="org.eclipse.jst.jee.server:JSP08_TagDirective"/>
-				<Context docBase="JSP09_ImplicitObject" path="/JSP09_ImplicitObject" reloadable="true" source="org.eclipse.jst.jee.server:JSP09_ImplicitObject"/>
-				<Context docBase="JSP10_ActionTag" path="/JSP10_ActionTag" reloadable="true" source="org.eclipse.jst.jee.server:JSP10_ActionTag"/>
-				<Context docBase="JSP11_Cookie" path="/JSP11_Cookie" reloadable="true" source="org.eclipse.jst.jee.server:JSP11_Cookie"/>
-				<Context docBase="JSP12_Session" path="/JSP12_Session" reloadable="true" source="org.eclipse.jst.jee.server:JSP12_Session"/>
-				<Context docBase="JSP13_Exception" path="/JSP13_Exception" reloadable="true" source="org.eclipse.jst.jee.server:JSP13_Exception"/>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				<Context docBase="JSP14_JavaBean" path="/JSP14_JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JSP14_JavaBean"/>
 				<Context docBase="JSP000_PRAC" path="/JSP000_PRAC" reloadable="true" source="org.eclipse.jst.jee.server:JSP000_PRAC"/>
 				<Context docBase="JSP16_DAODTO" path="/JSP16_DAODTO" reloadable="true" source="org.eclipse.jst.jee.server:JSP16_DAODTO"/>

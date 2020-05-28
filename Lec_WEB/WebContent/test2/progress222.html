@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h4>ajaxStart() 메소드 예제</h4>
+    <div class="test">Test</div>
+    <p>Press Button !!</p>
+    <button>Button</button>
+    <script>
+        $(document).ajaxStart(function () {
+            $('p').text('Loading');
+        });
+        $("button").click(function () {
+            $("p").load("gggggggg.txt");
+        });
+
+        $(document).ajaxStop(function () {
+            $(".test").hide();
+        })
+        
+
+    //이거 응용하면 될듯  show()  랑 hide()
+
+
+       $('button').click(function (e) { 
+           e.preventDefault();
+           $(document).ajaxStart(function(){
+               $('p').append("불러오는중입니다.");
+           });
+           $(document).ajaxStop(function(){
+                $('h4').text("완료^^").hide();
+           })
+
+
+       });
+    </script>
+
+</body>
+
+</html>

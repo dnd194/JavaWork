@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import= "com.lec.emailt.*"%>
 <%
 	request.setCharacterEncoding("utf-8");
     String product = request.getParameter("product");
@@ -7,7 +8,10 @@
     String email = request.getParameter("email");
     String phone = request.getParameter("phone");
     String address = request.getParameter("address");
-    int totalPrice = Integer.parseInt(request.getParameter("totalPrice"));    
+    int totalPrice = Integer.parseInt(request.getParameter("totalPrice")); 
+    
+    emailPrccc emailtt = new emailPrccc(product,email, totalPrice);
+//     emailtt.setPayMessege(product);
 %>
 <!DOCTYPE html>
 <html>
@@ -57,6 +61,7 @@
                         msg += '카드 승인번호 : ' + rsp.apply_num;
                         
                         alert(msg);
+			<%  emailtt.naverMailSend();   %>
                     } else {
                         //[3] 아직 제대로 결제가 되지 않았습니다.
                         //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
