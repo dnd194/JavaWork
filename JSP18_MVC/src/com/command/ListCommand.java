@@ -12,7 +12,6 @@ public class ListCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
 
 		WriteDAO dao = new WriteDAO();   //
 		WriteDTO[] arr = null;  //초기값

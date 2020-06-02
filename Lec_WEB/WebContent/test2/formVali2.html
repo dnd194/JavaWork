@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+<body>
+
+    <form id="joinForm" method="post" action="#">
+        <table border="1" cellspacing="0" cellpadding="5" style="width:550px;">
+            <tr>
+                <th colspan="2">Join Form</th>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td><input type="text" id="id" name="id" /></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" id="pwd" name="pwd" /></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="password" id="pwdConfirm" name="pwdConfirm" /></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" id="name" name="name" /></td>
+            </tr>
+
+            <tr>
+                <td>이메일 </td>
+                <td><input type="text" id="email" name="email" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align:right;"><input type="submit" value="JOIN!" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        $("#joinForm").validate({ // joinForm에 validate를 적용
+            rules: {
+                id: {
+                    required: true,
+                    rangelength: [5, 10]
+                },
+                // required는 필수, rangelength는 글자 개수(5~10개 사이)
+                pwd: {
+                    required: true,
+                    rangelength: [8, 15]
+                },
+                pwdConfirm: {
+                    required: true,
+                    equalTo: "#pwd"
+                },
+                // equalTo : id가 pwd인 값과 같아야함
+                name: "required", // 검증값이 하나일 경우 이와 같이도 가능
+
+                email: {
+                    required: true,
+                    email: true
+                },
+                // email 형식 검증
+
+            },
+            messages: {
+                id: "아이디를 입력해주세요",
+                name: "이름을 입력해주세요",
+                pwd: {
+                    required: "비밀번호는 필수 입니다",
+                    minlength: "비밀번호는 8자리 이상입니다."
+                },
+                pwdConfirm: "똑같은 비밀번호를 입력해주세요",
+                email: "유효한 이메일을 입력해주세요"
+            },
+        });
+    </script>
+
+</body>
+
+</html>

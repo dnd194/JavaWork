@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+*{
+  font-family: "Avenir Next", "Century Gothic", "Franklin Gothic Medium", "Helvetica Neue", Helvetica, Arial, sans-serif,'Nanum Gothic Coding', monospace;
+  letter-spacing: 1px;
+  }
+
+.header{
+  height: 100px;
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+video#bgvideo {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(https://nrsplus.com/ext/bg-still.jpg) no-repeat;
+    background-size: cover;
+    }
+    
+/* 동영상 위 글씨 */
+.vid-text {
+  margin: 150px 100px 0px 100px;
+  max-width: 55%;
+  vertical-align: middle;
+  color:#fff;
+
+}
+.vid-h1{
+  font-size: 39px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+.vid-h2{
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+.vid-h3{
+  font-size: 20px;
+  margin-bottom: 50px;
+  font-weight: 600;
+  line-height: 150%;
+  font-weight: 200;
+}
+
+/* 버튼 */
+.vid-txt-1{
+  padding: px 60px;
+
+}
+
+.vid-txt-1 div{
+  margin: 100px 80px;
+  padding: 50px 50px;
+  background-color: rgb(37, 37, 85);
+  opacity: 80%;
+  position: relative;
+  width: 10%;
+  display: inline-block;
+}
+
+.vid-txt-1 a{
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(247, 232, 211);
+}
+
+/* foot3 */
+.language{
+  background-color:rgb(245, 243, 241);
+  padding: 15px 0px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.lan{
+  margin-right: auto;
+  margin-left: auto;
+  width: 480px;
+}
