@@ -15,7 +15,7 @@
 	<c:otherwise>
 		<script>
 			alert("수정 성공, 수정된 리스트를 '다시' 출력합니다~~");
-			location.href="view.do?uid=${param.uid}";
+			location.href="view.do?uid=${uid}";
 		</script>
 	</c:otherwise>
 </c:choose>

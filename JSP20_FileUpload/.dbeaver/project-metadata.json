@@ -1,1 +1,1 @@
-{"resources":{"ERD/test_write_oracle.sql":{"sql-editor-data-source-id":"oracle_thin-17272653547-72a83886d5a621d4","default-schema":"SCOTT0316"}}}
+{"resources":{"ERD/test_write_oracle.sql":{"default-schema":"SCOTT0316","sql-editor-data-source-id":"oracle_thin-17272653547-72a83886d5a621d4"},"ERD/test_write_oracle2.sql":{"sql-editor-data-source-id":"oracle_thin-17235e17355-73b4ae6d60516652","default-schema":"SCOTT0316"}}}

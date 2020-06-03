@@ -29,7 +29,7 @@
 		//삭제 여부, 다시 확인하고 진행하기
 		var r = confirm("삭제하시겠습니까??");
 		if(r){  //삭제하기버튼을 눌렀을때 동작
-				location.href("deleteOk.do?uid="+uid);
+				location.href="deleteOk.do?uid="+uid;
 		}
 		
 	}
@@ -77,10 +77,10 @@
 	
 	
 	<br>
-	<button onclick="location.href('update.do?uid=${view[0].uid }')">수정하기</button>
-	<button onclick="location.href('list.do')">목록보기</button>
+	<button onclick="location.href='update.do?uid=${view[0].uid }'">수정하기</button>
+	<button onclick="location.href='list.do'">목록보기</button>
 	<button onclick="chkDelete(${view[0].uid })">삭제하기</button>
-	<button onclick="location.href('wrtie.do')">신규등록</button>
+	<button onclick="location.href='write.do'">신규등록</button>
 </body>
 		</html>
 		

@@ -15,7 +15,7 @@
 	<c:otherwise>
 		<script>
 			alert("등록 성공, 리스트를 출력합니다~~");
-			location.href("list.do");  //브라우저가 기억하는 직전 페이지
+			location.href="list.do";  //브라우저가 기억하는 직전 페이지
 		</script>
 	
 	</c:otherwise>

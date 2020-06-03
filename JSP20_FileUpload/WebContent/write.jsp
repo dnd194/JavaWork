@@ -42,6 +42,7 @@ enctype="Multipart/form-data">
 내용:<br>
 <textarea name="content"></textarea>
 <br><br>
+<!-- 첨부파일  -->
 <div style="background:#dddddd; padding:2px 10px; margin-bottom:5px; border:1px solid black;">
 	<h4>첨부파일</h4>
 	<button type="button" id="btnAdd">추가</button>

@@ -15,7 +15,7 @@
 	<c:otherwise>
 		<script>
 			alert("삭제 성공, 수정된 리스트를 '다시' 출력합니다~~");
-			location.href("list.do");
+			location.href="list.do";
 		</script>
 
 	</c:otherwise>
