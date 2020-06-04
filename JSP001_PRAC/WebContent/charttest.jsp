@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import = "java.sql.*"
     import = "java.text.*"%>
@@ -21,6 +21,7 @@
 	// 게시글 읽어오기
 	int uid = 20;   //일부러 고정시켜준 값
 	final String SQL_WRITE_SELECT_BY_UID = "SELECT * FROM test_write WHERE wr_uid = ?";
+	
 %>
 <%
 // 	변수를 담을 공간 준비
@@ -160,8 +161,8 @@
 		    	    // These labels appear in the legend and in the tooltips when hovering different arcs
 		    	    labels: [
 		    	        'Red',
-		    	        'Yellow',
-		    	        'Blue'
+		    	        'Blue',
+		    	        'Yellow'
 		    	    ]
 		    	},
 		    	options : {
