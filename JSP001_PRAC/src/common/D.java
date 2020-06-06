@@ -11,9 +11,21 @@ public class D {
 		public static String USERID="scott0316";		//유저 아이디
 		public static String USERPW="tiger0316";		//유저 비밀번호
 		
+		//테이블 이름 : menu_tb
+		//menu_uid
+		//menu_name
+		//menu_price
+		//SEQ_menu_tb_menu_uid
+		//store_uid
+		//------------------------------------------------
+		public static String SQL_MENU_INSERT = "insert into menu_tb values (SEQ_menu_tb_menu_uid.nextval, ?, ?, ?)";
 		
-		public static String SQL_INSERT_MENU = "insert into demo_menu_table values (uid_seq.nextval, ?, ?)";
-		public static String SQL_SELECT ="select * from demo_menu_table ORDER BY menu_uid ASC";
+		public static String SQL_MENU_SELECT_ALL ="SELECT menu_name, menu_price FROM menu_tb";
+		
+		
+		
+		//--------------------------------------------------
+		
 		//게시글 추가 (insert)
 		public static String SQL_WRITE_INSERT = "INSERT INTO test_write "+"(wr_uid, wr_subject, wr_content, wr_name) "+
 		"VALUES(test_write_seq.nextval, ?, ?, ?)";

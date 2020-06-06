@@ -4,16 +4,11 @@
     
   
 <!-- 	String SQL_INSERT_MENU = "insert into demo_menu_table values (uid_seq.nextval, ?, ?)"; -->
-	<% int cnt = (Integer)request.getAttribute("result"); %>
+	<% int cnt = (Integer)request.getAttribute("result"); 
+	int mem_uid = (Integer)session.getAttribute("mem_uid");%>
 
 <!DOCTYPE html>
-
-<!-- 이거는 모달창 바로 뜨는거  
-                            modal fade 날리면 됨 
-                        tabindex = -1 이랑    -->
-
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,6 +103,10 @@
             </tbody>
         </table>
     </div>
+    <div class="text-center">
+  <a class="btn btn-default btn-rounded" data-toggle="modal" data-target="#orangeModalSubscription">Launch
+    modal Subscription</a>
+</div>
     <script>
     
         var i = 1;

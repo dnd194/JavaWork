@@ -8,11 +8,7 @@
 	WriteDTO[] arr = (WriteDTO[])request.getAttribute("view");
 	// 이 단계에서 parameter 검증이 필요 (validation)  하지만 생략~~ writeOk.jsp에 example 있음
 %>
-<%
-	int uid = Integer.parseInt(request.getParameter("uid"));
-%>
-
-
+<%int uid = Integer.parseInt(request.getParameter("uid"));%>
 <%
 	if(arr == null || arr.length == 0 ){
 %>

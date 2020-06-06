@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.command.Command;
 import com.command.DeleteCommand;
 import com.command.ListCommand;
+import com.command.UpdateCommand;
+import com.command.UpdateOkCommand;
+import com.command.ViewCommand;
 import com.command.WriteCommand;
-
 
 
 @WebServlet("*.do")
@@ -63,24 +65,38 @@ public class WriteController extends HttpServlet {
 			command = new ListCommand();
 			command.execute(request, response);
 			viewPage = "list.jsp"; 	//포워딩할 jsp 선택
-			
 			break;
 			
 		case "/write.do":
 			viewPage = "write.jsp";
 			break;
 		
+		case "/writeOk.do":
+			command = new WriteCommand();
+			command.execute(request, response);
+			viewPage = "writeOk.jsp";   //포워딩할 jsp 선택
+			break;
+		case "/view.do":
+			command = new ViewCommand();
+			command.execute(request, response);
+			viewPage = "view.jsp";
+			break;
+		case "/update.do":
+			command = new UpdateCommand();
+			command.execute(request, response);
+			viewPage = "update.jsp";
+			break;
+		case "/updateOk.do":
+			command = new UpdateOkCommand();
+			command.execute(request, response);
+			viewPage = "updateOk.jsp";
+			break;
 		case "/deleteOk.do":
 			command = new DeleteCommand();
 			command.execute(request, response);
 			viewPage = "deleteOk.jsp";
 			break;
 			
-		case "/addmenutest.do":
-			command = new WriteCommand();
-			command.execute(request, response);
-			viewPage = "addmenutest.jsp";
-			break;
 		}//end switch
 		
 		if(viewPage != null) {
