@@ -111,14 +111,8 @@
 		e.printStackTrace();
 		out.println("파일 처리 예외발생<br>");
 	}
-			
 %>
 <input type="submit" value="업로드 파일 확인">
 </form>
-
-
-
-
-
 </body>
 </html>

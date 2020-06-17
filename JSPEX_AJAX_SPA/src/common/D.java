@@ -33,13 +33,12 @@ public class D {
 		public static String SQL_WRITE_DELETE_BY_UID =
 				"DELETE FROM test_write WHERE wr_uid = ?";
 		
-		
-		// ------------------------------ 페이징 쿼리
-		public static String SQL_WRITE_COUNT_ALL = "SELECT count(*) FROM test_write";
+		// 글 목록 전체 개수 가져오기
+		public static final String SQL_WRITE_COUNT_ALL = "SELECT count(*) FROM test_write";
 		
 		// fromRow 부터 pageRows 만큼 SELECT
 		// (몇번째) 부터 (몇개) 만큼
-		public static String SQL_WRITE_SELECT_FROM_ROW =  "SELECT * FROM " + 
+		public static final String SQL_WRITE_SELECT_FROM_ROW =  "SELECT * FROM " + 
 				"(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM test_write ORDER BY wr_uid DESC) T) " + 
 				"WHERE RNUM >= ? AND RNUM < ?";
 		

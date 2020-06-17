@@ -97,9 +97,6 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "deleteOk.jsp";
 			break;
-		case "/pagination.do":
-			viewPage = "pagination.jsp";
-			break;
 			
 		}//end switch
 		

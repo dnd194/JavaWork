@@ -18,7 +18,7 @@ public class ListCommand implements Command {
 		
 		try {
 			//트랜잭션수행
-			arr = dao.select();
+			arr = dao.selectPaging();
 			
 			//결과를 담아야한다.  결과 = arr ,  바구니 = request
 			// list 란 name 으로 request에 arr 값 전달
