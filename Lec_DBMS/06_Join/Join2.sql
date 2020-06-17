@@ -25,7 +25,7 @@ ON c.C_POINT BETWEEN g.G_START  AND g.G_END
 GROUP BY g.G_NAME ;
 
 --#6203
-
+SELECT * FROM t_student ;
 SELECT * FROM T_EXAM01 ;
 SELECT * FROM T_CREDIT ;
 
@@ -93,10 +93,47 @@ on p2.HIREDATE < p1.HIREDATE
 GROUP BY p1.PROFNO , p1.NAME , p1.HIREDATE 
 ORDER BY 4;
 
+CREATE TABLE menu_tb
+(
+	menu_uid number NOT NULL,
+	menu_name varchar2(50) NOT NULL,
+	menu_price number NOT NULL,
+	store_uid number NOT NULL,
+	PRIMARY KEY (menu_uid)
+);
+DROP TABLE menu_tb CASCADE CONSTRAINTS;
+DROP TABLE menu_detail CASCADE CONSTRAINTS;
+CREATE SEQUENCE menu_uid_seq;
+CREATE SEQUENCE order_uid_seq;
+CREATE SEQUENCE store_uid_seq;
+CREATE SEQUENCE menu_uid2_seq;
+CREATE TABLE menu_detail
+(
+	menu_uid2 number NOT NULL,
+	menu_name varchar2(50) NOT NULL,
+	order_uid NUMBER NOT NULL,
+	menu_quantity NUMBER NOT null
+);
 
+INSERT INTO menu_tb VALUES (menu_uid_seq.nextval, '아아연',3000,store_uid_seq.nextval);
+INSERT INTO menu_tb VALUES (menu_uid_seq.nextval, '라뗴연',3000,store_uid_seq.nextval);
+INSERT INTO menu_tb VALUES (menu_uid_seq.nextval, '코코아연',3000,store_uid_seq.nextval);
+INSERT INTO menu_tb VALUES (menu_uid_seq.nextval, '기모찌',3000,store_uid_seq.nextval);
 
+INSERT INTO menu_detail VALUES (menu_uid2_seq.nextval, '아아연',order_uid_seq.nextval, 2);
+INSERT INTO menu_detail VALUES (menu_uid2_seq.nextval, '라뗴연',order_uid_seq.nextval, 2);
+INSERT INTO menu_detail VALUES (menu_uid2_seq.nextval, '코코아연',order_uid_seq.nextval, 1);
+INSERT INTO menu_detail VALUES (menu_uid2_seq.nextval, '기모찌',order_uid_seq.nextval, 4);
+INSERT INTO menu_detail VALUES (menu_uid2_seq.nextval, '제발요',6, 4);
+INSERT INTO menu_detail VALUES (menu_uid2_seq.nextval, '오마에와',6, 4);
 
+SELECT * FROM MENU_TB ;
+SELECT * FROM menu_detail;
+CREATE TABLE sbbb as
+SELECT a.menu_price , a.menu_name, b.menu_quantity
+FROM MENU_TB a , menu_detail b
+WHERE a.menu_uid = b.menu_uid2;
 
-
+SELECT * FROM sbbb;
 
 
