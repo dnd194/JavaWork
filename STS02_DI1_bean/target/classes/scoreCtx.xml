@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 스코어 객체 생성 -->
+	<bean id="myScore1" class="com.lec.spring.Score"/>
+	
+	<!-- 매개벼눗 자종 constructor - arg -->
+	<bean id="myScore2" class="com.lec.spring.Score">
+		<!-- 매개변수 4개이고  ''순서'' 대로 매개변수로 들어감 -->
+		<constructor-arg value="88"/>
+		<constructor-arg value="90"/>
+		<constructor-arg>
+			<value>44</value>
+		</constructor-arg>
+		<constructor-arg value="조오아여"></constructor-arg>
+	</bean>
+	
+	<!-- 매개변수지정, index 사용 -->
+	<bean id="myScore3" class="com.lec.spring.Score">
+		<constructor-arg index="3" value="4번쨰라구"/>
+		<constructor-arg index="2" value="22"/>
+		<constructor-arg index="0" value="77"/>
+		<constructor-arg index="1" value="33" ></constructor-arg>
+	</bean>
+	
+	<!-- 매개변수 type 사용  -->
+	<bean id="myScore4" class="com.lec.spring.Score">
+		<constructor-arg type="int" value="55"/>
+		<constructor-arg type="int" value="46"/>
+		<constructor-arg type="java.lang.String" value="좋지않아"/>
+		<constructor-arg value="78"/>
+
+<!-- 			자동 형변환은 지원하지 않는다  -->
+<!-- 		<constructor-arg type="byte" value="55"/> -->
+<!-- 		<constructor-arg type="short" value="46"/> -->
+<!-- 		<constructor-arg type="java.lang.String" value="좋지않아"/> -->
+<!-- 		<constructor-arg value="78"/> -->
+	</bean>
+	
+<!-- 			배열 타입 매개변수 생성자	 -->
+		
+		<bean id="myScore5" class="com.lec.spring.Score">
+			<constructor-arg>
+				<list>
+					<value>77</value>
+					<value>88</value>
+					<value>96</value>
+				</list>
+			</constructor-arg>
+			<constructor-arg value="배열이에요오"></constructor-arg>
+		</bean>
+		
+<!-- 		setter 메서드 사용 -->
+		<bean id="myScore6" class="com.lec.spring.Score">
+<!-- 			일단은 기본 생성자로 생성 -->
+			<property name="kor" value="88"></property>
+<!-- 			myScore6.setKor 이랑 똑같은 역할-->
+			
+			<property name="math">
+				<value>66</value>
+			</property>
+			<property name="eng" value="78"></property>
+			<property name="comment" value="하하히히호호"></property>
+		</bean>
+		
+<!-- 		생성자와 setter 동시에 가능 
+			생성자가 먼저 호출되고 setter 수행됨		 -->
+		<bean id="myScore7" class="com.lec.spring.Score">
+			<constructor-arg value="77"></constructor-arg>
+			<property name="comment" value="우우웁스"></property>
+			<constructor-arg value="60"></constructor-arg>
+			<constructor-arg value="89"></constructor-arg>
+			<constructor-arg value="웁스"></constructor-arg>
+		</bean>
+		
+		<bean id="myScore8" class="com.lec.spring.Score">
+			<property name="score">
+				<list>
+					<value>100</value>
+					<value>200</value>
+					<value>300</value>
+				</list>
+			</property>
+		</bean>
+</beans>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 	컨테이너들은 순서대로 만들어진다 score 가 먼저 만들어지고 student 가 만들어짐 -->
+
+	<bean id="scoreA" class="com.lec.spring.Score">
+		<constructor-arg value="88"/>
+		<constructor-arg value="90"/>
+		<constructor-arg value="97"/>
+		<constructor-arg value="굳굳굳"/>
+	</bean>
+
+<!-- 	생성자 매개변수 reference 타입은 ref 사용 -->
+	<bean id="bini" class="com.lec.spring.Student">
+		<constructor-arg value ="tkdqls"/>
+		<constructor-arg value ="27"/>
+<!-- 		<constructor-arg ref ="scoreA"/> -->
+		<constructor-arg>
+			<ref bean="scoreA"/>
+		</constructor-arg>
+	</bean>
+
+<!-- 	setter 와 ref 사용 -->
+	<bean id="bbin" class="com.lec.spring.Student">
+		<property name="name" value="지이이잉"/>
+		<property name="age" value="32"/>
+		<property name="score" ref = "scoreA"/>
+	</bean>
+
+
+
+</beans>

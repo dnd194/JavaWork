@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="score1" class="com.lec.spring.Score" 
+	 	c:kor="88" c:eng="99" c:math="85" c:comment="ㄱㅁㅉ"/>
+	
+<!-- 		해당 생성자가 없으면 에러 -->
+<!-- 	<bean id="score2" class="com.lec.spring.Score"  -->
+<!-- 	 	c:kor="88"/> -->
+	
+<!-- 	p : setter 호출 -->
+<!-- 		기본생성자를 만들고 set 함 -->
+	<bean id="score2" class="com.lec.spring.Score" p:kor = "99"/>  
+	
+<!-- 		c: 생성자 매개변수가 ref인 경우 -->
+	<bean id="stu1" class="com.lec.spring.Student" 
+				c:name="상빈" c:age="25" c:score-ref="score1"/>
+	
+
+<!-- 		p:setter 매개변수가 ref 인경우 -->
+	<bean id="stu2" class="com.lec.spring.Student" 
+				p:name="갬자" p:age="27" p:score-ref="score1"/>
+
+
+</beans>
