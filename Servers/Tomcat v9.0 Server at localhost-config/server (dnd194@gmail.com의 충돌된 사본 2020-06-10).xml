@@ -116,13 +116,13 @@
 				
 				
 				
-				
-				
+				<Context docBase="JSP14_JavaBean" path="/JSP14_JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JSP14_JavaBean"/>
+				<Context docBase="JSP000_PRAC" path="/JSP000_PRAC" reloadable="true" source="org.eclipse.jst.jee.server:JSP000_PRAC"/>
 				
 
 				
-			
-			<Context docBase="JSPEX_AJAX_SPA" path="/JSPEX_AJAX_SPA" reloadable="true" source="org.eclipse.jst.jee.server:JSPEX_AJAX_SPA"/><Context docBase="JSPEX_Category" path="/JSPEX_Category" reloadable="true" source="org.eclipse.jst.jee.server:JSPEX_Category"/></Host>
+			<Context docBase="JSP15_JDBC" path="/JSP15_JDBC" reloadable="true" source="org.eclipse.jst.jee.server:JSP15_JDBC"/>
+			<Context docBase="JSP001_PRAC" path="/JSP001_PRAC" reloadable="true" source="org.eclipse.jst.jee.server:JSP001_PRAC"/><Context docBase="JSP003_EMAIL" path="/JSP003_EMAIL" reloadable="true" source="org.eclipse.jst.jee.server:JSP003_EMAIL"/><Context docBase="JSP004_CS" path="/JSP004_CS" reloadable="true" source="org.eclipse.jst.jee.server:JSP004_CS"/><Context docBase="JSPEX_AJAX_SPA" path="/JSPEX_AJAX_SPA" reloadable="true" source="org.eclipse.jst.jee.server:JSPEX_AJAX_SPA"/><Context docBase="ProjectSC" path="/ProjectSC" reloadable="true" source="org.eclipse.jst.jee.server:ProjectSC"/><Context docBase="JSP18_MVC" path="/JSP18_MVC" reloadable="true" source="org.eclipse.jst.jee.server:JSP18_MVC"/></Host>
 			<!--뒤에 host 지워버리면 큰일 납니다~~ -->
 		</Engine>
 	</Service>

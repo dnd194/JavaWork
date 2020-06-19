@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+<!-- 	context namespace 우선적으로 추가 -->
+	<context:property-placeholder
+				location="classpath:admin.auth, classpath:db.info"/>
+				
+	<bean id="dbConnection" class="com.lec.spring.property2.xml.DBConn">
+		<property name="id">
+			<value>${admin.id}</value>
+		</property>
+		<property name="pw">
+			<value>${admin.pw}</value>
+		</property>
+		<property name="url">
+			<value>${db.url}</value>
+		</property>
+		<property name="port">
+			<value>${db.port}</value>
+		</property>
+	</bean>    
+	
+	
+</beans>

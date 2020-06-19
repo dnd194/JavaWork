@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+<!-- 	싱글톤   singleton scope (default) 
+		컨테이너 생성시점에서 생성됨
+		컨테이너안에 하나의 인스턴스만 생성된다.  ==> 빈을 여러번 호출해도 동일한 객체
+ -->
+		<bean id="score1" class="com.lec.spring.beans.Score"
+		c:kor="99" c:eng="95" c:math="88" c:comment="qweqwe" scope="singleton"></bean>
+
+
+<!-- 		prototype scope  
+			컨테이너 생성지점에서는 생성되지 않음~~
+			getBean() 할때마다 새로운 인스턴스로 생성
+-->
+		<bean id="score2" class="com.lec.spring.beans.Score"
+		c:kor="60" c:eng="70" c:math="90" c:comment="1241212" scope="prototype"></bean>
+
+
+</beans>
