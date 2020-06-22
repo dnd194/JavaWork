@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="logger" class="com.lec.beans.Logger"/>
+	
+	<bean name="service21" class="com.lec.spring.aop02.MyService21"/>
+	<bean name="service22" class="com.lec.spring.aop02.MyService22"/>
+	
+	<bean name="serviceEx31" class="com.lec.spring.aop03.MyServiceEx31"/>
+	<bean name="serviceEx32" class="com.lec.spring.aop03.MyServiceEx32"/>
+
+	<aop:config>
+		<aop:pointcut expression="within(com.lec.spring.aop03.*)" id="pc1"/>
+		<aop:pointcut expression="within(com.lec.spring.aop02.*)" id="pc2"/>
+		<aop:pointcut expression="execution(* com.lec.spring.aop*.My*.*Action(..))" id="pc3"/>
+		<aop:pointcut expression="execution(* com.lec.spring.*3.My*.do*(..))" id="pc4"/>
+		
+		<aop:aspect id="logAspect3" ref="logger">
+<!-- 			<aop:before method="logAdvice" pointcut-ref="pc1"/> -->
+	
+<!-- 				pointcut-ref 대신 pointcut 으로 직접 지정 가능 -->
+				<aop:after method="logOut" pointcut="within(com.lec.spring.aop03.*)"/>
+		</aop:aspect>
+		
+		
+		
+		
+	</aop:config>
+</beans>

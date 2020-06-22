@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	
+<!-- 	공통기능 클래스를 빈 객체로 생성하는 작업을 여기서 해줘야함 -->
+	<bean id="logger" class="com.lec.beans.Logger"/>   <!--이친구임  -->
+	
+	<bean name="service21" class="com.lec.spring.aop02.MyService21"/>
+	<bean name="service22" class="com.lec.spring.aop02.MyService22"/>
+	
+	<aop:config>
+		<!-- config 안에 aspect 들을 설정 -->
+		<aop:aspect id="logAspect1" ref="logger">
+<!-- 			aspect 의 pointcut 설정 -->
+			<aop:pointcut expression="within(com.lec.spring.aop02.*)" id="pc1"/>
+			
+<!-- 			aspect 의 adivce 설정 -->
+			<aop:before pointcut-ref="pc1" method="logIn"/>			
+		</aop:aspect>
+	
+		<aop:aspect id="logAspect2" ref="logger">
+			<aop:after method="logOut" pointcut-ref="pc1"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
