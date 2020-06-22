@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+
+	<!-- Proxy 객체 자동생성.  @Aspect 있는 빈 객체들을 찾아서 공통기능으로 등록 -->
+	<aop:aspectj-autoproxy/>
+	
+	<bean id="logAop" class="com.lec.spring.aop02.LogAspect"/>
+	
+
+	<bean name="service21" class="com.lec.spring.aop02.MyService21"/>
+	<bean name="service22" class="com.lec.spring.aop02.MyService22"/>
+	
+
+</beans>
+
+
+
+
+
+
+
+
+
