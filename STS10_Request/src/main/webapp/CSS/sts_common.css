@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.sts{
+	background: lightcyan;
+}
+div.sts span{
+	color:blue;
+	font-size: 16px;
+}
