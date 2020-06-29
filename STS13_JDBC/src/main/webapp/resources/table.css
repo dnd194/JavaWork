@@ -1,0 +1,17 @@
+@charset "UTF-8";
+table { width: 100%;}
+table, th, td {
+   border: 1px solid orange;
+   border-collapse: collapse;
+   text-align: center;
+}
+th{
+   background-color: lightpink;
+}
+a{
+   text-decoration: none;
+   color: black;
+}
+a:hover{
+   color: olive;
+}
