@@ -42,7 +42,7 @@ public class PlusOp implements OperatorBean {
 		this.operand2 = operand2;
 	}
 
-	@Override
+	
 	public int doOperate() {
 		return operand1.getValue() + operand2.getValue();
 	}

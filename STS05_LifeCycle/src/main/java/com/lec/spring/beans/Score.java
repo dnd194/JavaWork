@@ -85,12 +85,12 @@ public class Score implements InitializingBean, DisposableBean{
 		return "Score [국어 = " + kor + ", 영어 = " + eng + ", 수학 = " + math + ", 평가 = " + comment + "]";
 	}
 	
-	@Override
+	
 	public void afterPropertiesSet() throws Exception {
 		//빈 초기화 과정에서 호출
 		System.out.println("빈 초기화 afterPropertiesset 호출()");
 	}
-	@Override
+	
 	public void destroy() throws Exception {
 		//빈 소멸 과정에서 호출
 		System.out.println("빈 소멸 destroy 호출");

@@ -24,7 +24,7 @@ public class MinusOp implements OperatorBean {
 	public void setOperand2(int operand2) {
 		this.operand2 = operand2;
 	}
-	@Override
+	
 	public int doOperate() {
 		return operand1 - operand2;
 	}

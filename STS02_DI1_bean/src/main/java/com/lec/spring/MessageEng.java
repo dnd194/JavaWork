@@ -8,7 +8,6 @@ public class MessageEng implements MessageBean {
 		System.out.println("MessageEng() 생성");
 	}
 
-	@Override
 	public void sayHello() {
 		System.out.println(msgEng);
 	}

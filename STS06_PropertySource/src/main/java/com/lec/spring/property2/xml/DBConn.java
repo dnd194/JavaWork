@@ -35,11 +35,9 @@ public class DBConn implements InitializingBean, DisposableBean{
 		this.port = port;
 	}
 	
-	@Override
 	public void destroy() throws Exception {
 		System.out.println("destroy()");
 	}
-	@Override
 	public void afterPropertiesSet() throws Exception {
 		System.out.println("afterPropertiesSet()");
 	}

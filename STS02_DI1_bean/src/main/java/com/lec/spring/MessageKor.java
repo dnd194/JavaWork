@@ -11,7 +11,7 @@ public class MessageKor implements MessageBean {
 	}
 
 
-	@Override
+	
 	public void sayHello() {
 		System.out.println(msgKor);
 
