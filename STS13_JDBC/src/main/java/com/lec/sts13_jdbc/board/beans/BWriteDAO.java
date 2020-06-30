@@ -62,11 +62,21 @@ public class BWriteDAO {
 	}
 	
 	public List<BWriteDTO> readByUid(final int uid){
-		
+		int cnt = 0;
+		cnt = template.update(new PreparedStatementCreator() {
+			
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement ps2 = con.prepareStatement(C.SQL_WRITE_INC_VIEWCNT);
+				ps2.setInt(1, uid);
+				return ps2;
+			}
+		});
 		return template.query(new PreparedStatementCreator() {
 			
 			@Override
 			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				
 				PreparedStatement ps = con.prepareStatement(C.SQL_WRITE_SELECT_BY_UID);
 				ps.setInt(1, uid);
 				return ps;
