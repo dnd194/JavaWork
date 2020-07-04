@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.lec.sts15_mybatis.board.beans.IWriteDAO">
+<!-- 	<select id="select" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO"> -->
+<!-- 		select wr_uid "uid", wr_subject subject, wr_content content, wr_name name, wr_viewcnt viewcnt, wr_regdate regdate from test_write order by wr_uid desc -->
+<!-- 	</select> -->
+	
+<!-- <insert id="insert" parameterType="com.lec.sts15_mybatis.board.beans.BWriteDTO" flushCache="true"> -->
+<!-- 		insert into test_write (wr_uid, wr_subject, wr_content, wr_name, wr_regdate) values (TEST_WRITE_SEQ.nextval, #{subject}, #{content}, #{name}, SYSDATE) -->
+<!-- 	</insert> -->
+	
+<!-- 		<insert id="insert" flushCache="true"> -->
+<!-- 			insert into test_write (wr_uid, wr_subject, wr_content, wr_name) values (test_write_seq.nextval, #{param1}, #{param2}, #{param3}) -->
+<!-- 		</insert> -->
+</mapper>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.lec.sts19_rest.board.beans.IWriteDAO">
+	<select id="select" resultType="com.lec.sts19_rest.board.beans.BWriteDTO">
+		select wr_uid "uid", wr_subject subject, wr_content content, wr_name name, wr_viewcnt viewcnt, wr_regdate regdate from test_write order by wr_uid desc
+	</select>
+	
+<!-- 	<insert id="insert" parameterType="com.lec.sts19_rest.board.beans.BWriteDTO" flushCache="true" -->
+<!-- 	  keyProperty="uid" useGeneratedKeys="true" keyColumn="wr_uid"> -->
+ 	  <!--  		 keyColumn 는 디비에 저장된 컬럼명을 의미한다 -->  
+<!-- 		insert into test_write (wr_uid, wr_subject, wr_content, wr_name, wr_regdate) values (TEST_WRITE_SEQ.nextval, #{subject}, #{content}, #{name}, SYSDATE) -->
+<!-- 	</insert> -->
+	
+	
+	<insert id="insert" flushCache="true">
+			insert into test_write (wr_uid, wr_subject, wr_content, wr_name) values (test_write_seq.nextval, #{param1}, #{param2}, #{param3})
+	</insert>
+	
+	<select id="selectByUid" resultType="com.lec.sts19_rest.board.beans.BWriteDTO">
+		select wr_uid "uid", wr_subject subject, wr_content content, wr_name name, wr_viewcnt viewcnt, wr_regdate regdate from test_write where wr_uid = #{uid} 
+	</select>
+	
+	<update id="incViewCnt">
+		UPDATE test_write SET wr_viewcnt = wr_viewcnt + 1 WHERE wr_uid = #{param1}
+	</update>
+	
+<!-- 	<update id="update"> -->
+<!-- 		UPDATE test_write SET wr_subject = #{subject}, wr_content = #{content} WHERE wr_uid = #{uid} -->
+<!-- 	</update> -->
+	<update id="update">
+		UPDATE test_write SET wr_subject = #{a.subject}, wr_content = #{a.content} WHERE wr_uid = #{param1}
+	</update>
+	
+	<delete id="deleteByUid">
+		DELETE FROM test_write WHERE wr_uid = #{uid}
+	</delete>
+	
+	<select id="countAll">
+		SELECT count(*) FROM test_write
+	</select>
+	
+	<select id="selectFromRow" parameterType="int" resultType="com.lec.sts19_rest.board.beans.BWriteDTO">
+		<![CDATA[
+		SELECT 
+			wr_uid "uid", wr_subject subject, wr_content content, wr_name name, wr_viewcnt viewcnt, wr_regdate regdate  
+		FROM (SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM test_write ORDER BY wr_uid DESC) T) WHERE RNUM >= #{param1} AND RNUM < (#{param1} + #{param2})
+		
+		]]>
+	</select>
+<!-- 		mybatipse 어시스트 확인용 -->
+<!-- 	<select id="searchBySubject" resultType="com.lec.sts19_rest.board.beans.BWriteDTO"></select> -->
+		
+</mapper>

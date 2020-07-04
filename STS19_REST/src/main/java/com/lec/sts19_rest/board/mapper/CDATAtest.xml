@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lec.sts15_mybatis.board.mapper.CDATAtest">
+
+<!-- 	CDATA 안에 담으면 표현할수 없는 특수문자도 (>, < 부등호) 표현가능 -->
+<!-- 	<![CDATA[ -->
+<!-- 			ex) select uid from table where uid > 10 -->
+<!-- 	]]> -->
+	
+</mapper>
