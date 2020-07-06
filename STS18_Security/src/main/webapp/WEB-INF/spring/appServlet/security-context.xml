@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security 
+						http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="customAccessDenied" 
+				class="com.lec.sts18_security.security.CustomAccessDeniedHandler"/>
+	
+
+	<bean id="customLoginSuccess" 
+		class="com.lec.sts18_security.security.CustomLoginSuccessHandler"/>
+
+<!-- 	컨테이너의 http security 요소 -->
+
+	<security:http>
+		<!-- 특정 url pattern 의 요청이 들어올 때 interceptor를 이용해 접근 제한 설정 -->
+	<security:intercept-url pattern="/sample/all" access="permitAll"/>
+	
+	<!-- /sample/member url 요청은  ROLE_MEMBER 라는 권한이 있는 사용자만 접근 가능-->
+	<security:intercept-url pattern="/sample/member" access="hasRole('ROLE_MEMBER')"/>
+	
+	<!-- /sample/admin url 요청은  ROLE_ADMIN 라는 권한이 있는 사용자만 접근 가능-->
+	<security:intercept-url pattern="/sample/admin" access="hasRole('ROLE_ADMIN')"/>
+	
+<!-- 		<security:form-login/>  -->	<!-- 스프링에서 제공하는 기본 로그인 사용 -->
+		<security:form-login login-page="/customLogin"
+			authentication-success-handler-ref="customLoginSuccess"/>
+		
+		
+<!-- 		<security:access-denied-handler error-page="/accessError"/> -->
+			<security:access-denied-handler ref="customAccessDenied"/>
+			
+			<security:logout logout-url="/customLogout" invalidate-session="true"/>
+	</security:http>
+	
+<!-- 	authenticationManager 빈 생성 -->
+	<security:authentication-manager>
+<!-- 		UserDetailsService 사용자 인증과 권한 처리 -->
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="member" password="{noop}member" authorities="ROLE_MEMBER"/>
+				<security:user name="admin" password="{noop}admin" authorities="ROLE_ADMIN, ROLE_MEMBER"/>
+				
+				
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+
+</beans>
