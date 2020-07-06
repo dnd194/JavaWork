@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lec.sts19_rest.board.beans.IAjaxDAO">
+
+
+	<select id="selectFromRow" 
+		resultType="com.lec.sts19_rest.board.beans.BWriteDTO">
+		<![CDATA[
+		SELECT 
+			wr_uid "uid",
+			wr_subject subject,
+			wr_content content,
+			wr_name name,
+			wr_viewcnt viewcnt,
+			wr_regdate regdate 
+		FROM 
+			(SELECT ROWNUM AS RNUM, T.* FROM 
+				(SELECT * FROM test_write ORDER BY wr_uid DESC) T) 
+		WHERE 
+			RNUM >= #{from} AND RNUM < (#{from} + #{pageRows})
+		]]>
+	</select>
+
+
+	<!-- SELECT 쿼리문인데, 단일값 int 값 받고 싶으면 
+		resultType="java.lang.Integer" 혹은
+		resultType="int"
+	 -->
+	<select id="countAll" resultType="int"> 
+		SELECT count(*) FROM test_write
+	</select>
+
+	<!-- 글 읽기 -->
+	<select id="selectByUid"
+		resultType="com.lec.sts19_rest.board.beans.BWriteDTO">
+		SELECT 
+			wr_uid "uid",
+			wr_subject subject,
+			wr_content content,
+			wr_name name,
+			wr_viewcnt viewcnt,
+			wr_regdate regdate 
+		FROM 
+			test_write
+		WHERE
+			wr_uid = #{uid}
+	</select>
+
+	<!-- 조회수 증가 -->
+	<update id="incViewCnt">
+		UPDATE test_write
+		SET wr_viewcnt = wr_viewcnt + 1
+		WHERE wr_uid = #{param1}	
+	</update>
+
+	<!-- 글작성 -->
+	<insert id="insert" flushCache="true">
+		INSERT INTO test_write
+			(wr_uid, wr_subject, wr_content, wr_name)
+		VALUES
+			(test_write_seq.nextval,
+			#{param1}, #{param2}, #{param3})
+	</insert>
+
+	<!-- 글수정 -->
+	<update id="update" flushCache="true">
+		UPDATE test_write
+		SET 
+			wr_subject = #{subject}, 
+			wr_content = #{content}
+		WHERE
+			wr_uid = #{uid}
+	</update>
+
+	<!-- 배열을 파라미터로 받는 경우
+		collection 에 꼭 ! arrray 로!
+		
+		item : foreach 문 안에서 사용할 매개변수 이름
+		separator : foreach 문이 한번 돌고 다음번 돌때의 구분자.
+		open : 시작문자열
+		close : 닫는 (종료)문자열
+	 -->
+	<delete id="deleteByUid" flushCache="true"
+		parameterType="java.util.ArrayList">
+		
+		DELETE FROM test_write
+		WHERE wr_uid in (
+			<foreach collection="array" item="item" index="index" separator=",">
+				${item}
+			</foreach>	
+		)
+	</delete>
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
